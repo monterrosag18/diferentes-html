@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MEGA Referencia HTML5 - La más completa del mundo con Cards, Carrusel, Ejemplos Desplegables y Casos de Uso">
+    <meta name="author" content="Proyecto Educativo Web">
+    <title>🚀 MEGA Referencia HTML5 - Completa Total con Cards, Carrusel y Código Desplegable</title>
+    <link rel="stylesheet" href="estilos_referencia.css">
+    <style>
+        /* ═══════════════════════════════════════════════════════════ */
+        /* ESTILOS GLOBALES MEGA COMPLETA */
+        /* ═══════════════════════════════════════════════════════════ */
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .header-principal {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+        }
+
+        .header-principal h1 {
+            font-size: 3em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-right: 8px;
+            text-transform: uppercase;
+        }
+
+        .badge-nuevo { background: #FF6B6B; color: white; }
+        .badge-componente { background: #4ECDC4; color: white; }
+        .badge-semantica { background: #95E1D3; color: #333; }
+        .badge-multimedia { background: #FFE66D; color: #333; }
+        .badge-formulario { background: #FFB84D; color: white; }
+        .badge-texto { background: #A8D8EA; color: #333; }
+        .badge-interactivo { background: #AA96DA; color: white; }
+        .badge-avanzado { background: #FF6B9D; color: white; }
+
+        /* Contenedor principal */
+        .contenedor-referencia {
+            max-width: 1400px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* Secciones */
+        .seccion-referencia {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .seccion-referencia h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        /* Tarjeta de ejemplo */
+        .ejemplo-card {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .ejemplo-card:hover {
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .ejemplo-card h3 {
+            color: #667eea;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* Código desplegable */
+        .codigo-desplegable {
+            margin: 15px 0;
+        }
+
+        .boton-desplegar {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .boton-desplegar:hover {
+            background: #764ba2;
+            transform: scale(1.05);
+        }
+
+        .boton-desplegar::before {
+            content: "▶";
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .boton-desplegar.activo::before {
+            transform: rotate(90deg);
+        }
+
+        .contenido-codigo {
+            display: none;
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .contenido-codigo.visible {
+            display: block;
+        }
+
+        /* Tabla de atributos */
+        .tabla-atributos {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .tabla-atributos th,
+        .tabla-atributos td {
+            border: 1px solid #ddd;
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        .tabla-atributos th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .tabla-atributos tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .tabla-atributos tr:hover {
+            background: #e8f4f8;
+        }
+
+        /* Boxes de información */
+        .info-box {
+            background: #E8F4F8;
+            border-left: 4px solid #4ECDC4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        .info-box.tip {
+            border-left-color: #FFB84D;
+            background: #FFF8E8;
+        }
+
+        .info-box.warning {
+            border-left-color: #FF6B6B;
+            background: #FFE8E8;
+        }
+
+        .info-box.success {
+            border-left-color: #4ECDC4;
+            background: #E8F8F5;
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        /* Grid de ejemplos */
+        .grid-ejemplos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        /* Casos de uso */
+        .caso-uso {
+            background: linear-gradient(135deg, #667eea15 0%, #764ba215 100%);
+            border: 1px solid #667eea;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+        }
+
+        .caso-uso h4 {
+            color: #667eea;
+            margin: 0 0 10px 0;
+        }
+
+        /* Navegación */
+        .nav-referencia {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            border-bottom: 2px solid #667eea;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .nav-referencia a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .nav-referencia a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* ESTILOS ESPECÍFICOS PARA COMPONENTES */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        /* Cards - Estilos visuales */
+        .card-demo {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .card-demo:hover {
+            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+            transform: translateY(-5px);
+        }
+
+        .card-demo-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            height: 150px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .card-demo-body {
+            padding: 20px;
+        }
+
+        .card-demo-body h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+
+        .card-demo-body p {
+            margin: 0;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .card-demo-footer {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            border-top: 1px solid #eee;
+            display: flex;
+            gap: 10px;
+        }
+
+        .card-demo-footer button {
+            flex: 1;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #764ba2;
+        }
+
+        .btn-secondary {
+            background: #e9ecef;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .btn-secondary:hover {
+            background: #ddd;
+        }
+
+        /* Carrusel */
+        .carrusel-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #f8f9fa;
+            max-width: 500px;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .carrusel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carrusel-item {
+            min-width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carrusel-item h3 {
+            margin: 0 0 20px 0;
+            font-size: 2em;
+        }
+
+        .carrusel-item p {
+            margin: 0;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .carrusel-controles {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #eee;
+        }
+
+        .carrusel-btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .carrusel-btn:hover {
+            background: #764ba2;
+            transform: scale(1.1);
+        }
+
+        .carrusel-indicadores {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px;
+        }
+
+        .indicador {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicador.activo {
+            background: #667eea;
+            transform: scale(1.3);
+        }
+
+        /* Pie de página */
+        footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- HEADER PRINCIPAL -->
+    <header class="header-principal">
+        <h1>🚀 MEGA Referencia HTML5 Completa</h1>
+        <p style="font-size: 1.2em; margin: 10px 0;">La guía más completa jamás creada</p>
+        <p style="font-size: 14px; margin-top: 15px; opacity: 0.95;">
+            ✨ Cards • Carrusel • Código Desplegable • Casos de Uso • Atributos Completos • Ejemplos Visuales • Etiquetas Semánticas
+        </p>
+    </header>
+
+    <!-- NAVEGACIÓN STICKY -->
+    <nav class="nav-referencia">
+        <a href="#cards">🎴 Cards</a>
+        <a href="#carrusel">🎠 Carrusel</a>
+        <a href="#textos">📝 Textos</a>
+        <a href="#listas">📋 Listas</a>
+        <a href="#formularios">📝 Formularios</a>
+        <a href="#multimedia">🎬 Multimedia</a>
+        <a href="#tablas">📊 Tablas</a>
+        <a href="#semantica">🏗️ Semántica</a>
+    </nav>
+
+    <main class="contenedor-referencia">
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN: CARDS / TARJETAS -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="cards" class="seccion-referencia">
+            <h2>🎴 CARDS / TARJETAS - Componentes Reutilizables</h2>
+
+            <!-- Información general -->
+            <div class="info-box success">
+                <strong>💡 ¿Qué son las Cards?</strong>
+                Las cards o tarjetas son componentes reutilizables que contienen información relacionada. Se usan en dashboards, portfolios, tiendas online y aplicaciones modernas.
+            </div>
+
+            <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+            <!-- CARD TIPO 1: BÁSICA -->
+            <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+            <div class="ejemplo-card">
+                <h3>
+                    <span class="badge badge-nuevo">CARD BÁSICA</span>
+                    <span class="badge badge-componente">COMPONENTE</span>
+                </h3>
+                <p>La estructura más simple de una card con encabezado, contenido y acciones.</p>
+
+                <!-- Vista previa -->
+                <div style="margin: 20px 0; border: 1px dashed #667eea; padding: 20px; border-radius: 8px;">
+                    <div class="card-demo">
+                        <div class="card-demo-header">
+                            <h4 style="margin: 0; font-size: 1.5em;">📱 Mi Producto</h4>
+                        </div>
+                        <div class="card-demo-body">
+                            <h4>Título Importante</h4>
+                            <p>Esta es una descripción breve del contenido de la card. Puede ser un producto, artículo, usuario, etc.</p>
+                        </div>
+                        <div class="card-demo-footer">
+                            <button class="btn-primary">Detalles</button>
+                            <button class="btn-secondary">Compartir</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Código desplegable -->
+                <div class="codigo-desplegable">
+                    <button class="boton-desplegar" onclick="toggleCodigo(this)">Ver Código HTML</button>
+                    <div class="contenido-codigo">
+&lt;div class="card"&gt;
+    &lt;div class="card-header"&gt;
+        &lt;h3&gt;Título de la Card&lt;/h3&gt;
+    &lt;/div&gt;
+    &lt;div class="card-body"&gt;
+        &lt;p&gt;Contenido principal de la tarjeta&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="card-footer"&gt;
+        &lt;button&gt;Acción 1&lt;/button&gt;
+        &lt;button&gt;Acción 2&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <!-- Tabla de elementos -->
+                <table class="tabla-atributos">
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Uso</th>
+                        <th>Etiquetas Semánticas Correctas</th>
+                    </tr>
+                    <tr>
+                        <td><strong>&lt;div class="card"&gt;</strong></td>
+                        <td>Contenedor principal</td>
+                        <td><code>&lt;article&gt;</code> o <code>&lt;div&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>&lt;div class="card-header"&gt;</strong></td>
+                        <td>Encabezado con título</td>
+                        <td><code>&lt;header&gt;</code> (si es importante) o <code>&lt;div&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>&lt;div class="card-body"&gt;</strong></td>
+                        <td>Contenido principal</td>
+                        <td><code>&lt;section&gt;</code> o <code>&lt;div&gt;</code></td>
+                    </tr>
+                    <tr>
+                        <td><strong>&lt;div class="card-footer"&gt;</strong></td>
+                        <td>Botones de acción</td>
+                        <td><code>&lt;footer&gt;</code> (en semántica HTML5)</td>
+                    </tr>
+                </table>
+
+                <!-- Casos de uso -->
+                <div class="caso-uso">
+                    <h4>📌 Casos de Uso Reales</h4>
+                    <ul>
+                        <li><strong>E-commerce:</strong> Mostrar productos con imagen, precio, descripción y botón "Agregar al carrito"</li>
+                        <li><strong>Portfolio:</strong> Proyectos con thumbnail, descripción y enlace a detalles</li>
+                        <li><strong>Dashboard:</strong> Estadísticas en tarjetas con datos e iconos</li>
+                        <li><strong>Red Social:</strong> Posts con autor, contenido, likes y comentarios</li>
+                        <li><strong>Equipo:</strong> Miembros del equipo con foto, nombre, cargo y redes sociales</li>
+                    </ul>
+                </div>
+
+                <!-- Info adicional -->
+                <div class="info-box tip">
+                    <strong>💡 Tips de Diseño</strong>
+                    Usa cards para agrupar información relacionada. Mantén la altura consistente en grillas. Agrega sombras al hover para feedback visual. Limita a máximo 3 botones por card.
+                </div>
+            </div>
+
+            <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+            <!-- CARD TIPO 2: CON IMAGEN -->
+            <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+            <div class="ejemplo-card">
+                <h3>
+                    <span class="badge badge-nuevo">CARD CON IMAGEN</span>
+                    <span class="badge badge-componente">AVANZADA</span>
+                </h3>
+                <p>Card con imagen destacada, perfecta para productos y artículos.</p>
+
+                <!-- Vista previa -->
+                <div style="margin: 20px 0; border: 1px dashed #667eea; padding: 20px; border-radius: 8px;">
+                    <div class="card-demo" style="max-width: 300px; margin: 0 auto;">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 200px; display: flex; align-items: center; justify-content: center; color: white;">
+                            <p style="margin: 0; font-size: 3em;">📷</p>
+                        </div>
+                        <div class="card-demo-body">
+                            <h4>Producto Premium</h4>
+                            <p>Descripción del producto con características principales.</p>
+                            <p style="color: #667eea; font-weight: bold; margin-top: 10px;">$99.99</p>
+                        </div>
+                        <div class="card-demo-footer">
+                            <button class="btn-primary">Comprar</button>
+                            <button class="btn-secondary">Más Info</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Código -->
+                <div class="codigo-desplegable">
+                    <button class="boton-desplegar" onclick="toggleCodigo(this)">Ver Código HTML</button>
+                    <div class="contenido-codigo">
+&lt;article class="card"&gt;
+    &lt;img src="producto.jpg" alt="Producto" class="card-image"&gt;
+    &lt;div class="card-body"&gt;
+        &lt;h3&gt;Nombre del Producto&lt;/h3&gt;
+        &lt;p&gt;Descripción breve&lt;/p&gt;
+        &lt;span class="precio"&gt;$99.99&lt;/span&gt;
+    &lt;/div&gt;
+    &lt;footer class="card-actions"&gt;
+        &lt;button&gt;Comprar&lt;/button&gt;
+        &lt;button&gt;Favorito&lt;/button&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;
+                    </div>
+                </div>
+
+                <!-- Etiquetas semánticas correctas -->
+                <table class="tabla-atributos">
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Etiqueta Semántica</th>
+                        <th>¿Por qué?</th>
+                    </tr>
+                    <tr>
+                        <td>Contenedor card</td>
+                        <td><code>&lt;article&gt;</code></td>
+                        <td>Contenido independiente y reutilizable</td>
+                    </tr>
+                    <tr>
+                        <td>Imagen principal</td>
+                        <td><code>&lt;img&gt;</code></td>
+                        <td>Elemento multimedia con alt text</td>
+                    </tr>
+                    <tr>
+                        <td>Contenido principal</td>
+                        <td><code>&lt;section&gt;</code> o <code>&lt;div&gt;</code></td>
+                        <td>Agrupa el contenido informativo</td>
+                    </tr>
+                    <tr>
+                        <td>Botones/Acciones</td>
+                        <td><code>&lt;footer&gt;</code></td>
+                        <td>Contenido secundario/acciones</td>
+                    </tr>
+                </table>
+
+                <div class="caso-uso">
+                    <h4>📌 Ideal Para</h4>
+                    <ul>
+                        <li>🛒 Productos de tienda online</li>
+                        <li>📸 Galería de fotos</li>
+                        <li>📰 Artículos de blog</li>
+                        <li>👥 Perfiles de usuarios</li>
+                        <li>🎬 Videos y media</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+            <!-- CARD TIPO 3: CON OVERLAY -->
+            <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+            <div class="ejemplo-card">
+                <h3>
+                    <span class="badge badge-nuevo">CARD CON OVERLAY</span>
+                    <span class="badge badge-avanzado">HOVER EFFECT</span>
+                </h3>
+                <p>Card con efecto overlay que aparece al pasar el mouse (muy moderna).</p>
+
+                <!-- Vista previa -->
+                <div style="margin: 20px 0; border: 1px dashed #667eea; padding: 20px; border-radius: 8px;">
+                    <div style="position: relative; width: 300px; height: 250px; margin: 0 auto; border-radius: 8px; overflow: hidden; background: url('data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22><rect fill=%22%23667eea%22 width=%22300%22 height=%22250%22/></svg>'); cursor: pointer; transition: all 0.3s ease; group: hover;">
+                        <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(102, 126, 234, 0.9); opacity: 0; transition: opacity 0.3s ease; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center;">
+                            <h4 style="margin: 0 0 10px 0; font-size: 1.5em;">Hover Effect</h4>
+                            <p style="margin: 0; font-size: 14px;">Ver detalles →</p>
+                        </div>
+                        <div style="padding: 20px; color: white;">
+                            <h4 style="margin: 0;">Proyecto Amazing</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Código -->
+                <div class="codigo-desplegable">
+                    <button class="boton-desplegar" onclick="toggleCodigo(this)">Ver Código CSS + HTML</button>
+                    <div class="contenido-codigo">
+/* HTML */
+&lt;div class="card-overlay"&gt;
+    &lt;img src="imagen.jpg" alt="Proyecto"&gt;
+    &lt;div class="overlay"&gt;
+        &lt;h3&gt;Titulo&lt;/h3&gt;
+        &lt;p&gt;Descripción&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+/* CSS */
+.card-overlay {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.card-overlay img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-overlay:hover img {
+    transform: scale(1.1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.card-overlay:hover .overlay {
+    opacity: 1;
+}
+                    </div>
+                </div>
+
+                <div class="caso-uso">
+                    <h4>📌 Aplicaciones Comunes</h4>
+                    <ul>
+                        <li>🖼️ Portfolio de trabajos</li>
+                        <li>🎨 Galería de diseños</li>
+                        <li>📸 Fotos de proyectos</li>
+                        <li>🏢 Equipo de empresa</li>
+                        <li>🎬 Videos destacados</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN: CARRUSEL -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="carrusel" class="seccion-referencia">
+            <h2>🎠 CARRUSEL / SLIDER - Componente Dinámico</h2>
+
+            <div class="info-box success">
+                <strong>💡 ¿Qué es un Carrusel?</strong>
+                Un carrusel o slider es un componente interactivo que muestra múltiples elementos, permitiendo navegar entre ellos. Se usa para testimonios, productos destacados, galerías y anuncios.
+            </div>
+
+            <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+            <!-- CARRUSEL TIPO 1: BÁSICO -->
+            <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+            <div class="ejemplo-card">
+                <h3>
+                    <span class="badge badge-nuevo">CARRUSEL BÁSICO</span>
+                    <span class="badge badge-interactivo">INTERACTIVO</span>
+                </h3>
+                <p>Carrusel simple con navegación manual.</p>
+
+                <!-- Vista previa -->
+                <div style="margin: 20px 0;">
+                    <div class="carrusel-container">
+                        <div class="carrusel" id="carrusel1" style="transform: translateX(0%);">
+                            <div class="carrusel-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <h3>Slide 1</h3>
+                                <p>Contenido del primer elemento</p>
+                            </div>
+                            <div class="carrusel-item" style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);">
+                                <h3>Slide 2</h3>
+                                <p>Contenido del segundo elemento</p>
+                            </div>
+                            <div class="carrusel-item" style="background: linear-gradient(135deg, #FFB84D 0%, #FF6B6B 100%);">
+                                <h3>Slide 3</h3>
+                                <p>Contenido del tercer elemento</p>
+                            </div>
+                        </div>
+                        <div class="carrusel-controles">
+                            <button class="carrusel-btn" onclick="carruselAnterior('carrusel1', 'indicadores1')">← Anterior</button>
+                            <button class="carrusel-btn" onclick="carruselSiguiente('carrusel1', 'indicadores1')">Siguiente →</button>
+                        </div>
+                        <div class="carrusel-indicadores" id="indicadores1">
+                            <span class="indicador activo" onclick="irAlSlide('carrusel1', 0, 'indicadores1')"></span>
+                            <span class="indicador" onclick="irAlSlide('carrusel1', 1, 'indicadores1')"></span>
+                            <span class="indicador" onclick="irAlSlide('carrusel1', 2, 'indicadores1')"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Código -->
+                <div class="codigo-desplegable">
+                    <button class="boton-desplegar" onclick="toggleCodigo(this)">Ver Código HTML</button>
+                    <div class="contenido-codigo">
+&lt;div class="carrusel-container"&gt;
+    &lt;div class="carrusel"&gt;
+        &lt;div class="carrusel-item"&gt;
+            &lt;h3&gt;Slide 1&lt;/h3&gt;
+            &lt;p&gt;Contenido&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="carrusel-item"&gt;
+            &lt;h3&gt;Slide 2&lt;/h3&gt;
+            &lt;p&gt;Contenido&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;div class="carrusel-item"&gt;
+            &lt;h3&gt;Slide 3&lt;/h3&gt;
+            &lt;p&gt;Contenido&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carrusel-controles"&gt;
+        &lt;button onclick="anterior()"&gt;← Anterior&lt;/button&gt;
+        &lt;button onclick="siguiente()"&gt;Siguiente →&lt;/button&gt;
+    &lt;/div&gt;
+    &lt;div class="carrusel-indicadores"&gt;
+        &lt;span class="indicador activo"&gt;&lt;/span&gt;
+        &lt;span class="indicador"&gt;&lt;/span&gt;
+        &lt;span class="indicador"&gt;&lt;/span&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                    </div>
+                </div>
+
+                <!-- Código JavaScript -->
+                <div class="codigo-desplegable">
+                    <button class="boton-desplegar" onclick="toggleCodigo(this)">Ver Código JavaScript</button>
+                    <div class="contenido-codigo">
+let indiceSlide = 0;
+let totalSlides = 3;
+
+function carruselSiguiente(carruselId, indicadoresId) {
+    indiceSlide = (indiceSlide + 1) % totalSlides;
+    actualizarCarrusel(carruselId, indicadoresId);
+}
+
+function carruselAnterior(carruselId, indicadoresId) {
+    indiceSlide = (indiceSlide - 1 + totalSlides) % totalSlides;
+    actualizarCarrusel(carruselId, indicadoresId);
+}
+
+function irAlSlide(carruselId, n, indicadoresId) {
+    indiceSlide = n;
+    actualizarCarrusel(carruselId, indicadoresId);
+}
+
+function actualizarCarrusel(carruselId, indicadoresId) {
+    const carrusel = document.getElementById(carruselId);
+    const indicadores = document.getElementById(indicadoresId).querySelectorAll('.indicador');
+    
+    carrusel.style.transform = `translateX(${-indiceSlide * 100}%)`;
+    
+    indicadores.forEach((ind, i) => {
+        ind.classList.toggle('activo', i === indiceSlide);
+    });
+}
+                    </div>
+                </div>
+
+                <table class="tabla-atributos">
+                    <tr>
+                        <th>Elemento</th>
+                        <th>Etiqueta HTML</th>
+                        <th>Propósito</th>
+                    </tr>
+                    <tr>
+                        <td>Contenedor</td>
+                        <td><code>&lt;div class="carrusel-container"&gt;</code></td>
+                        <td>Wrapper principal que limita el área visible</td>
+                    </tr>
+                    <tr>
+                        <td>Carrusel</td>
+                        <td><code>&lt;div class="carrusel"&gt;</code></td>
+                        <td>Contenedor de items que se desplaza</td>
+                    </tr>
+                    <tr>
+                        <td>Items</td>
+                        <td><code>&lt;div class="carrusel-item"&gt;</code></td>
+                        <td>Cada slide o elemento del carrusel</td>
+                    </tr>
+                    <tr>
+                        <td>Botones</td>
+                        <td><code>&lt;button&gt;</code></td>
+                        <td>Controles de navegación</td>
+                    </tr>
+                    <tr>
+                        <td>Indicadores</td>
+                        <td><code>&lt;span class="indicador"&gt;</code></td>
+                        <td>Puntos que muestran posición actual</td>
+                    </tr>
+                </table>
+
+                <div class="caso-uso">
+                    <h4>📌 Usos Comunes</h4>
+                    <ul>
+                        <li>🌟 Productos destacados en tienda</li>
+                        <li>💬 Testimonios de clientes</li>
+                        <li>🎬 Banner de anuncios</li>
+                        <li>📸 Galería de imágenes</li>
+                        <li>📰 Noticias destacadas</li>
+                        <li>🎁 Ofertas especiales</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+            <!-- CARRUSEL TIPO 2: CON AUTOPLAY -->
+            <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+            <div class="ejemplo-card">
+                <h3>
+                    <span class="badge badge-nuevo">CARRUSEL CON AUTOPLAY</span>
+                    <span class="badge badge-avanzado">AUTOMÁTICO</span>
+                </h3>
+                <p>Carrusel que se desplaza automáticamente cada 3 segundos.</p>
+
+                <!-- Vista previa -->
+                <div style="margin: 20px 0;">
+                    <div class="carrusel-container">
+                        <div class="carrusel" id="carrusel2" style="transform: translateX(0%);">
+                            <div class="carrusel-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                                <h3>Testimonio 1</h3>
+                                <p>"Excelente servicio, muy recomendado"</p>
+                                <p style="font-size: 12px; margin-top: 20px;">- Cliente Feliz</p>
+                            </div>
+                            <div class="carrusel-item" style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);">
+                                <h3>Testimonio 2</h3>
+                                <p>"La mejor experiencia de compra"</p>
+                                <p style="font-size: 12px; margin-top: 20px;">- Usuario Satisfecho</p>
+                            </div>
+                            <div class="carrusel-item" style="background: linear-gradient(135deg, #FFB84D 0%, #FF6B6B 100%);">
+                                <h3>Testimonio 3</h3>
+                                <p>"Producto de excelente calidad"</p>
+                                <p style="font-size: 12px; margin-top: 20px;">- Comprador Verificado</p>
+                            </div>
+                        </div>
+                        <div class="carrusel-indicadores" id="indicadores2">
+                            <span class="indicador activo"></span>
+                            <span class="indicador"></span>
+                            <span class="indicador"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Código -->
+                <div class="codigo-desplegable">
+                    <button class="boton-desplegar" onclick="toggleCodigo(this)">Ver Código JavaScript - Autoplay</button>
+                    <div class="contenido-codigo">
+let indiceActual = 0;
+const carruselElement = document.getElementById('carrusel2');
+const indicadores = document.getElementById('indicadores2');
+
+function avanzarSlide() {
+    indiceActual = (indiceActual + 1) % 3;
+    actualizarCarruselAutoplay();
+}
+
+function actualizarCarruselAutoplay() {
+    carruselElement.style.transform = `translateX(${-indiceActual * 100}%)`;
+    
+    const dots = indicadores.querySelectorAll('.indicador');
+    dots.forEach((dot, i) => {
+        dot.classList.toggle('activo', i === indiceActual);
+    });
+}
+
+// Iniciar autoplay cada 3 segundos
+setInterval(avanzarSlide, 3000);
+
+// Pausar al pasar el mouse
+carruselElement.addEventListener('mouseenter', () => {
+    clearInterval(intervalo);
+});
+
+// Reanudar al salir el mouse
+carruselElement.addEventListener('mouseleave', () => {
+    intervalo = setInterval(avanzarSlide, 3000);
+});
+                    </div>
+                </div>
+
+                <div class="info-box tip">
+                    <strong>⚡ Mejora de Rendimiento</strong>
+                    Usa <code>requestAnimationFrame</code> en lugar de <code>setInterval</code> para mejor rendimiento. También considera usar bibliotecas como Swiper.js para funcionalidad avanzada.
+                </div>
+            </div>
+
+            <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+            <!-- CARRUSEL TIPO 3: CON TECLADO Y TOUCH -->
+            <!-- ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ -->
+            <div class="ejemplo-card">
+                <h3>
+                    <span class="badge badge-nuevo">CARRUSEL AVANZADO</span>
+                    <span class="badge badge-avanzado">TECLADO + TOUCH</span>
+                </h3>
+                <p>Carrusel con soporte para navegación con teclado, mouse y touch.</p>
+
+                <!-- Código -->
+                <div class="codigo-desplegable">
+                    <button class="boton-desplegar" onclick="toggleCodigo(this)">Ver Código Completo - Interactividad Avanzada</button>
+                    <div class="contenido-codigo">
+class Carrusel {
+    constructor(selector, opciones = {}) {
+        this.elemento = document.querySelector(selector);
+        this.items = this.elemento.querySelectorAll('.carrusel-item');
+        this.indiceActual = 0;
+        this.totalItems = this.items.length;
+        this.opciones = {
+            autoplay: opciones.autoplay || false,
+            intervalo: opciones.intervalo || 3000,
+            velocidad: opciones.velocidad || 500,
+            ...opciones
+        };
+        this.init();
+    }
+
+    init() {
+        this.agregarEventos();
+        if (this.opciones.autoplay) {
+            this.iniciarAutoplay();
+        }
+    }
+
+    agregarEventos() {
+        // Teclado
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.anterior();
+            if (e.key === 'ArrowRight') this.siguiente();
+        });
+
+        // Touch
+        let posInicial = 0;
+        this.elemento.addEventListener('touchstart', (e) => {
+            posInicial = e.touches[0].clientX;
+        });
+
+        this.elemento.addEventListener('touchend', (e) => {
+            const posFinal = e.changedTouches[0].clientX;
+            if (posInicial - posFinal > 50) this.siguiente();
+            if (posFinal - posInicial > 50) this.anterior();
+        });
+    }
+
+    siguiente() {
+        this.indiceActual = (this.indiceActual + 1) % this.totalItems;
+        this.actualizar();
+    }
+
+    anterior() {
+        this.indiceActual = (this.indiceActual - 1 + this.totalItems) % this.totalItems;
+        this.actualizar();
+    }
+
+    actualizar() {
+        this.elemento.style.transform = `translateX(${-this.indiceActual * 100}%)`;
+    }
+
+    iniciarAutoplay() {
+        setInterval(() => this.siguiente(), this.opciones.intervalo);
+    }
+}
+
+// Uso:
+const miCarrusel = new Carrusel('.carrusel', {
+    autoplay: true,
+    intervalo: 3000,
+    velocidad: 500
+});
+                    </div>
+                </div>
+
+                <div class="caso-uso">
+                    <h4>📌 Funcionalidades Avanzadas</h4>
+                    <ul>
+                        <li>⌨️ Navegación con teclas (← y →)</li>
+                        <li>👆 Deslizar con toque en móviles</li>
+                        <li>🖱️ Arrastrar con mouse</li>
+                        <li>🔁 Autoplay configurable</li>
+                        <li>⏸️ Pausa al pasar mouse</li>
+                        <li>📍 Indicadores interactivos</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN: EJEMPLOS INTEGRADOS RÁPIDOS -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="ejemplos-rapidos" class="seccion-referencia">
+            <h2>⚡ Más Componentes: Grid de Cards y Galerías</h2>
+
+            <!-- Grid de 4 cards -->
+            <div class="grid-ejemplos">
+                <div class="card-demo">
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); height: 120px; display: flex; align-items: flex-end; color: white; padding: 15px;">
+                        <h4 style="margin: 0;">Card 1</h4>
+                    </div>
+                    <div class="card-demo-body">
+                        <p>Ejemplo de card en grid responsive</p>
+                    </div>
+                </div>
+
+                <div class="card-demo">
+                    <div style="background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%); height: 120px; display: flex; align-items: flex-end; color: white; padding: 15px;">
+                        <h4 style="margin: 0;">Card 2</h4>
+                    </div>
+                    <div class="card-demo-body">
+                        <p>Se adapta automáticamente</p>
+                    </div>
+                </div>
+
+                <div class="card-demo">
+                    <div style="background: linear-gradient(135deg, #FFB84D 0%, #FF6B6B 100%); height: 120px; display: flex; align-items: flex-end; color: white; padding: 15px;">
+                        <h4 style="margin: 0;">Card 3</h4>
+                    </div>
+                    <div class="card-demo-body">
+                        <p>Responsive en móvil</p>
+                    </div>
+                </div>
+
+                <div class="card-demo">
+                    <div style="background: linear-gradient(135deg, #AA96DA 0%, #FCBAD3 100%); height: 120px; display: flex; align-items: flex-end; color: white; padding: 15px;">
+                        <h4 style="margin: 0;">Card 4</h4>
+                    </div>
+                    <div class="card-demo-body">
+                        <p>Perfecta para portafolios</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Código del grid -->
+            <div class="codigo-desplegable">
+                <button class="boton-desplegar" onclick="toggleCodigo(this)">Ver Código CSS - Grid Responsivo</button>
+                <div class="contenido-codigo">
+/* Grid Responsivo */
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* En tablets */
+@media (max-width: 768px) {
+    .grid-cards {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 15px;
+    }
+}
+
+/* En móviles */
+@media (max-width: 480px) {
+    .grid-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>🎉 MEGA Referencia HTML5 Completada</h3>
+        <p>Última actualización: 3 de Diciembre de 2025</p>
+        <p style="font-size: 12px; margin-top: 15px; opacity: 0.9;">
+            Contiene: Cards • Carrusel • Código Desplegable • Casos de Uso • Etiquetas Semánticas • Atributos Completos
+        </p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // ═══════════════════════════════════════════════════════════
+        // FUNCIÓN: Desplegar/Contraer Código
+        // ═══════════════════════════════════════════════════════════
+        function toggleCodigo(boton) {
+            const codigo = boton.nextElementSibling;
+            codigo.classList.toggle('visible');
+            boton.classList.toggle('activo');
+        }
+
+        // ═══════════════════════════════════════════════════════════
+        // FUNCIONES: Carrusel
+        // ═══════════════════════════════════════════════════════════
+        let indiceCarrusel1 = 0;
+        let indiceCarrusel2 = 0;
+
+        function carruselSiguiente(carruselId, indicadoresId) {
+            const carrusel = document.getElementById(carruselId);
+            const indicadores = document.getElementById(indicadoresId).querySelectorAll('.indicador');
+            
+            if (carruselId === 'carrusel1') {
+                indiceCarrusel1 = (indiceCarrusel1 + 1) % 3;
+                carrusel.style.transform = `translateX(${-indiceCarrusel1 * 100}%)`;
+                actualizarIndicadores(indicadores, indiceCarrusel1);
+            }
+        }
+
+        function carruselAnterior(carruselId, indicadoresId) {
+            const carrusel = document.getElementById(carruselId);
+            const indicadores = document.getElementById(indicadoresId).querySelectorAll('.indicador');
+            
+            if (carruselId === 'carrusel1') {
+                indiceCarrusel1 = (indiceCarrusel1 - 1 + 3) % 3;
+                carrusel.style.transform = `translateX(${-indiceCarrusel1 * 100}%)`;
+                actualizarIndicadores(indicadores, indiceCarrusel1);
+            }
+        }
+
+        function irAlSlide(carruselId, n, indicadoresId) {
+            const carrusel = document.getElementById(carruselId);
+            const indicadores = document.getElementById(indicadoresId).querySelectorAll('.indicador');
+            
+            if (carruselId === 'carrusel1') {
+                indiceCarrusel1 = n;
+                carrusel.style.transform = `translateX(${-indiceCarrusel1 * 100}%)`;
+                actualizarIndicadores(indicadores, indiceCarrusel1);
+            }
+        }
+
+        function actualizarIndicadores(indicadores, indice) {
+            indicadores.forEach((ind, i) => {
+                ind.classList.toggle('activo', i === indice);
+            });
+        }
+
+        // Autoplay para carrusel2
+        let indiceAutoplay = 0;
+        setInterval(() => {
+            const carrusel = document.getElementById('carrusel2');
+            const indicadores = document.getElementById('indicadores2').querySelectorAll('.indicador');
+            
+            indiceAutoplay = (indiceAutoplay + 1) % 3;
+            carrusel.style.transform = `translateX(${-indiceAutoplay * 100}%)`;
+            
+            indicadores.forEach((ind, i) => {
+                ind.classList.toggle('activo', i === indiceAutoplay);
+            });
+        }, 3000);
+
+    </script>
+
+</body>
+</html>

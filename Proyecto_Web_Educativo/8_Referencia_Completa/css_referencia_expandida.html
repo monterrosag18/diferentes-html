@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Referencia COMPLETA de CSS3 con 80+ propiedades y ejemplos interactivos">
+    <meta name="author" content="Proyecto Educativo Web">
+    <title>🎨 Referencia CSS3 Completa - 80+ Propiedades Prácticas</title>
+    <link rel="stylesheet" href="estilos_referencia.css">
+    <style>
+        /* Estilos CSS expandidos y ejemplos visuales */
+        
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        .badge-color { background: #FF6B6B; }
+        .badge-layout { background: #4ECDC4; }
+        .badge-animacion { background: #FFE66D; color: #333; }
+        .badge-texto { background: #95E1D3; color: #333; }
+        .badge-responsive { background: #C7CEEA; }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .demo-item {
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .demo-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+        }
+        
+        /* Colores */
+        .color-rojo { background: #FF6B6B; }
+        .color-azul { background: #667eea; }
+        .color-verde { background: #4ECDC4; }
+        .color-naranja { background: #FFB84D; }
+        .color-morado { background: #C7CEEA; }
+        .color-rosa { background: #FF85B3; }
+        
+        /* Bordes */
+        .borde-solido { border: 4px solid #FF6B6B; }
+        .borde-punteado { border: 4px dotted #667eea; }
+        .borde-discontinuo { border: 4px dashed #4ECDC4; }
+        .borde-doble { border: 8px double #FFB84D; }
+        .borde-redondeado { border: 3px solid #C7CEEA; border-radius: 15px; }
+        .borde-circulo { border: 3px solid #667eea; border-radius: 50%; width: 100px; height: 100px; }
+        
+        /* Sombras */
+        .sombra-leve {
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        .sombra-media {
+            box-shadow: 4px 4px 12px rgba(0,0,0,0.2);
+        }
+        .sombra-fuerte {
+            box-shadow: 8px 8px 20px rgba(0,0,0,0.3);
+        }
+        .sombra-inset {
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
+        }
+        .sombra-texto {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 24px;
+            color: white;
+        }
+        .sombra-multiples {
+            box-shadow: 
+                3px 3px 0px #FF6B6B,
+                6px 6px 0px #667eea,
+                9px 9px 0px #4ECDC4;
+        }
+        
+        /* Tipografía */
+        .fuente-grande { font-size: 32px; }
+        .fuente-pequena { font-size: 12px; }
+        .fuente-negrita { font-weight: 700; }
+        .fuente-ligera { font-weight: 300; }
+        .fuente-arial { font-family: Arial, sans-serif; }
+        .fuente-georgia { font-family: Georgia, serif; }
+        .fuente-monospace { font-family: 'Courier New', monospace; }
+        .texto-mayuscula { text-transform: uppercase; }
+        .texto-minuscula { text-transform: lowercase; }
+        .texto-capitalize { text-transform: capitalize; }
+        .texto-cursiva { font-style: italic; }
+        .linea-altura { line-height: 2; }
+        .letra-espaciada { letter-spacing: 2px; }
+        .palabra-espaciada { word-spacing: 10px; }
+        .texto-decorado { text-decoration: underline wavy #FF6B6B; }
+        .texto-tachado { text-decoration: line-through; }
+        
+        /* Espaciado */
+        .margen-20 { margin: 20px; }
+        .margen-top { margin-top: 20px; }
+        .margen-bottom { margin-bottom: 20px; }
+        .margen-izq { margin-left: 20px; }
+        .margen-der { margin-right: 20px; }
+        .padding-20 { padding: 20px; }
+        .padding-top { padding-top: 20px; }
+        
+        /* Display y Layout */
+        .display-flex {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: center;
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .display-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            background: #f0f0f0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        
+        .display-grid > div {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 4px;
+        }
+        
+        /* Transformaciones */
+        .transform-scale:hover {
+            transform: scale(1.2);
+        }
+        .transform-rotate:hover {
+            transform: rotate(15deg);
+        }
+        .transform-skew:hover {
+            transform: skew(10deg);
+        }
+        .transform-combo:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        /* Transiciones y animaciones */
+        .transicion {
+            transition: all 0.3s ease;
+            background: #667eea;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .transicion:hover {
+            background: #FF6B6B;
+            transform: translateX(10px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .animacion-pulse {
+            animation: pulse 1s infinite;
+        }
+        
+        @keyframes deslizar {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        .animacion-deslizar {
+            animation: deslizar 2s infinite;
+        }
+        
+        @keyframes girar {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .animacion-girar {
+            animation: girar 2s linear infinite;
+        }
+        
+        /* Gradientes */
+        .gradiente-lineal-1 {
+            background: linear-gradient(90deg, #FF6B6B, #667eea, #4ECDC4);
+            color: white;
+        }
+        .gradiente-lineal-2 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .gradiente-radial-1 {
+            background: radial-gradient(circle, #FFE66D, #FF6B6B);
+            color: #333;
+        }
+        .gradiente-radial-2 {
+            background: radial-gradient(ellipse, #667eea, #764ba2);
+            color: white;
+        }
+        .gradiente-conico {
+            background: conic-gradient(from 0deg, #FF6B6B, #667eea, #4ECDC4, #FFE66D, #FF6B6B);
+            color: white;
+        }
+        
+        /* Opacidad */
+        .opacidad-100 { opacity: 1; }
+        .opacidad-75 { opacity: 0.75; }
+        .opacidad-50 { opacity: 0.5; }
+        .opacidad-25 { opacity: 0.25; }
+        
+        /* Posicionamiento */
+        .posicion-relative {
+            position: relative;
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        
+        .posicion-absolute {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #FF6B6B;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        .posicion-fixed-demo {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: none;
+            z-index: 1000;
+        }
+        
+        /* Filtros */
+        .filtro-brillo { filter: brightness(150%); }
+        .filtro-contraste { filter: contrast(150%); }
+        .filtro-blur { filter: blur(3px); }
+        .filtro-escala-grises { filter: grayscale(100%); }
+        .filtro-sepia { filter: sepia(100%); }
+        .filtro-sombra { filter: drop-shadow(0 0 10px rgba(0,0,0,0.3)); }
+        
+        /* Overflow */
+        .overflow-scroll {
+            width: 100%;
+            height: 200px;
+            overflow-y: scroll;
+            border: 2px solid #667eea;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        
+        /* Z-index */
+        .z-index-demo {
+            position: relative;
+            height: 150px;
+        }
+        .capa-1 { background: #FF6B6B; z-index: 1; }
+        .capa-2 { background: #667eea; z-index: 2; }
+        .capa-3 { background: #4ECDC4; z-index: 3; }
+        
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .demo-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .display-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .demo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .tip-box {
+            background: #E8F4F8;
+            border-left: 4px solid #4ECDC4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .atributos-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+        }
+        
+        .atributos-tabla th,
+        .atributos-tabla td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .atributos-tabla th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .atributos-tabla tr:hover {
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER PRINCIPAL -->
+    <header class="header-principal">
+        <h1>🎨 Referencia Completa CSS3</h1>
+        <p class="subtitulo">80+ Propiedades CSS con Ejemplos Visuales Interactivos</p>
+        <p style="font-size: 14px; margin-top: 10px; opacity: 0.9;">
+            Incluye: Colores, Bordes, Sombras, Tipografía, Espaciado, Layouts, Animaciones, Gradientes y más
+        </p>
+    </header>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="nav-referencia">
+        <a href="#colores">🎨 Colores</a>
+        <a href="#bordes">🔲 Bordes</a>
+        <a href="#sombras">👤 Sombras</a>
+        <a href="#tipografia">📝 Tipografía</a>
+        <a href="#espaciado">📏 Espaciado</a>
+        <a href="#layout">🏗️ Layout</a>
+        <a href="#transformaciones">🔄 Transformaciones</a>
+        <a href="#animaciones">✨ Animaciones</a>
+        <a href="#gradientes">🌈 Gradientes</a>
+        <a href="#avanzadas">⚡ Avanzadas</a>
+    </nav>
+
+    <main class="contenedor-referencia">
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- COLORES -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="colores" class="seccion-referencia">
+            <h2>🎨 COLORES (HEX, RGB, RGBA, HSL)</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Formatos de Color</h3>
+                    <span class="badge badge-color">Colores</span>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px;">
+                    <h4 style="margin-top: 0;">Hexadecimal (#RRGGBB)</h4>
+                    <div class="demo-grid">
+                        <div class="demo-item" style="background: #FF6B6B;">Rojo<br>#FF6B6B</div>
+                        <div class="demo-item" style="background: #667eea;">Azul<br>#667eea</div>
+                        <div class="demo-item" style="background: #4ECDC4;">Verde<br>#4ECDC4</div>
+                        <div class="demo-item" style="background: #FFB84D;">Naranja<br>#FFB84D</div>
+                        <div class="demo-item" style="background: #C7CEEA;">Púrpura<br>#C7CEEA</div>
+                        <div class="demo-item" style="background: #FF85B3;">Rosa<br>#FF85B3</div>
+                    </div>
+                    
+                    <h4>RGB (Red, Green, Blue)</h4>
+                    <div class="demo-grid">
+                        <div class="demo-item" style="background: rgb(255, 107, 107);">RGB Rojo<br>rgb(255,107,107)</div>
+                        <div class="demo-item" style="background: rgb(102, 126, 234);">RGB Azul<br>rgb(102,126,234)</div>
+                        <div class="demo-item" style="background: rgb(78, 205, 196);">RGB Verde<br>rgb(78,205,196)</div>
+                    </div>
+                    
+                    <h4>RGBA (con Transparencia)</h4>
+                    <div class="demo-grid">
+                        <div class="demo-item" style="background: rgba(255, 107, 107, 1);">RGBA 100%<br>rgba(..., 1)</div>
+                        <div class="demo-item" style="background: rgba(255, 107, 107, 0.75);">RGBA 75%<br>rgba(..., 0.75)</div>
+                        <div class="demo-item" style="background: rgba(255, 107, 107, 0.5);">RGBA 50%<br>rgba(..., 0.5)</div>
+                        <div class="demo-item" style="background: rgba(255, 107, 107, 0.25);">RGBA 25%<br>rgba(..., 0.25)</div>
+                    </div>
+                    
+                    <h4>HSL (Hue, Saturation, Lightness)</h4>
+                    <div class="demo-grid">
+                        <div class="demo-item" style="background: hsl(0, 100%, 70%);">HSL Rojo<br>hsl(0,100%,70%)</div>
+                        <div class="demo-item" style="background: hsl(240, 87%, 66%);">HSL Azul<br>hsl(240,87%,66%)</div>
+                        <div class="demo-item" style="background: hsl(174, 56%, 54%);">HSL Verde<br>hsl(174,56%,54%)</div>
+                    </div>
+                </div>
+                
+                <table class="atributos-tabla">
+                    <tr>
+                        <th>Formato</th>
+                        <th>Sintaxis</th>
+                        <th>Ejemplo</th>
+                        <th>Casos de uso</th>
+                    </tr>
+                    <tr>
+                        <td>Hexadecimal</td>
+                        <td>#RRGGBB</td>
+                        <td>#FF6B6B</td>
+                        <td>Más común, simple y directo</td>
+                    </tr>
+                    <tr>
+                        <td>RGB</td>
+                        <td>rgb(r, g, b)</td>
+                        <td>rgb(255, 107, 107)</td>
+                        <td>Cuando necesitas valores numéricos</td>
+                    </tr>
+                    <tr>
+                        <td>RGBA</td>
+                        <td>rgba(r, g, b, a)</td>
+                        <td>rgba(255, 107, 107, 0.5)</td>
+                        <td>Necesitas transparencia</td>
+                    </tr>
+                    <tr>
+                        <td>HSL</td>
+                        <td>hsl(h, s%, l%)</td>
+                        <td>hsl(0, 100%, 70%)</td>
+                        <td>Mejor para ajustar brillo/saturación</td>
+                    </tr>
+                    <tr>
+                        <td>Named</td>
+                        <td>Nombre directo</td>
+                        <td>red, blue, green</td>
+                        <td>Rápido para prototipado</td>
+                    </tr>
+                </table>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>/* Hexadecimal */
+background: #FF6B6B;
+
+/* RGB */
+background: rgb(255, 107, 107);
+
+/* RGBA (con transparencia) */
+background: rgba(255, 107, 107, 0.5);
+
+/* HSL */
+background: hsl(0, 100%, 70%);
+
+/* Named colors */
+background: red;
+background: blue;</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- BORDES -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="bordes" class="seccion-referencia">
+            <h2>🔲 BORDES Y ESQUINAS</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Estilos de Borde</h3>
+                    <span class="badge badge-layout">Bordes</span>
+                </div>
+                
+                <div class="demo-grid">
+                    <div class="demo-item borde-solido">Sólido</div>
+                    <div class="demo-item borde-punteado">Punteado</div>
+                    <div class="demo-item borde-discontinuo">Discontinuo</div>
+                    <div class="demo-item borde-doble">Doble</div>
+                    <div class="demo-item borde-redondeado">Redondeado</div>
+                    <div class="demo-item borde-circulo">Círculo</div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>/* Borde sólido */
+border: 3px solid #FF6B6B;
+
+/* Borde punteado */
+border: 3px dotted #667eea;
+
+/* Borde discontinuo */
+border: 3px dashed #4ECDC4;
+
+/* Borde doble */
+border: 6px double #FFB84D;
+
+/* Esquinas redondeadas */
+border-radius: 15px;
+
+/* Círculo */
+border-radius: 50%;
+
+/* Radio diferente por esquina */
+border-radius: 10px 20px 30px 40px;
+
+/* Ancho diferente por lado */
+border-top: 3px solid red;
+border-right: 3px solid green;
+border-bottom: 3px solid blue;
+border-left: 3px solid yellow;</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- SOMBRAS -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="sombras" class="seccion-referencia">
+            <h2>👤 SOMBRAS Y EFECTOS</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Tipos de Sombras</h3>
+                    <span class="badge badge-layout">Sombras</span>
+                </div>
+                
+                <div class="demo-grid">
+                    <div class="demo-item sombra-leve" style="background: #667eea;">Sombra<br>Leve</div>
+                    <div class="demo-item sombra-media" style="background: #667eea;">Sombra<br>Media</div>
+                    <div class="demo-item sombra-fuerte" style="background: #667eea;">Sombra<br>Fuerte</div>
+                    <div class="demo-item sombra-inset" style="background: #667eea;">Sombra<br>Inset</div>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <h4>Sombra de Texto:</h4>
+                    <div class="sombra-texto" style="text-align: center; background: #667eea; padding: 20px; border-radius: 8px;">
+                        Texto con Sombra
+                    </div>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <h4>Múltiples Sombras:</h4>
+                    <div class="demo-item sombra-multiples" style="background: white; color: #333;">
+                        3 Sombras
+                    </div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>/* Box-shadow: offset-x | offset-y | blur-radius | spread-radius | color */
+
+/* Sombra simple */
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+/* Sombra más fuerte */
+box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+
+/* Sombra interna */
+box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+
+/* Múltiples sombras */
+box-shadow: 
+    3px 3px 0px #FF6B6B,
+    6px 6px 0px #667eea,
+    9px 9px 0px #4ECDC4;
+
+/* Sombra de texto */
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- TIPOGRAFÍA -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="tipografia" class="seccion-referencia">
+            <h2>📝 TIPOGRAFÍA Y TEXTO</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Propiedades de Fuente</h3>
+                    <span class="badge badge-texto">Tipografía</span>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>Tamaño de Fuente:</h4>
+                    <div class="fuente-grande" style="margin: 10px 0;">Texto Grande (32px)</div>
+                    <div style="font-size: 20px; margin: 10px 0;">Texto Normal (20px)</div>
+                    <div class="fuente-pequena" style="margin: 10px 0;">Texto Pequeño (12px)</div>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>Peso de Fuente:</h4>
+                    <div style="font-weight: 300; margin: 10px 0;">Fuente Ligera (300)</div>
+                    <div style="font-weight: 400; margin: 10px 0;">Fuente Normal (400)</div>
+                    <div class="fuente-negrita" style="margin: 10px 0;">Fuente Negrita (700)</div>
+                    <div style="font-weight: 900; margin: 10px 0;">Fuente Ultra-Negrita (900)</div>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>Familias de Fuente:</h4>
+                    <div class="fuente-arial" style="margin: 10px 0;">Arial - Sans-serif (fuente común)</div>
+                    <div class="fuente-georgia" style="margin: 10px 0;">Georgia - Serif (con remates)</div>
+                    <div class="fuente-monospace" style="margin: 10px 0;">Monospace - Monoespaciada (código)</div>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>Transformación de Texto:</h4>
+                    <div class="texto-mayuscula" style="margin: 10px 0;">Este texto será todo mayúscula</div>
+                    <div class="texto-minuscula" style="margin: 10px 0;">ESTE TEXTO SERÁ TODO MINÚSCULA</div>
+                    <div class="texto-capitalize" style="margin: 10px 0;">este texto tendrá cada palabra capitalizada</div>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>Estilo de Texto:</h4>
+                    <div style="margin: 10px 0;">Texto <span class="texto-cursiva">en cursivas</span> para énfasis</div>
+                    <div style="margin: 10px 0;">Texto <span class="texto-tachado">tachado</span> para indicar algo desactualizado</div>
+                    <div style="margin: 10px 0;">Texto <span class="texto-decorado">con decoración</span> especial</div>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>Espaciado de Líneas y Letras:</h4>
+                    <div class="linea-altura" style="margin: 10px 0;">
+                        Este texto tiene altura de línea de 2, lo que hace que haya mucho espacio<br>
+                        entre cada línea cuando hay múltiples líneas de texto.
+                    </div>
+                    <div class="letra-espaciada" style="margin: 10px 0;">Letras muy separadas</div>
+                    <div class="palabra-espaciada" style="margin: 10px 0;">Palabras muy separadas</div>
+                </div>
+                
+                <table class="atributos-tabla">
+                    <tr>
+                        <th>Propiedad</th>
+                        <th>Valores comunes</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>font-size</td>
+                        <td>px, em, rem, %</td>
+                        <td>font-size: 16px;</td>
+                    </tr>
+                    <tr>
+                        <td>font-weight</td>
+                        <td>400, 700, 900, bold, normal</td>
+                        <td>font-weight: 700;</td>
+                    </tr>
+                    <tr>
+                        <td>font-family</td>
+                        <td>Arial, Georgia, cursiva, etc</td>
+                        <td>font-family: Arial;</td>
+                    </tr>
+                    <tr>
+                        <td>text-align</td>
+                        <td>left, center, right, justify</td>
+                        <td>text-align: center;</td>
+                    </tr>
+                    <tr>
+                        <td>text-transform</td>
+                        <td>uppercase, lowercase, capitalize</td>
+                        <td>text-transform: uppercase;</td>
+                    </tr>
+                    <tr>
+                        <td>line-height</td>
+                        <td>número, px, em, %</td>
+                        <td>line-height: 1.5;</td>
+                    </tr>
+                    <tr>
+                        <td>letter-spacing</td>
+                        <td>px, em</td>
+                        <td>letter-spacing: 2px;</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- ESPACIADO -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="espaciado" class="seccion-referencia">
+            <h2>📏 ESPACIADO (MARGIN Y PADDING)</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Diferencia: Margin vs Padding</h3>
+                    <span class="badge badge-layout">Espaciado</span>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>Padding (interior):</h4>
+                    <div style="background: #667eea; color: white; padding: 30px; border-radius: 8px; text-align: center;">
+                        <div style="background: #FF6B6B; padding: 15px; border-radius: 4px;">
+                            Contenido interior
+                        </div>
+                    </div>
+                    <p style="font-size: 12px; margin-top: 10px;">El padding es espacio DENTRO del elemento (entre contenido y borde)</p>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>Margin (exterior):</h4>
+                    <div style="background: #667eea; color: white; padding: 15px; border-radius: 8px; text-align: center;">
+                        Elemento 1
+                    </div>
+                    <div style="background: #FF6B6B; color: white; padding: 15px; margin-top: 30px; border-radius: 8px; text-align: center;">
+                        Elemento 2 (con margin-top: 30px)
+                    </div>
+                    <p style="font-size: 12px; margin-top: 10px;">El margin es espacio FUERA del elemento (entre elementos)</p>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>Combinando Margin y Padding:</h4>
+                    <div style="background: #FFE66D; color: #333; border: 2px solid #FFB84D; margin: 20px; padding: 20px; border-radius: 8px; text-align: center;">
+                        Margen amarillo (margin) + Espacio interior azul (padding)
+                    </div>
+                </div>
+                
+                <table class="atributos-tabla">
+                    <tr>
+                        <th>Propiedad</th>
+                        <th>Valores</th>
+                        <th>Ejemplo</th>
+                        <th>Resultado</th>
+                    </tr>
+                    <tr>
+                        <td>margin</td>
+                        <td>1 valor = todos</td>
+                        <td>margin: 20px;</td>
+                        <td>20px en todos los lados</td>
+                    </tr>
+                    <tr>
+                        <td>margin</td>
+                        <td>2 valores = v/h</td>
+                        <td>margin: 10px 20px;</td>
+                        <td>10px arriba/abajo, 20px izquierda/derecha</td>
+                    </tr>
+                    <tr>
+                        <td>margin</td>
+                        <td>4 valores = t/r/b/l</td>
+                        <td>margin: 10px 20px 30px 40px;</td>
+                        <td>Diferentes para cada lado</td>
+                    </tr>
+                    <tr>
+                        <td>padding</td>
+                        <td>Igual a margin</td>
+                        <td>padding: 15px;</td>
+                        <td>Espacio interior</td>
+                    </tr>
+                    <tr>
+                        <td>margin-top</td>
+                        <td>px, em, %</td>
+                        <td>margin-top: 20px;</td>
+                        <td>Solo espacio superior</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- LAYOUT -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="layout" class="seccion-referencia">
+            <h2>🏗️ LAYOUT (FLEXBOX, GRID, DISPLAY)</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Flexbox</h3>
+                    <span class="badge badge-layout">Layout</span>
+                </div>
+                
+                <div class="display-flex">
+                    <div style="background: #FF6B6B; color: white; padding: 15px; border-radius: 4px;">Item 1</div>
+                    <div style="background: #667eea; color: white; padding: 15px; border-radius: 4px;">Item 2</div>
+                    <div style="background: #4ECDC4; color: white; padding: 15px; border-radius: 4px;">Item 3</div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código Flexbox</summary>
+                    <pre><code>/* Contenedor Flexbox */
+.contenedor {
+    display: flex;
+    gap: 10px;                    /* Espacio entre items */
+    justify-content: center;      /* Alineación horizontal */
+    align-items: center;          /* Alineación vertical */
+    flex-wrap: wrap;              /* Permite que se envuelva */
+}
+
+/* Ítems flexibles */
+.item {
+    flex: 1;                      /* Crece para llenar espacio */
+}
+
+/* Valores comunes de justify-content */
+justify-content: flex-start;     /* Inicio */
+justify-content: flex-end;       /* Fin */
+justify-content: center;         /* Centro */
+justify-content: space-between;  /* Espacio entre */
+justify-content: space-around;   /* Espacio alrededor */
+justify-content: space-evenly;   /* Espacio parejo */</code></pre>
+                </details>
+            </article>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>CSS Grid</h3>
+                    <span class="badge badge-layout">Layout</span>
+                </div>
+                
+                <div class="display-grid">
+                    <div>Grid 1</div>
+                    <div>Grid 2</div>
+                    <div>Grid 3</div>
+                    <div>Grid 4</div>
+                    <div>Grid 5</div>
+                    <div>Grid 6</div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código Grid</summary>
+                    <pre><code>/* Contenedor Grid */
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 columnas iguales */
+    gap: 15px;                              /* Espacio entre items */
+}
+
+/* Grid responsivo automático */
+.contenedor {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Grid específico */
+.contenedor {
+    grid-template-columns: 200px 1fr 150px;
+}
+
+/* Spans */
+.item-grande {
+    grid-column: span 2;  /* Ocupa 2 columnas */
+    grid-row: span 2;     /* Ocupa 2 filas */
+}</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- TRANSFORMACIONES -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="transformaciones" class="seccion-referencia">
+            <h2>🔄 TRANSFORMACIONES</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Efectos Transform (pasa el mouse)</h3>
+                    <span class="badge badge-animacion">Transformaciones</span>
+                </div>
+                
+                <div class="demo-grid">
+                    <div class="demo-item transform-scale" style="background: #FF6B6B;">Scale (aumentar)</div>
+                    <div class="demo-item transform-rotate" style="background: #667eea;">Rotate (girar)</div>
+                    <div class="demo-item transform-skew" style="background: #4ECDC4;">Skew (sesgar)</div>
+                    <div class="demo-item transform-combo" style="background: #FFB84D;">Combinado</div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>/* Scale (aumentar/disminuir) */
+transform: scale(1.2);              /* Aumenta 20% */
+transform: scaleX(1.5);             /* Solo horizontalmente */
+transform: scaleY(0.8);             /* Solo verticalmente */
+
+/* Rotate (girar) */
+transform: rotate(45deg);           /* Gira 45 grados */
+
+/* Translate (mover) */
+transform: translate(20px, 10px);   /* Mover X, Y */
+transform: translateX(50px);        /* Solo X */
+transform: translateY(-30px);       /* Solo Y */
+
+/* Skew (sesgar) */
+transform: skew(10deg);             /* Sesga ambos ejes */
+transform: skewX(20deg);            /* Solo horizontalmente */
+
+/* Combinar múltiples */
+transform: scale(1.1) rotate(5deg) translateY(-10px);
+
+/* Transform-origin (punto de rotación) */
+transform-origin: center center;
+transform-origin: top left;
+transform-origin: 50% 50%;</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- ANIMACIONES -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="animaciones" class="seccion-referencia">
+            <h2>✨ ANIMACIONES Y TRANSICIONES</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Transiciones (hover el botón)</h3>
+                    <span class="badge badge-animacion">Animaciones</span>
+                </div>
+                
+                <div style="text-align: center; background: #f9f9f9; padding: 20px; border-radius: 8px;">
+                    <div class="transicion">
+                        Pasa el mouse aquí →
+                    </div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código Transiciones</summary>
+                    <pre><code>/* Transición simple */
+.elemento {
+    background: #667eea;
+    transition: all 0.3s ease;
+}
+
+.elemento:hover {
+    background: #FF6B6B;
+    transform: translateX(10px);
+}
+
+/* Transición específica */
+.elemento {
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Transición con delay */
+.elemento {
+    transition: all 0.3s ease 0.1s;  /* 0.1s de espera */
+}
+
+/* Timing functions */
+transition-timing-function: ease;           /* Por defecto */
+transition-timing-function: ease-in;        /* Lento al inicio */
+transition-timing-function: ease-out;       /* Lento al final */
+transition-timing-function: ease-in-out;    /* Lento inicio y final */
+transition-timing-function: linear;         /* Velocidad constante */
+transition-timing-function: cubic-bezier(...); /* Personalizado */</code></pre>
+                </details>
+            </article>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Keyframe Animations (automáticas)</h3>
+                    <span class="badge badge-animacion">Animaciones</span>
+                </div>
+                
+                <div class="demo-grid">
+                    <div class="demo-item animacion-pulse" style="background: #FF6B6B;">Pulse</div>
+                    <div class="demo-item animacion-deslizar" style="background: #667eea;">Deslizar</div>
+                    <div class="demo-item animacion-girar" style="background: #4ECDC4;">Girar</div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código Keyframes</summary>
+                    <pre><code>/* Definir animación */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes deslizar {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+@keyframes girar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Usar animación */
+.elemento {
+    animation: pulse 1s infinite;
+    /* animation: nombre duración iteraciones; */
+}
+
+/* Propiedades de animación */
+animation: nombre 2s linear infinite;
+animation-delay: 0.5s;          /* Espera antes de empezar */
+animation-direction: alternate;  /* Ida y vuelta */
+animation-fill-mode: forwards;   /* Mantiene estado final */</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- GRADIENTES -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="gradientes" class="seccion-referencia">
+            <h2>🌈 GRADIENTES</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Tipos de Gradientes</h3>
+                    <span class="badge badge-color">Gradientes</span>
+                </div>
+                
+                <div class="demo-grid">
+                    <div class="demo-item gradiente-lineal-1">Lineal 1</div>
+                    <div class="demo-item gradiente-lineal-2">Lineal 2</div>
+                    <div class="demo-item gradiente-radial-1">Radial 1</div>
+                    <div class="demo-item gradiente-radial-2">Radial 2</div>
+                    <div class="demo-item gradiente-conico" style="grid-column: span 2;">Cónico 360°</div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>/* Gradiente Lineal */
+background: linear-gradient(90deg, #FF6B6B, #667eea, #4ECDC4);
+background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+/* Gradiente Lineal - Ángulos */
+linear-gradient(0deg, ...)      /* De abajo a arriba */
+linear-gradient(90deg, ...)     /* De izquierda a derecha */
+linear-gradient(180deg, ...)    /* De arriba a abajo */
+
+/* Gradiente Radial */
+background: radial-gradient(circle, #FFE66D, #FF6B6B);
+background: radial-gradient(ellipse, #667eea, #764ba2);
+
+/* Gradiente Cónico */
+background: conic-gradient(from 0deg, #FF6B6B, #667eea, #4ECDC4, #FFE66D, #FF6B6B);
+
+/* Con posiciones */
+background: linear-gradient(90deg, 
+    #FF6B6B 0%, 
+    #667eea 50%, 
+    #4ECDC4 100%
+);
+
+/* Gradiente repetido */
+background: repeating-linear-gradient(90deg, 
+    #FF6B6B 0px, 
+    #FF6B6B 10px, 
+    white 10px, 
+    white 20px
+);</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- AVANZADAS -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="avanzadas" class="seccion-referencia">
+            <h2>⚡ PROPIEDADES AVANZADAS</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Filtros, Opacidad y Más</h3>
+                    <span class="badge badge-nuevo">Avanzadas</span>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>Opacidad (transparencia):</h4>
+                    <div class="demo-grid">
+                        <div class="demo-item opacidad-100" style="background: #667eea;">opacity: 1</div>
+                        <div class="demo-item opacidad-75" style="background: #667eea;">opacity: 0.75</div>
+                        <div class="demo-item opacidad-50" style="background: #667eea;">opacity: 0.5</div>
+                        <div class="demo-item opacidad-25" style="background: #667eea;">opacity: 0.25</div>
+                    </div>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>Filtros:</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+                        <svg width="100" height="80" style="background: #667eea; border-radius: 4px; filter: brightness(150%);">
+                            <circle cx="50" cy="40" r="30" fill="white" opacity="0.8"/>
+                        </svg>
+                        <svg width="100" height="80" style="background: #667eea; border-radius: 4px; filter: blur(2px);">
+                            <circle cx="50" cy="40" r="30" fill="white" opacity="0.8"/>
+                        </svg>
+                        <svg width="100" height="80" style="background: #667eea; border-radius: 4px; filter: grayscale(100%);">
+                            <circle cx="50" cy="40" r="30" fill="white" opacity="0.8"/>
+                        </svg>
+                        <svg width="100" height="80" style="background: #667eea; border-radius: 4px; filter: sepia(100%);">
+                            <circle cx="50" cy="40" r="30" fill="white" opacity="0.8"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <table class="atributos-tabla">
+                    <tr>
+                        <th>Propiedad</th>
+                        <th>Uso</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>opacity</td>
+                        <td>Transparencia general</td>
+                        <td>opacity: 0.5;</td>
+                    </tr>
+                    <tr>
+                        <td>filter</td>
+                        <td>Efectos visuales</td>
+                        <td>filter: blur(5px);</td>
+                    </tr>
+                    <tr>
+                        <td>z-index</td>
+                        <td>Profundidad (capas)</td>
+                        <td>z-index: 10;</td>
+                    </tr>
+                    <tr>
+                        <td>overflow</td>
+                        <td>Contenido que desborda</td>
+                        <td>overflow: hidden;</td>
+                    </tr>
+                    <tr>
+                        <td>cursor</td>
+                        <td>Tipo de cursor</td>
+                        <td>cursor: pointer;</td>
+                    </tr>
+                    <tr>
+                        <td>mix-blend-mode</td>
+                        <td>Modo de fusión</td>
+                        <td>mix-blend-mode: multiply;</td>
+                    </tr>
+                </table>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código completo</summary>
+                    <pre><code>/* OPACIDAD */
+opacity: 0.5;              /* 50% transparente */
+
+/* FILTROS */
+filter: blur(5px);         /* Desenfoque */
+filter: brightness(150%);  /* Brillo */
+filter: contrast(150%);    /* Contraste */
+filter: grayscale(100%);   /* Escala de grises */
+filter: sepia(100%);       /* Efecto sepia */
+filter: drop-shadow(...);  /* Sombra */
+
+/* Z-INDEX (profundidad) */
+z-index: 10;               /* Elementos superiores */
+z-index: 1;
+
+/* OVERFLOW */
+overflow: visible;         /* Por defecto */
+overflow: hidden;          /* Corta el contenido */
+overflow: scroll;          /* Siempre muestra scroll */
+overflow: auto;            /* Scroll solo si necesita */
+
+/* CURSOR */
+cursor: pointer;           /* Mano */
+cursor: default;           /* Flecha */
+cursor: not-allowed;       /* Prohibido */
+cursor: move;              /* Mover */
+
+/* POINTER EVENTS */
+pointer-events: none;      /* No responde a clicks */
+pointer-events: auto;      /* Responde a clicks */</code></pre>
+                </details>
+            </article>
+        </section>
+
+    </main>
+
+    <footer style="background: #667eea; color: white; padding: 20px; text-align: center; margin-top: 40px;">
+        <p>🎨 Referencia CSS3 Completa | 80+ Propiedades | Última actualización: Diciembre 2025</p>
+    </footer>
+</body>
+</html>

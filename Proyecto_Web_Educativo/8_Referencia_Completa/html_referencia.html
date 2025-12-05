@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Metadatos y configuración -->
+    <meta charset="UTF-8">
+    <!-- Define el juego de caracteres, esencial para que funcione bien español -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Responsive: hace que la web se vea bien en móviles -->
+    
+    <meta name="description" content="Referencia completa de etiquetas HTML con ejemplos">
+    <!-- Descripción que ven en Google -->
+    
+    <meta name="author" content="Proyecto Educativo">
+    <!-- Autor de la página -->
+    
+    <title>Referencia HTML5 - Todas las Etiquetas</title>
+    <!-- Título que aparece en la pestaña del navegador -->
+    
+    <link rel="stylesheet" href="estilos_referencia.css">
+    <!-- Vinculamos el archivo CSS para los estilos -->
+</head>
+
+<body>
+    <!-- ESTRUCTURA PRINCIPAL DE LA PÁGINA -->
+    
+    <!-- Header: encabezado de la página (navegación, logo, etc) -->
+    <header class="header-principal">
+        <h1>📚 Referencia Completa HTML5</h1>
+        <!-- h1: encabezado principal (máxima importancia) -->
+        
+        <p class="subtitulo">Ejemplos de todas las etiquetas HTML esenciales con sus usos</p>
+        <!-- p: párrafo (texto normal) -->
+    </header>
+
+    <!-- Nav: navegación (menú) -->
+    <nav class="nav-referencia">
+        <a href="#textos">Textos</a>
+        <!-- a: enlace/hipervínculo -->
+        
+        <a href="#listas">Listas</a>
+        <a href="#formularios">Formularios</a>
+        <a href="#multimedia">Multimedia</a>
+        <a href="#tablas">Tablas</a>
+    </nav>
+
+    <!-- Main: contenido principal de la página -->
+    <main class="contenedor-referencia">
+
+        <!-- ====== SECCIÓN 1: TEXTOS Y CONTENIDO ====== -->
+        <section id="textos" class="seccion-referencia">
+            <!-- section: sección temática de contenido -->
+            
+            <h2>1️⃣ ETIQUETAS DE TEXTO</h2>
+            <!-- h2: encabezado secundario -->
+            
+            <article class="ejemplo-card">
+                <!-- article: contenido independiente (artículo, blog, etc) -->
+                
+                <h3>Encabezados (h1 a h6)</h3>
+                <!-- h3: encabezado de tercer nivel -->
+                
+                <div class="ejemplo-html">
+                    <!-- div: contenedor genérico (divide la página) -->
+                    
+                    <h1 style="font-size: 32px;">Esto es h1 - Principal</h1>
+                    <h2 style="font-size: 28px;">Esto es h2 - Secundario</h2>
+                    <h3 style="font-size: 24px;">Esto es h3 - Tertiary</h3>
+                    <h4 style="font-size: 20px;">Esto es h4</h4>
+                    <h5 style="font-size: 16px;">Esto es h5</h5>
+                    <h6 style="font-size: 14px;">Esto es h6 - Mínimo</h6>
+                    
+                    <p><strong>Regla:</strong> Solo usa 1 h1 por página (para SEO)</p>
+                </div>
+                
+                <details class="codigo-html">
+                    <!-- details: contenido expandible (click para ver) -->
+                    
+                    <summary>Ver código HTML</summary>
+                    <!-- summary: título del contenido expandible -->
+                    
+                    <pre><code>&lt;h1&gt;Encabezado Principal&lt;/h1&gt;
+&lt;h2&gt;Encabezado Secundario&lt;/h2&gt;
+&lt;h3&gt;Encabezado Tercer Nivel&lt;/h3&gt;</code></pre>
+                    <!-- pre: preserva espacios y saltos (para código) -->
+                    <!-- code: código fuente -->
+                </details>
+            </article>
+
+            <!-- ===== -->
+            <article class="ejemplo-card">
+                <h3>Párrafos y Énfasis</h3>
+                
+                <div class="ejemplo-html">
+                    <p>Esto es un <strong>párrafo</strong> normal.</p>
+                    <!-- strong: texto importante (se ve en negritas) -->
+                    
+                    <p>Este texto tiene <em>énfasis</em> (se ve en itálicas).</p>
+                    <!-- em: énfasis (semántica) -->
+                    
+                    <p>También puedo usar <b>negritas</b> o <i>itálicas</i>.</p>
+                    <!-- b: negritas (sin semántica) -->
+                    <!-- i: itálicas (sin semántica) -->
+                    
+                    <p>Puedo <mark>resaltar texto</mark> como importante.</p>
+                    <!-- mark: resalta (como marcador) -->
+                    
+                    <p>Este texto tiene un <u>subrayado</u>.</p>
+                    <!-- u: subrayado -->
+                    
+                    <p>Precio original: <del>$100</del> Nuevo: $50</p>
+                    <!-- del: texto tachado (eliminado) -->
+                    
+                    <p>E=mc<sup>2</sup> (supíndice)</p>
+                    <!-- sup: supíndice (arriba) -->
+                    
+                    <p>H<sub>2</sub>O (subíndice)</p>
+                    <!-- sub: subíndice (abajo) -->
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;strong&gt;Importante&lt;/strong&gt;
+&lt;em&gt;Énfasis&lt;/em&gt;
+&lt;b&gt;Negritas&lt;/b&gt;
+&lt;i&gt;Itálicas&lt;/i&gt;
+&lt;mark&gt;Resaltado&lt;/mark&gt;
+&lt;u&gt;Subrayado&lt;/u&gt;
+&lt;del&gt;Eliminado&lt;/del&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- ===== -->
+            <article class="ejemplo-card">
+                <h3>Saltos de Línea y Líneas Horizontales</h3>
+                
+                <div class="ejemplo-html">
+                    <p>Primera línea<br>Segunda línea en nuevo párrafo</p>
+                    <!-- br: salto de línea -->
+                    
+                    <hr>
+                    <!-- hr: línea horizontal (separador) -->
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;p&gt;Primera línea&lt;br&gt;Segunda línea&lt;/p&gt;
+&lt;hr&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- ===== -->
+            <article class="ejemplo-card">
+                <h3>Bloques de Texto</h3>
+                
+                <div class="ejemplo-html">
+                    <blockquote>
+                        <!-- blockquote: cita de otro lugar -->
+                        "La educación es el arma más poderosa para cambiar el mundo."
+                        <footer>- Nelson Mandela</footer>
+                        <!-- footer: pie de página (autor, fecha, etc) -->
+                    </blockquote>
+                    
+                    <address>
+                        <!-- address: información de contacto/ubicación -->
+                        Email: estudiante@ejemplo.com<br>
+                        Teléfono: +57 300 000 0000
+                    </address>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;blockquote&gt;
+  "Cita importante"
+  &lt;footer&gt;Autor&lt;/footer&gt;
+&lt;/blockquote&gt;
+&lt;address&gt;Contacto&lt;/address&gt;</code></pre>
+                </details>
+            </article>
+
+        </section>
+
+        <!-- ====== SECCIÓN 2: LISTAS ====== -->
+        <section id="listas" class="seccion-referencia">
+            
+            <h2>2️⃣ LISTAS</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Listas No Ordenadas (bullets)</h3>
+                
+                <div class="ejemplo-html">
+                    <ul>
+                        <!-- ul: lista no ordenada (sin orden específico) -->
+                        
+                        <li>Primer elemento</li>
+                        <!-- li: elemento de lista -->
+                        
+                        <li>Segundo elemento</li>
+                        <li>Tercer elemento
+                            <ul>
+                                <li>Sub-elemento 1</li>
+                                <li>Sub-elemento 2</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;ul&gt;
+  &lt;li&gt;Elemento 1&lt;/li&gt;
+  &lt;li&gt;Elemento 2&lt;/li&gt;
+  &lt;li&gt;Elemento 3&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- ===== -->
+            <article class="ejemplo-card">
+                <h3>Listas Ordenadas (números)</h3>
+                
+                <div class="ejemplo-html">
+                    <ol>
+                        <!-- ol: lista ordenada (1, 2, 3...) -->
+                        
+                        <li>Primer paso</li>
+                        <li>Segundo paso</li>
+                        <li>Tercer paso
+                            <ol>
+                                <li>Sub-paso A</li>
+                                <li>Sub-paso B</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;ol&gt;
+  &lt;li&gt;Paso 1&lt;/li&gt;
+  &lt;li&gt;Paso 2&lt;/li&gt;
+  &lt;li&gt;Paso 3&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- ===== -->
+            <article class="ejemplo-card">
+                <h3>Listas de Definición</h3>
+                
+                <div class="ejemplo-html">
+                    <dl>
+                        <!-- dl: lista de definiciones -->
+                        
+                        <dt>HTML</dt>
+                        <!-- dt: término -->
+                        
+                        <dd>HyperText Markup Language - Lenguaje para crear estructuras web</dd>
+                        <!-- dd: definición del término -->
+                        
+                        <dt>CSS</dt>
+                        <dd>Cascading Style Sheets - Lenguaje para estilizar HTML</dd>
+                        
+                        <dt>JavaScript</dt>
+                        <dd>Lenguaje de programación que hace interactivas las webs</dd>
+                    </dl>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;dl&gt;
+  &lt;dt&gt;Término&lt;/dt&gt;
+  &lt;dd&gt;Definición del término&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                </details>
+            </article>
+
+        </section>
+
+        <!-- ====== SECCIÓN 3: FORMULARIOS ====== -->
+        <section id="formularios" class="seccion-referencia">
+            
+            <h2>3️⃣ FORMULARIOS</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Inputs (Campos de Entrada)</h3>
+                
+                <div class="ejemplo-html">
+                    <form>
+                        <!-- form: contenedor de formulario -->
+                        
+                        <label for="input-texto">Texto normal:</label>
+                        <!-- label: etiqueta que describe el input (accesibilidad) -->
+                        
+                        <input type="text" id="input-texto" placeholder="Escribe aquí...">
+                        <!-- input type="text": campo para texto -->
+                        
+                        <br><br>
+                        
+                        <label for="input-email">Email:</label>
+                        <input type="email" id="input-email" placeholder="tu@email.com">
+                        <!-- input type="email": valida que sea email -->
+                        
+                        <br><br>
+                        
+                        <label for="input-password">Contraseña:</label>
+                        <input type="password" id="input-password" placeholder="Oculto con puntos">
+                        <!-- input type="password": oculta el texto -->
+                        
+                        <br><br>
+                        
+                        <label for="input-numero">Número:</label>
+                        <input type="number" id="input-numero" min="1" max="100" value="50">
+                        <!-- input type="number": solo permite números -->
+                        
+                        <br><br>
+                        
+                        <label for="input-rango">Rango (slider):</label>
+                        <input type="range" id="input-rango" min="0" max="100" value="50">
+                        <!-- input type="range": deslizador -->
+                        
+                        <br><br>
+                        
+                        <label for="input-fecha">Fecha:</label>
+                        <input type="date" id="input-fecha">
+                        <!-- input type="date": selector de fecha -->
+                        
+                        <br><br>
+                        
+                        <label for="input-color">Color:</label>
+                        <input type="color" id="input-color" value="#667eea">
+                        <!-- input type="color": selector de color -->
+                        
+                    </form>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;input type="text" placeholder="Texto"&gt;
+&lt;input type="email" placeholder="Email"&gt;
+&lt;input type="password" placeholder="Contraseña"&gt;
+&lt;input type="number" min="1" max="100"&gt;
+&lt;input type="range" min="0" max="100"&gt;
+&lt;input type="date"&gt;
+&lt;input type="color"&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- ===== -->
+            <article class="ejemplo-card">
+                <h3>Textarea, Select y Botones</h3>
+                
+                <div class="ejemplo-html">
+                    <label for="textarea">Área de Texto (múltiples líneas):</label>
+                    <textarea id="textarea" rows="4" cols="50" placeholder="Escribe un mensaje largo aquí..."></textarea>
+                    <!-- textarea: campo para múltiples líneas de texto -->
+                    
+                    <br><br>
+                    
+                    <label for="select">Selecciona una opción:</label>
+                    <select id="select">
+                        <!-- select: lista desplegable -->
+                        
+                        <option value="">-- Elige una opción --</option>
+                        <!-- option: opción dentro del select -->
+                        
+                        <option value="opcion1">Opción 1</option>
+                        <option value="opcion2">Opción 2</option>
+                        <option value="opcion3">Opción 3</option>
+                    </select>
+                    
+                    <br><br>
+                    
+                    <fieldset>
+                        <!-- fieldset: agrupa campos relacionados -->
+                        
+                        <legend>Elige tu género:</legend>
+                        <!-- legend: título del fieldset -->
+                        
+                        <label>
+                            <input type="radio" name="genero" value="masculino">
+                            <!-- input type="radio": seleccionar UNO de varios -->
+                            
+                            Masculino
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="genero" value="femenino">
+                            Femenino
+                        </label>
+                        
+                        <label>
+                            <input type="radio" name="genero" value="otro">
+                            Otro
+                        </label>
+                    </fieldset>
+                    
+                    <br>
+                    
+                    <fieldset>
+                        <legend>Intereses (selecciona varios):</legend>
+                        
+                        <label>
+                            <input type="checkbox" name="intereses" value="deportes">
+                            <!-- input type="checkbox": seleccionar VARIOS -->
+                            
+                            Deportes
+                        </label>
+                        
+                        <label>
+                            <input type="checkbox" name="intereses" value="musica">
+                            Música
+                        </label>
+                        
+                        <label>
+                            <input type="checkbox" name="intereses" value="tecnologia">
+                            Tecnología
+                        </label>
+                    </fieldset>
+                    
+                    <br>
+                    
+                    <button type="submit">Enviar</button>
+                    <!-- button type="submit": envía el formulario -->
+                    
+                    <button type="reset">Limpiar</button>
+                    <!-- button type="reset": vacía el formulario -->
+                    
+                    <button type="button">Botón Normal</button>
+                    <!-- button type="button": botón sin acción automática -->
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;textarea rows="4"&gt;&lt;/textarea&gt;
+&lt;select&gt;
+  &lt;option&gt;Opción 1&lt;/option&gt;
+&lt;/select&gt;
+&lt;input type="radio" name="grupo"&gt;
+&lt;input type="checkbox"&gt;
+&lt;button type="submit"&gt;Enviar&lt;/button&gt;</code></pre>
+                </details>
+            </article>
+
+        </section>
+
+        <!-- ====== SECCIÓN 4: MULTIMEDIA ====== -->
+        <section id="multimedia" class="seccion-referencia">
+            
+            <h2>4️⃣ MULTIMEDIA</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Imágenes</h3>
+                
+                <div class="ejemplo-html">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='150'%3E%3Crect width='200' height='150' fill='%23667eea'/%3E%3Ctext x='50%' y='50%' text-anchor='middle' dy='.3em' fill='white' font-size='24'%3EImagen Ejemplo%3C/text%3E%3C/svg%3E" alt="Imagen de ejemplo" style="max-width: 100%; border: 2px solid #ccc; margin: 10px 0;">
+                    <!-- img: imagen -->
+                    <!-- src: ruta de la imagen -->
+                    <!-- alt: texto si la imagen no carga (importante para SEO) -->
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;img src="ruta/imagen.png" alt="Descripción"&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- ===== -->
+            <article class="ejemplo-card">
+                <h3>Figuras (Imagen + Descripción)</h3>
+                
+                <div class="ejemplo-html">
+                    <figure>
+                        <!-- figure: imagen con descripción semántica -->
+                        
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='150'%3E%3Crect width='200' height='150' fill='%2364b5f6'/%3E%3Ctext x='50%' y='50%' text-anchor='middle' dy='.3em' fill='white' font-size='20'%3EGráfico%3C/text%3E%3C/svg%3E" alt="Gráfico ejemplo">
+                        
+                        <figcaption>Esto es una figcaption - Descripción de la imagen</figcaption>
+                        <!-- figcaption: pie de la imagen -->
+                    </figure>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;figure&gt;
+  &lt;img src="imagen.png" alt="Desc"&gt;
+  &lt;figcaption&gt;Descripción&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- ===== -->
+            <article class="ejemplo-card">
+                <h3>Video y Audio</h3>
+                
+                <div class="ejemplo-html">
+                    <p><strong>Video:</strong></p>
+                    <video width="200" height="150" controls style="border: 2px solid #ccc; margin: 10px 0;">
+                        <!-- video: reproductor de video -->
+                        <!-- controls: botones play, volumen, etc -->
+                        
+                        <source src="video.mp4" type="video/mp4">
+                        <!-- source: archivo de video -->
+                        
+                        Tu navegador no soporta video HTML5
+                    </video>
+                    
+                    <p><strong>Audio:</strong></p>
+                    <audio controls style="margin: 10px 0;">
+                        <!-- audio: reproductor de audio -->
+                        
+                        <source src="audio.mp3" type="audio/mpeg">
+                        <!-- source: archivo de audio -->
+                        
+                        Tu navegador no soporta audio HTML5
+                    </audio>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;video width="300" controls&gt;
+  &lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+&lt;audio controls&gt;
+  &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+&lt;/audio&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- ===== -->
+            <article class="ejemplo-card">
+                <h3>iframe (Embed de otras páginas)</h3>
+                
+                <div class="ejemplo-html">
+                    <p>Embed de mapa (ejemplo):</p>
+                    <iframe width="100%" height="300" style="border: none; border-radius: 8px; margin: 10px 0;" src="data:text/html,%3Cdiv style=%27background:%23667eea;width:100%25;height:100%25;display:flex;align-items:center;justify-content:center;color:white;%27%3E%3Cp%3EAquí iría un mapa de Google Maps%3C/p%3E%3C/div%3E"></iframe>
+                    <!-- iframe: contenedor para contenido externo (mapa, video YouTube, etc) -->
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;iframe width="300" height="300" src="https://maps.google.com"&gt;
+&lt;/iframe&gt;</code></pre>
+                </details>
+            </article>
+
+        </section>
+
+        <!-- ====== SECCIÓN 5: TABLAS ====== -->
+        <section id="tablas" class="seccion-referencia">
+            
+            <h2>5️⃣ TABLAS</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Estructura Completa de Tabla</h3>
+                
+                <div class="ejemplo-html">
+                    <table style="width: 100%; border-collapse: collapse; margin: 10px 0;">
+                        <!-- table: contenedor de tabla -->
+                        
+                        <thead style="background-color: #667eea; color: white;">
+                            <!-- thead: encabezado de la tabla -->
+                            
+                            <tr>
+                                <!-- tr: fila de tabla -->
+                                
+                                <th style="border: 1px solid #ddd; padding: 10px;">Nombre</th>
+                                <!-- th: celda de encabezado (header) -->
+                                
+                                <th style="border: 1px solid #ddd; padding: 10px;">Email</th>
+                                <th style="border: 1px solid #ddd; padding: 10px;">País</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <!-- tbody: cuerpo de la tabla -->
+                            
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 10px;">Juan Pérez</td>
+                                <!-- td: celda de dato (data) -->
+                                
+                                <td style="border: 1px solid #ddd; padding: 10px;">juan@email.com</td>
+                                <td style="border: 1px solid #ddd; padding: 10px;">Colombia</td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 10px;">María García</td>
+                                <td style="border: 1px solid #ddd; padding: 10px;">maria@email.com</td>
+                                <td style="border: 1px solid #ddd; padding: 10px;">España</td>
+                            </tr>
+                            
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 10px;">Carlos López</td>
+                                <td style="border: 1px solid #ddd; padding: 10px;">carlos@email.com</td>
+                                <td style="border: 1px solid #ddd; padding: 10px;">México</td>
+                            </tr>
+                        </tbody>
+                        
+                        <tfoot style="background-color: #f5f5f5;">
+                            <!-- tfoot: pie de tabla (totales, resumen) -->
+                            
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 10px;"><strong>Total</strong></td>
+                                <td style="border: 1px solid #ddd; padding: 10px;">3 personas</td>
+                                <td style="border: 1px solid #ddd; padding: 10px;">3 países</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Encabezado 1&lt;/th&gt;
+      &lt;th&gt;Encabezado 2&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Dato 1&lt;/td&gt;
+      &lt;td&gt;Dato 2&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+  &lt;tfoot&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Total&lt;/td&gt;
+      &lt;td&gt;Suma&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                </details>
+            </article>
+
+        </section>
+
+        <!-- ====== SECCIÓN 6: ELEMENTOS SEMÁNTICOS ====== -->
+        <section class="seccion-referencia">
+            
+            <h2>6️⃣ ELEMENTOS SEMÁNTICOS</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Estructura Semántica de Página</h3>
+                
+                <div class="ejemplo-html">
+                    <p><strong>Estructura recomendada:</strong></p>
+                    <pre style="background: #f5f5f5; padding: 10px; border-left: 4px solid #667eea; overflow-x: auto;"><code>&lt;header&gt; ← Encabezado (logo, nav)
+  &lt;nav&gt; ← Navegación
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt; ← Contenido principal
+  &lt;section&gt; ← Sección temática
+    &lt;article&gt; ← Artículo
+    &lt;/article&gt;
+  &lt;/section&gt;
+  &lt;aside&gt; ← Barra lateral
+  &lt;/aside&gt;
+&lt;/main&gt;
+&lt;footer&gt; ← Pie de página
+&lt;/footer&gt;</code></pre>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código HTML</summary>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;&lt;/head&gt;
+  &lt;body&gt;
+    &lt;header&gt;&lt;/header&gt;
+    &lt;nav&gt;&lt;/nav&gt;
+    &lt;main&gt;&lt;/main&gt;
+    &lt;aside&gt;&lt;/aside&gt;
+    &lt;footer&gt;&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </details>
+            </article>
+
+        </section>
+
+    </main>
+
+    <!-- Footer: pie de página -->
+    <footer class="footer-referencia">
+        <p>&copy; 2024 Referencia HTML5 - Proyecto Educativo | Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>

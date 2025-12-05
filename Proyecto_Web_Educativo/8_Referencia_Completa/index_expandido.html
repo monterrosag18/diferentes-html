@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Referencia Web Educativa - HTML, CSS y JavaScript Completos">
+    <meta name="author" content="Proyecto Educativo Web">
+    <title>📚 Referencia Web Educativa - Completa Expandida</title>
+    <link rel="stylesheet" href="estilos_referencia.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .contenedor-hub {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-hub {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .header-hub h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .header-hub .subtitulo {
+            font-size: 20px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .header-hub .descripcion {
+            font-size: 14px;
+            color: #999;
+            line-height: 1.8;
+        }
+        
+        .opciones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .carta {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            border-top: 5px solid;
+        }
+        
+        .carta-html {
+            border-top-color: #FF6B6B;
+        }
+        
+        .carta-css {
+            border-top-color: #4ECDC4;
+        }
+        
+        .carta-js {
+            border-top-color: #FFB84D;
+        }
+        
+        .carta:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+        }
+        
+        .carta-icono {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .carta h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+        .carta .version {
+            display: inline-block;
+            background: #f0f0f0;
+            color: #666;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .carta-contenido {
+            flex: 1;
+            margin-bottom: 20px;
+        }
+        
+        .carta-contenido p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+        
+        .carta-lista {
+            list-style: none;
+            font-size: 13px;
+            color: #666;
+        }
+        
+        .carta-lista li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .carta-lista li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .botones-carta {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
+        
+        .boton-enlace {
+            display: inline-block;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid;
+            font-size: 14px;
+        }
+        
+        .boton-primario {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .boton-primario:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+        
+        .boton-secundario {
+            background: white;
+            color: #667eea;
+            border-color: #667eea;
+        }
+        
+        .boton-secundario:hover {
+            background: #f5f5f5;
+        }
+        
+        .seccion-info {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .seccion-info h2 {
+            color: #667eea;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .info-card {
+            background: linear-gradient(135deg, #f5f5f5, #fafafa);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .info-card h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        
+        .info-card p {
+            color: #666;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .contador {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .contador-numero {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .contador-label {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .contador-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+        }
+        
+        .pie-pagina {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin-top: 40px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+        
+        .pie-pagina p {
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .header-hub h1 {
+                font-size: 32px;
+            }
+            
+            .opciones-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .header-hub {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="contenedor-hub">
+        
+        <!-- HEADER -->
+        <div class="header-hub">
+            <h1>📚 Referencia Web Educativa Completa</h1>
+            <p class="subtitulo">HTML • CSS • JavaScript | Expandida y Mejorada</p>
+            <p class="descripcion">
+                Tu guía completa para aprender y dominar los fundamentos del desarrollo web.<br>
+                Incluye más de 150+ ejemplos, ejercicios interactivos y toda la información que necesitas.
+            </p>
+        </div>
+
+        <!-- ESTADÍSTICAS -->
+        <div class="contador-grid">
+            <div class="contador">
+                <div class="contador-numero">50+</div>
+                <div class="contador-label">Etiquetas HTML</div>
+            </div>
+            <div class="contador">
+                <div class="contador-numero">80+</div>
+                <div class="contador-label">Propiedades CSS</div>
+            </div>
+            <div class="contador">
+                <div class="contador-numero">50+</div>
+                <div class="contador-label">Conceptos JavaScript</div>
+            </div>
+            <div class="contador">
+                <div class="contador-numero">150+</div>
+                <div class="contador-label">Ejemplos Interactivos</div>
+            </div>
+        </div>
+
+        <!-- OPCIONES PRINCIPALES -->
+        <div class="opciones-grid">
+            
+            <!-- OPCIÓN 1: HTML -->
+            <a href="html_referencia_expandida.html" class="carta carta-html">
+                <div class="carta-icono">📝</div>
+                <h2>HTML5 Completo</h2>
+                <span class="version">EXPANDIDA</span>
+                <div class="carta-contenido">
+                    <p><strong>Referencia completa de HTML5 con 50+ etiquetas y ejemplos.</strong></p>
+                    <ul class="carta-lista">
+                        <li>Textos, Listas, Formularios</li>
+                        <li>Multimedia e Tablas</li>
+                        <li>Elementos Semánticos</li>
+                        <li>Atributos Globales</li>
+                        <li>Etiquetas Avanzadas</li>
+                        <li>100% Comentado</li>
+                    </ul>
+                </div>
+                <div class="botones-carta">
+                    <button class="boton-enlace boton-primario">Abrir Referencia HTML →</button>
+                </div>
+            </a>
+
+            <!-- OPCIÓN 2: CSS -->
+            <a href="css_referencia_expandida.html" class="carta carta-css">
+                <div class="carta-icono">🎨</div>
+                <h2>CSS3 Completo</h2>
+                <span class="version">EXPANDIDA</span>
+                <div class="carta-contenido">
+                    <p><strong>80+ propiedades CSS con ejemplos visuales interactivos.</strong></p>
+                    <ul class="carta-lista">
+                        <li>Colores, Bordes, Sombras</li>
+                        <li>Tipografía y Espaciado</li>
+                        <li>Layouts (Flexbox, Grid)</li>
+                        <li>Transformaciones</li>
+                        <li>Animaciones y Gradientes</li>
+                        <li>Propiedades Avanzadas</li>
+                    </ul>
+                </div>
+                <div class="botones-carta">
+                    <button class="boton-enlace boton-primario">Abrir Referencia CSS →</button>
+                </div>
+            </a>
+
+            <!-- OPCIÓN 3: JAVASCRIPT -->
+            <a href="javascript_referencia_expandida.html" class="carta carta-js">
+                <div class="carta-icono">⚙️</div>
+                <h2>JavaScript Completo</h2>
+                <span class="version">EXPANDIDA</span>
+                <div class="carta-contenido">
+                    <p><strong>50+ ejemplos interactivos con consola en vivo.</strong></p>
+                    <ul class="carta-lista">
+                        <li>Variables, Tipos, Operadores</li>
+                        <li>Objetos, Arrays, Funciones</li>
+                        <li>Control de Flujo</li>
+                        <li>DOM y Eventos</li>
+                        <li>Promesas y Async/Await</li>
+                        <li>100% Ejecutable</li>
+                    </ul>
+                </div>
+                <div class="botones-carta">
+                    <button class="boton-enlace boton-primario">Abrir Referencia JS →</button>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- VERSIONES ANTIGUAS -->
+        <div class="seccion-info">
+            <h2>📦 Versiones Originales (Acceso Rápido)</h2>
+            <p style="color: #666; margin-bottom: 20px;">Si prefieres las versiones originales o quieres compararlas:</p>
+            <div class="info-grid">
+                <a href="html_referencia.html" class="info-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                    <h3>📝 HTML Original</h3>
+                    <p>Versión inicial de la referencia HTML con los conceptos básicos.</p>
+                </a>
+                <a href="css_referencia.html" class="info-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                    <h3>🎨 CSS Original</h3>
+                    <p>Versión inicial de la referencia CSS con ejemplos visuales.</p>
+                </a>
+                <a href="javascript_referencia.html" class="info-card" style="text-decoration: none; color: inherit; cursor: pointer;">
+                    <h3>⚙️ JavaScript Original</h3>
+                    <p>Versión inicial de la referencia JS con ejemplos interactivos.</p>
+                </a>
+            </div>
+        </div>
+
+        <!-- INFORMACIÓN SOBRE LAS REFERENCIAS -->
+        <div class="seccion-info">
+            <h2>🎓 ¿Cómo Usar Esta Referencia?</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>1️⃣ Busca lo que necesitas</h3>
+                    <p>Usa Ctrl+F (Cmd+F en Mac) para buscar palabras clave dentro de cada referencia.</p>
+                </div>
+                <div class="info-card">
+                    <h3>2️⃣ Lee el ejemplo</h3>
+                    <p>Observa el código comentado y comprende cómo funciona cada concepto.</p>
+                </div>
+                <div class="info-card">
+                    <h3>3️⃣ Prueba y aprende</h3>
+                    <p>En JavaScript, haz click en "Ejecutar" para ver resultados en la consola.</p>
+                </div>
+                <div class="info-card">
+                    <h3>4️⃣ Copia el código</h3>
+                    <p>Usa los ejemplos en tus propios proyectos adaptándolos a tus necesidades.</p>
+                </div>
+                <div class="info-card">
+                    <h3>5️⃣ Modifica y experimenta</h3>
+                    <p>Cambia valores, agrega propiedades, descubre nuevas posibilidades.</p>
+                </div>
+                <div class="info-card">
+                    <h3>6️⃣ Consulta siempre</h3>
+                    <p>Vuelve cuando lo necesites. Esta referencia es tu aliada permanente.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CARACTERÍSTICAS ESPECIALES -->
+        <div class="seccion-info">
+            <h2>✨ Características de Esta Referencia</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>📖 100% Comentado</h3>
+                    <p>Cada línea de código tiene explicaciones en español claro y directo.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🎬 Ejemplos Visuales</h3>
+                    <p>Ve en vivo cómo funcionan los estilos y propiedades mientras aprendes.</p>
+                </div>
+                <div class="info-card">
+                    <h3>⚡ Interactiva</h3>
+                    <p>En JavaScript ejecuta código y ve resultados instantáneamente en consola.</p>
+                </div>
+                <div class="info-card">
+                    <h3>📱 Responsive</h3>
+                    <p>Funciona perfectamente en desktop, tablet y móvil. Aprende desde donde sea.</p>
+                </div>
+                <div class="info-card">
+                    <h3>📋 Bien Estructurada</h3>
+                    <p>Tablas, secciones expandibles, y navegación fácil para encontrar lo que buscas.</p>
+                </div>
+                <div class="info-card">
+                    <h3>🚀 Siempre Actualizada</h3>
+                    <p>Incluye conceptos modernos: ES6+, CSS Grid, Async/Await, y más.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CASOS DE USO -->
+        <div class="seccion-info">
+            <h2>🎯 Casos de Uso (Qué Buscar Dónde)</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>❓ "¿Cómo hago un formulario?"</h3>
+                    <p>→ Abre HTML Referencia → Busca "Formularios" → Copia el código</p>
+                </div>
+                <div class="info-card">
+                    <h3>❓ "¿Cómo hago un gradiente?"</h3>
+                    <p>→ Abre CSS Referencia → Busca "Gradientes" → Ve el ejemplo visual</p>
+                </div>
+                <div class="info-card">
+                    <h3>❓ "¿Cómo funciona map()?"</h3>
+                    <p>→ Abre JavaScript Referencia → Busca "map" → Ejecuta el ejemplo</p>
+                </div>
+                <div class="info-card">
+                    <h3>❓ "¿Cuál es la diferencia entre let y const?"</h3>
+                    <p>→ Abre JS Referencia → Variables → Lee la tabla comparativa</p>
+                </div>
+                <div class="info-card">
+                    <h3>❓ "Necesito hacer una tabla responsiva"</h3>
+                    <p>→ HTML (estructura) + CSS (estilos) + JavaScript (interactividad)</p>
+                </div>
+                <div class="info-card">
+                    <h3>❓ "¿Cómo selecciono elementos del DOM?"</h3>
+                    <p>→ JS Referencia → DOM → Métodos de selección → Copia los ejemplos</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ESTADÍSTICAS COMPLETAS -->
+        <div class="seccion-info">
+            <h2>📊 Estadísticas Completas</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+                <div style="background: linear-gradient(135deg, #FF6B6B, #FF8C8C); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 36px; font-weight: bold;">50+</div>
+                    <div>Etiquetas HTML</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #4ECDC4, #6EE7DD); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 36px; font-weight: bold;">80+</div>
+                    <div>Propiedades CSS</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #FFB84D, #FFCC80); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 36px; font-weight: bold;">50+</div>
+                    <div>Conceptos JS</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #667eea, #8B9EFF); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 36px; font-weight: bold;">150+</div>
+                    <div>Ejemplos Totales</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #C7CEEA, #E0E5FF); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 36px; font-weight: bold;">10,000+</div>
+                    <div>Líneas de Código</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #FF85B3, #FFB3D0); color: white; padding: 20px; border-radius: 8px; text-align: center;">
+                    <div style="font-size: 36px; font-weight: bold;">100%</div>
+                    <div>Comentado</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PIE DE PÁGINA -->
+        <div class="pie-pagina">
+            <p style="font-size: 18px; font-weight: bold;">🎓 Referencia Web Educativa Completa</p>
+            <p>Última actualización: Diciembre 2025 | Versión: 2.0 EXPANDIDA</p>
+            <p>Hecho con ❤️ para aprender y dominar desarrollo web</p>
+            <p style="margin-top: 20px; font-size: 12px; color: #999;">
+                Todos los ejemplos están listos para copiar, pegar y usar. ¡Que disfrutes aprendiendo!
+            </p>
+        </div>
+
+    </div>
+</body>
+
+</html>

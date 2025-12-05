@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metadatos del documento -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>5_Galeria_Interactiva - Galería de Imágenes Responsiva</title>
+  <!-- Enlace al archivo CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ========== HEADER ========== -->
+  <header class="header-galeria">
+    <div class="contenedor-header">
+      <!-- Logo/Título -->
+      <h1>Galería Interactiva</h1>
+      <!-- Botón para cambiar vista -->
+      <div class="controles-vista">
+        <button class="btn-vista activo" data-vista="grid">Grid</button>
+        <button class="btn-vista" data-vista="masonry">Masonry</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== SECCIÓN FILTROS ========== -->
+  <section class="seccion-filtros">
+    <div class="contenedor">
+      <!-- Botones de filtro por categoría -->
+      <div class="filtros-categorias">
+        <!-- Botón "Todos" - muestra todas las imágenes -->
+        <button class="btn-filtro activo" data-categoria="todos">
+          Todos (12)
+        </button>
+        <!-- Botón "Naturaleza" - filtra por categoría -->
+        <button class="btn-filtro" data-categoria="naturaleza">
+          Naturaleza (3)
+        </button>
+        <!-- Botón "Urbano" -->
+        <button class="btn-filtro" data-categoria="urbano">
+          Urbano (3)
+        </button>
+        <!-- Botón "Arquitectura" -->
+        <button class="btn-filtro" data-categoria="arquitectura">
+          Arquitectura (3)
+        </button>
+        <!-- Botón "Personas" -->
+        <button class="btn-filtro" data-categoria="personas">
+          Personas (3)
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALERÍA PRINCIPAL ========== -->
+  <main class="contenedor">
+    <!-- Grid que contendrá las imágenes -->
+    <div class="galeria-grid grid-activo">
+      <!-- Las imágenes se generan con JavaScript -->
+    </div>
+  </main>
+
+  <!-- ========== MODAL LIGHTBOX ========== -->
+  <!-- Modal que aparece al hacer click en una imagen -->
+  <div class="modal-lightbox">
+    <!-- Botón cerrar (X) en la esquina superior derecha -->
+    <button class="cerrar-modal">×</button>
+    
+    <!-- Botón anterior (flecha izquierda) -->
+    <button class="btn-navegacion btn-anterior">❮</button>
+    
+    <!-- Contenedor de la imagen ampliada -->
+    <div class="contenedor-imagen-modal">
+      <!-- La imagen se carga aquí -->
+      <img src="" alt="" class="imagen-modal">
+    </div>
+    
+    <!-- Botón siguiente (flecha derecha) -->
+    <button class="btn-navegacion btn-siguiente">❯</button>
+    
+    <!-- Información de la imagen -->
+    <div class="info-imagen-modal">
+      <!-- Título de la imagen -->
+      <h3 class="titulo-imagen"></h3>
+      <!-- Descripción -->
+      <p class="descripcion-imagen"></p>
+      <!-- Contador de posición (ej: 1 de 12) -->
+      <span class="posicion-imagen"></span>
+    </div>
+  </div>
+
+  <!-- ========== OVERLAY PARA MODAL ========== -->
+  <!-- Fondo oscuro detrás del modal, click cierra el modal -->
+  <div class="overlay-galeria"></div>
+
+  <!-- ========== SCRIPT ========== -->
+  <script src="script.js"></script>
+</body>
+</html>

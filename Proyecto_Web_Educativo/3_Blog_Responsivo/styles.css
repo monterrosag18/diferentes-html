@@ -1,0 +1,515 @@
+/* 
+  ===============================
+  ARCHIVO: styles.css
+  CARPETA: 3_Blog_Responsivo
+  PROPÓSITO: Estilos para blog moderno con sidebar
+  
+  TÉCNICAS:
+  - CSS Grid para layout principal
+  - Flexbox para componentes
+  - Responsive sidebar
+  - Dark mode
+  ===============================
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #f0f2f5;
+  line-height: 1.6;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 
+  ========== HEADER ==========
+  Encabezado del blog
+*/
+
+.header-blog {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 40px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contenedor-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo-blog h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.logo-blog p {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
+/* 
+  ========== BUSCADOR ==========
+*/
+
+.buscador {
+  display: flex;
+  gap: 10px;
+  flex: 1;
+  max-width: 400px;
+}
+
+.buscador input {
+  flex: 1;
+  padding: 12px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.95rem;
+}
+
+.buscador button {
+  padding: 12px 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 1px solid white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.buscador button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* 
+  ========== NAVEGACIÓN ==========
+*/
+
+.nav-blog {
+  background-color: #2c3e50;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-blog ul {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  
+  display: flex;
+  list-style: none;
+}
+
+.nav-blog a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  transition: background-color 0.3s;
+}
+
+.nav-blog a:hover {
+  background-color: #1abc9c;
+}
+
+/* 
+  ========== LAYOUT PRINCIPAL (GRID) ==========
+  main + sidebar
+*/
+
+.contenedor-principal {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  
+  /* 
+    display: grid
+    grid-template-columns: 1fr 300px
+    
+    Dos columnas:
+    - Columna 1: 1fr (toma espacio disponible)
+    - Columna 2: 300px (sidebar fijo)
+  */
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 30px;
+}
+
+/* 
+  ========== MAIN BLOG ==========
+  Área principal con artículos
+*/
+
+.main-blog {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.seccion-articulos h2 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 10px;
+}
+
+/* 
+  ========== LISTADO DE ARTÍCULOS ==========
+*/
+
+.listado-articulos {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* 
+  Tarjeta de artículo
+  Cada artículo es una tarjeta con contenido
+*/
+
+.articulo {
+  border-left: 4px solid #667eea;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.articulo:hover {
+  transform: translateX(5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado del artículo */
+.articulo-titulo {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+  cursor: pointer;
+  
+  transition: color 0.2s;
+}
+
+.articulo-titulo:hover {
+  color: #667eea;
+}
+
+/* Metadatos del artículo */
+.articulo-meta {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 15px;
+  
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Contenido/Preview del artículo */
+.articulo-contenido {
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+/* Etiquetas del artículo */
+.articulo-etiquetas {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+}
+
+.etiqueta {
+  /* 
+    Badge de etiqueta
+    Pequeño fondo de color
+  */
+  background-color: #667eea;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.etiqueta:hover {
+  background-color: #5568d3;
+}
+
+/* Botón leer más */
+.btn-leer-mas {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: bold;
+  
+  transition: color 0.2s;
+}
+
+.btn-leer-mas:hover {
+  color: #5568d3;
+  text-decoration: underline;
+}
+
+/* 
+  ========== SIDEBAR ==========
+  Área lateral con widgets
+*/
+
+.sidebar-blog {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Widget (componente del sidebar) */
+.widget {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.widget h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+
+.widget p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* 
+  ========== LISTAS EN SIDEBAR ==========
+*/
+
+.lista-populares,
+.lista-categorias {
+  list-style: none;
+}
+
+.lista-populares li,
+.lista-categorias li {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.lista-populares a,
+.lista-categorias a {
+  color: #667eea;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.lista-populares a:hover,
+.lista-categorias a:hover {
+  color: #5568d3;
+  text-decoration: underline;
+}
+
+/* 
+  ========== WIDGET SUSCRIPCIÓN ==========
+*/
+
+.widget-suscripcion {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.widget-suscripcion h3 {
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+  color: white;
+}
+
+.widget-suscripcion input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.widget-suscripcion button {
+  width: 100%;
+}
+
+/* 
+  ========== BOTONES ==========
+*/
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+  font-size: 0.95rem;
+  font-weight: 600;
+  
+  transition: all 0.3s;
+}
+
+.btn-primario {
+  background-color: #667eea;
+  color: white;
+}
+
+.btn-primario:hover {
+  background-color: #5568d3;
+  transform: translateY(-2px);
+}
+
+/* 
+  ========== FOOTER ==========
+*/
+
+.footer-blog {
+  background-color: #2c3e50;
+  color: white;
+  padding: 40px 0 20px;
+  margin-top: 60px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+.footer-seccion h4 {
+  margin-bottom: 15px;
+  color: #1abc9c;
+}
+
+.footer-seccion ul {
+  list-style: none;
+}
+
+.footer-seccion a {
+  color: #bbb;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-seccion a:hover {
+  color: #1abc9c;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #34495e;
+}
+
+/* 
+  ========== RESPONSIVE DESIGN ==========
+*/
+
+@media (max-width: 768px) {
+  /* Header vertical */
+  .contenedor-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .logo-blog h1 {
+    font-size: 1.8rem;
+  }
+  
+  .buscador {
+    max-width: 100%;
+  }
+  
+  /* Layout: grid a stack */
+  .contenedor-principal {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  /* Sidebar en mobile */
+  .sidebar-blog {
+    order: -1; /* Aparece antes que main */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Header muy pequeño */
+  .logo-blog h1 {
+    font-size: 1.5rem;
+  }
+  
+  .logo-blog p {
+    font-size: 0.85rem;
+  }
+  
+  /* Main y widgets con padding menor */
+  .main-blog {
+    padding: 20px;
+  }
+  
+  .widget {
+    padding: 15px;
+  }
+  
+  /* Artículos más compactos */
+  .articulo {
+    padding: 15px;
+  }
+  
+  .articulo-titulo {
+    font-size: 1.2rem;
+  }
+  
+  /* Metadatos en columna */
+  .articulo-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  /* Footer simplificado */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

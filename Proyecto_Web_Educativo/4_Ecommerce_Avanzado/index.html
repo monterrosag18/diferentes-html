@@ -1,0 +1,264 @@
+<!-- 
+  ===============================
+  ARCHIVO: index.html
+  CARPETA: 4_Ecommerce_Avanzado
+  PROPÓSITO: Ecommerce con TODAS las funcionalidades
+  
+  Este es MEJOR que la tienda online anterior:
+  - Búsqueda avanzada
+  - Filtros por precio, categoría, rating
+  - Ordenamiento (precio, popularidad, nuevos)
+  - Wishlist (favoritos)
+  - Carrito con cantidades
+  - Sistema de puntuación
+  - Notificaciones dinámicas
+  
+  CASO DE USO REAL:
+  Puedes COPIAR este código y solo cambiar:
+  - Array de productos
+  - Colores en CSS
+  - Textos
+  
+  ===============================
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopMax - Ecommerce Profesional</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- HEADER CON LOGO Y CARRITO -->
+  <header class="header-ecommerce">
+    <div class="contenedor-header">
+      <div class="logo">
+        <h1>🛍️ ShopMax</h1>
+      </div>
+      
+      <!-- BÚSQUEDA CENTRAL -->
+      <div class="buscador-avanzado">
+        <input 
+          type="text" 
+          id="input-buscar-producto" 
+          placeholder="Buscar productos..."
+        >
+        <button id="btn-buscar-producto">🔍</button>
+      </div>
+      
+      <!-- CARRITO Y WISHLIST -->
+      <div class="iconos-header">
+        <!-- Wishlist (favoritos) -->
+        <div class="icon-group">
+          <span class="icon">❤️</span>
+          <span class="badge" id="cantidad-wishlist">0</span>
+        </div>
+        
+        <!-- Carrito -->
+        <div class="icon-group" id="carrito-icon">
+          <span class="icon">🛒</span>
+          <span class="badge" id="cantidad-carrito">0</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- BARRA DE FILTROS Y ORDENAMIENTO -->
+  <div class="barra-controles">
+    <div class="contenedor">
+      <!-- FILTROS -->
+      <div class="filtros-principales">
+        <!-- Filtro de categoría -->
+        <select id="filtro-categoria" class="select-filtro">
+          <option value="">Todas las categorías</option>
+          <option value="electronica">Electrónica</option>
+          <option value="ropa">Ropa</option>
+          <option value="accesorios">Accesorios</option>
+          <option value="libros">Libros</option>
+        </select>
+
+        <!-- Filtro de precio: MIN a MAX -->
+        <div class="filtro-precio">
+          <label>Precio:</label>
+          <input 
+            type="range" 
+            id="filtro-precio-min" 
+            min="0" 
+            max="1000" 
+            value="0"
+            class="range-input"
+          >
+          <span id="precio-minimo">$0</span> - 
+          <input 
+            type="range" 
+            id="filtro-precio-max" 
+            min="0" 
+            max="1000" 
+            value="1000"
+            class="range-input"
+          >
+          <span id="precio-maximo">$1000</span>
+        </div>
+
+        <!-- Filtro de rating (estrellas) -->
+        <select id="filtro-rating" class="select-filtro">
+          <option value="">Todos los ratings</option>
+          <option value="5">⭐⭐⭐⭐⭐ (5 estrellas)</option>
+          <option value="4">⭐⭐⭐⭐ (4+ estrellas)</option>
+          <option value="3">⭐⭐⭐ (3+ estrellas)</option>
+        </select>
+      </div>
+
+      <!-- ORDENAMIENTO -->
+      <div class="ordenamiento">
+        <label>Ordenar por:</label>
+        <select id="ordenar-por" class="select-filtro">
+          <option value="relevancia">Relevancia</option>
+          <option value="precio-asc">Precio: Menor a Mayor</option>
+          <option value="precio-desc">Precio: Mayor a Menor</option>
+          <option value="popularidad">Más Popular</option>
+          <option value="nuevos">Más Nuevos</option>
+          <option value="rating">Mejor Rating</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN: GRID DE PRODUCTOS -->
+  <main class="main-ecommerce">
+    <div class="contenedor">
+      <!-- Contador de resultados -->
+      <div class="resultado-info">
+        <p id="texto-resultados">Mostrando 0 productos</p>
+      </div>
+
+      <!-- GRID DE PRODUCTOS (se llena con JavaScript) -->
+      <div id="grid-productos" class="grid-productos-ecommerce">
+        <!-- Los productos se insertan aquí -->
+      </div>
+    </div>
+  </main>
+
+  <!-- MODAL DEL PRODUCTO (detalle) -->
+  <div class="modal-producto" id="modal-producto">
+    <div class="contenido-modal-producto">
+      <button class="cerrar-modal-x" id="cerrar-modal-producto">&times;</button>
+      
+      <div class="detalle-producto">
+        <!-- Imagen -->
+        <div class="detalle-imagen">
+          <div id="producto-imagen-grande">📦</div>
+        </div>
+
+        <!-- Información -->
+        <div class="detalle-info">
+          <h2 id="detalle-titulo">Producto</h2>
+          <div class="detalle-rating">
+            <span id="detalle-estrellas">⭐⭐⭐⭐⭐</span>
+            <span id="detalle-reviews">0 reseñas</span>
+          </div>
+          
+          <p id="detalle-descripcion">Descripción</p>
+          
+          <div class="detalle-precio">
+            <span class="precio-original" id="detalle-precio-original">$0</span>
+            <span class="precio-actual" id="detalle-precio-actual">$0</span>
+          </div>
+
+          <!-- Selector de cantidad -->
+          <div class="selector-cantidad">
+            <label>Cantidad:</label>
+            <button id="btn-menos" class="btn-cantidad">-</button>
+            <input type="number" id="cantidad-detalle" value="1" min="1">
+            <button id="btn-mas" class="btn-cantidad">+</button>
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="botones-detalle">
+            <button id="btn-agregar-detalle" class="btn btn-primario">
+              Agregar al Carrito
+            </button>
+            <button id="btn-agregar-wishlist" class="btn btn-secundario">
+              ❤️ Agregar a Favoritos
+            </button>
+          </div>
+
+          <!-- Disponibilidad -->
+          <div id="disponibilidad-info" class="disponibilidad">
+            Stock disponible: <span id="stock-disponible">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL DEL CARRITO -->
+  <div class="modal-carrito" id="modal-carrito">
+    <div class="contenido-modal-carrito">
+      <button class="cerrar-modal-x" id="cerrar-modal-carrito">&times;</button>
+      
+      <h2>🛒 Carrito de Compras</h2>
+      
+      <!-- Tabla de items -->
+      <table class="tabla-carrito-avanzada">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="carrito-items-tabla">
+          <!-- Se llena con JavaScript -->
+        </tbody>
+      </table>
+
+      <!-- Resumen -->
+      <div class="resumen-carrito-avanzado">
+        <div class="fila-resumen">
+          <span>Subtotal:</span>
+          <span id="resumen-subtotal">$0.00</span>
+        </div>
+        <div class="fila-resumen">
+          <span>Descuento:</span>
+          <span id="resumen-descuento">$0.00</span>
+        </div>
+        <div class="fila-resumen">
+          <span>Impuesto (IVA 19%):</span>
+          <span id="resumen-impuesto">$0.00</span>
+        </div>
+        <div class="fila-resumen total">
+          <span>TOTAL:</span>
+          <span id="resumen-total">$0.00</span>
+        </div>
+      </div>
+
+      <!-- Botones -->
+      <div class="botones-carrito-avanzado">
+        <button class="btn btn-secundario" id="vaciar-carrito-btn">
+          Vaciar Carrito
+        </button>
+        <button class="btn btn-primario" id="proceder-pago">
+          Proceder a Pagar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERLAY -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- NOTIFICACIÓN FLOTANTE -->
+  <div id="notificacion" class="notificacion"></div>
+
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
+</body>
+
+</html>

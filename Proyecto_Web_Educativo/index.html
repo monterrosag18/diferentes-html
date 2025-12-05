@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Central - Proyecto Web Educativo</title>
+    <link rel="stylesheet" href="panel-central.css">
+</head>
+<body>
+    <!-- ========== HEADER ========== -->
+    <header class="header-central">
+        <div class="contenedor-header">
+            <div class="logo-central">
+                <h1>🚀 Panel Central</h1>
+                <p>Tu Hub de Aprendizaje Web</p>
+            </div>
+            
+            <!-- BUSCADOR GLOBAL -->
+            <div class="buscador-global">
+                <input 
+                    type="text" 
+                    id="buscador-principal" 
+                    placeholder="🔍 Buscar proyecto, componente, referencia..."
+                    class="input-buscar"
+                >
+                <div class="resultados-busqueda" id="resultados-busqueda"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== NAVEGACIÓN ========== -->
+    <nav class="nav-central">
+        <div class="contenedor">
+            <button class="btn-nav activo" data-seccion="inicio">Inicio</button>
+            <button class="btn-nav" data-seccion="proyectos">Proyectos</button>
+            <button class="btn-nav" data-seccion="referencias">Referencias</button>
+            <button class="btn-nav" data-seccion="componentes">Componentes</button>
+            <button class="btn-nav" data-seccion="documentacion">Documentación</button>
+        </div>
+    </nav>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="contenedor-principal">
+        
+        <!-- ========== SECCIÓN: INICIO ========== -->
+        <section id="inicio" class="seccion activa">
+            <div class="contenedor">
+                <div class="hero">
+                    <h2>Bienvenido al Proyecto Web Educativo</h2>
+                    <p>Todo lo que necesitas para aprender HTML5, CSS3 y JavaScript ES6+ en un solo lugar.</p>
+                    
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="numero">9</span>
+                            <span class="label">Proyectos</span>
+                        </div>
+                        <div class="stat">
+                            <span class="numero">12000+</span>
+                            <span class="label">Líneas Código</span>
+                        </div>
+                        <div class="stat">
+                            <span class="numero">100%</span>
+                            <span class="label">Comentado</span>
+                        </div>
+                        <div class="stat">
+                            <span class="numero">3</span>
+                            <span class="label">Niveles</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ACCESOS RÁPIDOS -->
+                <div class="accesos-rapidos">
+                    <h3>⚡ Acceso Rápido</h3>
+                    <div class="grid-accesos">
+                        <a href="#" class="acceso-rapido" data-tipo="proyecto" data-id="1">
+                            <span class="icono">📁</span>
+                            <span class="titulo">Portfolio Básico</span>
+                            <span class="nivel">⭐ Principiante</span>
+                        </a>
+                        <a href="#" class="acceso-rapido" data-tipo="proyecto" data-id="2">
+                            <span class="icono">🛍️</span>
+                            <span class="titulo">Tienda Online</span>
+                            <span class="nivel">⭐⭐ Intermedio</span>
+                        </a>
+                        <a href="#" class="acceso-rapido" data-tipo="proyecto" data-id="3">
+                            <span class="icono">📝</span>
+                            <span class="titulo">Blog Responsivo</span>
+                            <span class="nivel">⭐⭐ Intermedio</span>
+                        </a>
+                        <a href="#" class="acceso-rapido" data-tipo="proyecto" data-id="4">
+                            <span class="icono">🛒</span>
+                            <span class="titulo">Ecommerce Avanzado</span>
+                            <span class="nivel">⭐⭐⭐ Avanzado</span>
+                        </a>
+                        <a href="#" class="acceso-rapido" data-tipo="proyecto" data-id="9">
+                            <span class="icono">🎯</span>
+                            <span class="titulo">Réplica de Webs</span>
+                            <span class="nivel">⭐⭐ Intermedio</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECCIÓN: PROYECTOS ========== -->
+        <section id="proyectos" class="seccion">
+            <div class="contenedor">
+                <h2>📚 Todos los Proyectos</h2>
+                <p class="subtitulo">Selecciona un proyecto para explorar</p>
+
+                <div class="grid-proyectos">
+                    <!-- PROYECTO 1 -->
+                    <div class="tarjeta-proyecto" data-proyecto="1">
+                        <div class="tarjeta-header nivel-1">
+                            <span class="proyecto-numero">1</span>
+                            <span class="proyecto-nivel">⭐ Principiante</span>
+                        </div>
+                        <div class="tarjeta-body">
+                            <h3>Portfolio Básico</h3>
+                            <p class="descripcion">Portfolio personal con navegación sticky, scroll suave y animaciones CSS.</p>
+                            <ul class="conceptos">
+                                <li>HTML Semántico</li>
+                                <li>Flexbox</li>
+                                <li>Responsive Design</li>
+                                <li>JavaScript Básico</li>
+                            </ul>
+                            <div class="tiempo">⏱️ 2-3 horas</div>
+                            <a href="1_Portfolio_Basico/index.html" class="btn-proyecto">Abrir Proyecto →</a>
+                        </div>
+                    </div>
+
+                    <!-- PROYECTO 2 -->
+                    <div class="tarjeta-proyecto" data-proyecto="2">
+                        <div class="tarjeta-header nivel-2">
+                            <span class="proyecto-numero">2</span>
+                            <span class="proyecto-nivel">⭐⭐ Intermedio</span>
+                        </div>
+                        <div class="tarjeta-body">
+                            <h3>Tienda Online</h3>
+                            <p class="descripcion">Tienda con productos, carrito funcional y modales interactivos.</p>
+                            <ul class="conceptos">
+                                <li>CSS Grid</li>
+                                <li>Modales</li>
+                                <li>Arrays</li>
+                                <li>LocalStorage</li>
+                            </ul>
+                            <div class="tiempo">⏱️ 4-6 horas</div>
+                            <a href="2_Tienda_Online/index.html" class="btn-proyecto">Abrir Proyecto →</a>
+                        </div>
+                    </div>
+
+                    <!-- PROYECTO 3 -->
+                    <div class="tarjeta-proyecto" data-proyecto="3">
+                        <div class="tarjeta-header nivel-2">
+                            <span class="proyecto-numero">3</span>
+                            <span class="proyecto-nivel">⭐⭐ Intermedio</span>
+                        </div>
+                        <div class="tarjeta-body">
+                            <h3>Blog Responsivo</h3>
+                            <p class="descripcion">Blog con sidebar, búsqueda avanzada y sistema de categorías.</p>
+                            <ul class="conceptos">
+                                <li>Grid 2 Columnas</li>
+                                <li>Búsqueda</li>
+                                <li>Filtros</li>
+                                <li>Sets</li>
+                            </ul>
+                            <div class="tiempo">⏱️ 6-8 horas</div>
+                            <a href="3_Blog_Responsivo/index.html" class="btn-proyecto">Abrir Proyecto →</a>
+                        </div>
+                    </div>
+
+                    <!-- PROYECTO 4 -->
+                    <div class="tarjeta-proyecto" data-proyecto="4">
+                        <div class="tarjeta-header nivel-3">
+                            <span class="proyecto-numero">4</span>
+                            <span class="proyecto-nivel">⭐⭐⭐ Avanzado</span>
+                        </div>
+                        <div class="tarjeta-body">
+                            <h3>Ecommerce Avanzado</h3>
+                            <p class="descripcion">Tienda profesional con filtros multi-criterio y sistema de wishlist.</p>
+                            <ul class="conceptos">
+                                <li>Filtros Avanzados</li>
+                                <li>Sorting</li>
+                                <li>Wishlist</li>
+                                <li>Notificaciones</li>
+                            </ul>
+                            <div class="tiempo">⏱️ 8-10 horas</div>
+                            <a href="4_Ecommerce_Avanzado/index.html" class="btn-proyecto">Abrir Proyecto →</a>
+                        </div>
+                    </div>
+
+                    <!-- PROYECTO 5 -->
+                    <div class="tarjeta-proyecto" data-proyecto="5">
+                        <div class="tarjeta-header nivel-3">
+                            <span class="proyecto-numero">5</span>
+                            <span class="proyecto-nivel">⭐⭐⭐ Avanzado</span>
+                        </div>
+                        <div class="tarjeta-body">
+                            <h3>Galería Interactiva</h3>
+                            <p class="descripcion">Galería de imágenes con lightbox, navegación por teclado y filtros.</p>
+                            <ul class="conceptos">
+                                <li>Masonry Layout</li>
+                                <li>Modal Lightbox</li>
+                                <li>Keyboard Shortcuts</li>
+                                <li>Filtros Dinámicos</li>
+                            </ul>
+                            <div class="tiempo">⏱️ 8-10 horas</div>
+                            <a href="5_Galeria_Interactiva/index.html" class="btn-proyecto">Abrir Proyecto →</a>
+                        </div>
+                    </div>
+
+                    <!-- PROYECTO 6 -->
+                    <div class="tarjeta-proyecto" data-proyecto="6">
+                        <div class="tarjeta-header nivel-2">
+                            <span class="proyecto-numero">6</span>
+                            <span class="proyecto-nivel">⭐⭐ Intermedio</span>
+                        </div>
+                        <div class="tarjeta-body">
+                            <h3>Landing Page</h3>
+                            <p class="descripcion">Página de desembarque profesional con navbar sticky y formularios.</p>
+                            <ul class="conceptos">
+                                <li>Navbar Sticky</li>
+                                <li>Hero Section</li>
+                                <li>Validación</li>
+                                <li>Animaciones</li>
+                            </ul>
+                            <div class="tiempo">⏱️ 5-7 horas</div>
+                            <a href="6_Landing_Page/index.html" class="btn-proyecto">Abrir Proyecto →</a>
+                        </div>
+                    </div>
+
+                    <!-- PROYECTO 7 -->
+                    <div class="tarjeta-proyecto" data-proyecto="7">
+                        <div class="tarjeta-header nivel-3">
+                            <span class="proyecto-numero">7</span>
+                            <span class="proyecto-nivel">⭐⭐⭐ Avanzado</span>
+                        </div>
+                        <div class="tarjeta-body">
+                            <h3>Dashboard Admin</h3>
+                            <p class="descripcion">Panel administrativo con sidebar fijo, múltiples secciones y gráficos.</p>
+                            <ul class="conceptos">
+                                <li>Sidebar Fijo</li>
+                                <li>Multi-secciones</li>
+                                <li>Búsqueda</li>
+                                <li>Datos Dinámicos</li>
+                            </ul>
+                            <div class="tiempo">⏱️ 10-12 horas</div>
+                            <a href="7_Dashboard_Admin/index.html" class="btn-proyecto">Abrir Proyecto →</a>
+                        </div>
+                    </div>
+
+                    <!-- PROYECTO 8 -->
+                    <div class="tarjeta-proyecto" data-proyecto="8">
+                        <div class="tarjeta-header nivel-4">
+                            <span class="proyecto-numero">8</span>
+                            <span class="proyecto-nivel">📚 Referencia</span>
+                        </div>
+                        <div class="tarjeta-body">
+                            <h3>Referencia Completa</h3>
+                            <p class="descripcion">Referencia interactiva de HTML, CSS y JavaScript con ejemplos.</p>
+                            <ul class="conceptos">
+                                <li>30+ Etiquetas HTML</li>
+                                <li>50+ Propiedades CSS</li>
+                                <li>25+ Conceptos JS</li>
+                                <li>Ejemplos Visuales</li>
+                            </ul>
+                            <div class="tiempo">⏱️ Consulta</div>
+                            <a href="8_Referencia_Completa/index.html" class="btn-proyecto">Abrir Referencia →</a>
+                        </div>
+                    </div>
+
+                    <!-- PROYECTO 9 -->
+                    <div class="tarjeta-proyecto" data-proyecto="9">
+                        <div class="tarjeta-header nivel-2">
+                            <span class="proyecto-numero">9</span>
+                            <span class="proyecto-nivel">⭐⭐ Intermedio</span>
+                        </div>
+                        <div class="tarjeta-body">
+                            <h3>🎯 Réplica de Webs</h3>
+                            <p class="descripcion">Aprende a replicar cualquier web paso a paso. Prepárate para tus evaluaciones.</p>
+                            <ul class="conceptos">
+                                <li>5 Pasos Sistemáticos</li>
+                                <li>Ejemplos Prácticos</li>
+                                <li>Checklist de Verificación</li>
+                                <li>3 Ejercicios Reales</li>
+                            </ul>
+                            <div class="tiempo">⏱️ 5-7 horas</div>
+                            <a href="9_Replica_Webs/index.html" class="btn-proyecto">Abrir Proyecto →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECCIÓN: REFERENCIAS ========== -->
+        <section id="referencias" class="seccion">
+            <div class="contenedor">
+                <h2>📖 Referencias Interactivas</h2>
+                <p class="subtitulo">Consulta rápida de conceptos, etiquetas y propiedades</p>
+
+                <div class="grid-referencias">
+                    <a href="8_Referencia_Completa/html_referencia.html" class="tarjeta-referencia">
+                        <div class="ref-header html">
+                            <h3>🏗️ HTML5</h3>
+                        </div>
+                        <div class="ref-body">
+                            <p>30+ etiquetas semánticas con ejemplos visuales</p>
+                            <ul>
+                                <li>Estructura HTML</li>
+                                <li>Formularios</li>
+                                <li>Multimedia</li>
+                                <li>Semántica</li>
+                            </ul>
+                        </div>
+                    </a>
+
+                    <a href="8_Referencia_Completa/css_referencia.html" class="tarjeta-referencia">
+                        <div class="ref-header css">
+                            <h3>🎨 CSS3</h3>
+                        </div>
+                        <div class="ref-body">
+                            <p>50+ propiedades con ejemplos interactivos</p>
+                            <ul>
+                                <li>Flexbox</li>
+                                <li>Grid</li>
+                                <li>Animaciones</li>
+                                <li>Responsive</li>
+                            </ul>
+                        </div>
+                    </a>
+
+                    <a href="8_Referencia_Completa/javascript_referencia.html" class="tarjeta-referencia">
+                        <div class="ref-header js">
+                            <h3>⚙️ JavaScript</h3>
+                        </div>
+                        <div class="ref-body">
+                            <p>25+ conceptos con ejemplos ejecutables</p>
+                            <ul>
+                                <li>DOM Manipulation</li>
+                                <li>Arrays</li>
+                                <li>ES6+ Features</li>
+                                <li>Async/Await</li>
+                            </ul>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECCIÓN: COMPONENTES ========== -->
+        <section id="componentes" class="seccion">
+            <div class="contenedor">
+                <h2>🧩 Componentes Reutilizables</h2>
+                <p class="subtitulo">Código probado que puedes copiar y usar en tus proyectos</p>
+
+                <div class="tabla-componentes">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Componente</th>
+                                <th>Ubicación</th>
+                                <th>Dificultad</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Sistema de Filtrado</strong></td>
+                                <td>4_Ecommerce_Avanzado</td>
+                                <td><span class="badge-nivel">⭐⭐</span></td>
+                                <td><a href="4_Ecommerce_Avanzado/index.html" class="btn-link">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Modal Lightbox</strong></td>
+                                <td>5_Galeria_Interactiva</td>
+                                <td><span class="badge-nivel">⭐⭐</span></td>
+                                <td><a href="5_Galeria_Interactiva/index.html" class="btn-link">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Validación Formulario</strong></td>
+                                <td>6_Landing_Page</td>
+                                <td><span class="badge-nivel">⭐</span></td>
+                                <td><a href="6_Landing_Page/index.html" class="btn-link">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Navegación Pestañas</strong></td>
+                                <td>7_Dashboard_Admin</td>
+                                <td><span class="badge-nivel">⭐⭐</span></td>
+                                <td><a href="7_Dashboard_Admin/index.html" class="btn-link">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sistema Carrito</strong></td>
+                                <td>2_Tienda_Online</td>
+                                <td><span class="badge-nivel">⭐⭐⭐</span></td>
+                                <td><a href="2_Tienda_Online/index.html" class="btn-link">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scroll Suave</strong></td>
+                                <td>1_Portfolio_Basico</td>
+                                <td><span class="badge-nivel">⭐</span></td>
+                                <td><a href="1_Portfolio_Basico/index.html" class="btn-link">Ver</a></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Búsqueda Avanzada</strong></td>
+                                <td>3_Blog_Responsivo</td>
+                                <td><span class="badge-nivel">⭐⭐</span></td>
+                                <td><a href="3_Blog_Responsivo/index.html" class="btn-link">Ver</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== SECCIÓN: DOCUMENTACIÓN ========== -->
+        <section id="documentacion" class="seccion">
+            <div class="contenedor">
+                <h2>📚 Documentación</h2>
+                <p class="subtitulo">Guías y tutoriales para aprender</p>
+
+                <div class="grid-documentacion">
+                    <a href="#" class="card-doc" data-archivo="00_LEE_ESTO_PRIMERO.txt">
+                        <span class="icono">📌</span>
+                        <h3>Comienza Aquí</h3>
+                        <p>Instrucciones iniciales</p>
+                    </a>
+                    <a href="#" class="card-doc" data-archivo="INICIO_RAPIDO.md">
+                        <span class="icono">⚡</span>
+                        <h3>Inicio Rápido</h3>
+                        <p>Quick start en 5 pasos</p>
+                    </a>
+                    <a href="#" class="card-doc" data-archivo="README.md">
+                        <span class="icono">📖</span>
+                        <h3>Guía Completa</h3>
+                        <p>Referencia detallada</p>
+                    </a>
+                    <a href="#" class="card-doc" data-archivo="COMPONENTES_REUTILIZABLES.md">
+                        <span class="icono">🧩</span>
+                        <h3>Componentes</h3>
+                        <p>Qué copiar de dónde</p>
+                    </a>
+                    <a href="#" class="card-doc" data-archivo="GITHUB_GUIA.md">
+                        <span class="icono">💾</span>
+                        <h3>Guía GitHub</h3>
+                        <p>Cómo subir a GitHub</p>
+                    </a>
+                    <a href="#" class="card-doc" data-archivo="ESTADO_FINAL.md">
+                        <span class="icono">✅</span>
+                        <h3>Estado Final</h3>
+                        <p>Resumen de todo</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer-central">
+        <div class="contenedor">
+            <p>&copy; 2025 Proyecto Web Educativo - 100% Comentado en Español</p>
+            <div class="footer-links">
+                <a href="#">GitHub</a>
+                <a href="#">Documentación</a>
+                <a href="#">Contacto</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script src="panel-central.js"></script>
+</body>
+</html>

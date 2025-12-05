@@ -1,0 +1,654 @@
+/* ========== COLORES Y VARIABLES ========== */
+:root {
+    --color-primario: #0066cc;
+    --color-secundario: #ff6600;
+    --color-tercero: #00aa66;
+    --color-fondo: #f8f9fa;
+    --color-texto: #333333;
+    --color-gris-claro: #e9ecef;
+    --color-gris-medio: #dee2e6;
+    --color-blanco: #ffffff;
+    --color-sombra: rgba(0, 0, 0, 0.1);
+    
+    --padding-seccion: 60px 0;
+    --max-width: 1200px;
+}
+
+/* ========== RESET Y ESTILOS GENERALES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+}
+
+.contenedor {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ========== HEADER ========== */
+.header-replica {
+    background: linear-gradient(135deg, var(--color-primario) 0%, #0052a3 100%);
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px var(--color-sombra);
+}
+
+.header-replica h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.header-replica p {
+    font-size: 18px;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+/* ========== NAVEGACIÓN ========== */
+.nav-replica {
+    background: white;
+    box-shadow: 0 2px 8px var(--color-sombra);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-replica .contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+
+.btn-nav {
+    flex: 1;
+    max-width: 200px;
+    padding: 15px 20px;
+    border: none;
+    background: white;
+    color: var(--color-texto);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.btn-nav:hover {
+    background-color: var(--color-gris-claro);
+    color: var(--color-primario);
+}
+
+.btn-nav.activo {
+    background-color: var(--color-primario);
+    color: white;
+    border-bottom-color: var(--color-primario);
+}
+
+/* ========== CONTENEDOR PRINCIPAL ========== */
+.contenedor-principal {
+    background: white;
+    margin-top: 20px;
+}
+
+/* ========== SECCIONES ========== */
+.seccion {
+    display: none;
+    padding: var(--padding-seccion);
+}
+
+.seccion.activa {
+    display: block;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.seccion h2 {
+    font-size: 36px;
+    color: var(--color-primario);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.seccion .subtitulo {
+    text-align: center;
+    font-size: 18px;
+    color: var(--color-gris-medio);
+    margin-bottom: 40px;
+}
+
+/* ========== TARJETAS DE PASO ========== */
+.tarjeta-paso {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 40px;
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 5px solid var(--color-primario);
+}
+
+.numero-paso {
+    font-size: 32px;
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+}
+
+.contenido-paso {
+    flex: 1;
+}
+
+.contenido-paso h3 {
+    color: var(--color-primario);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.contenido-paso .descripcion {
+    font-size: 16px;
+    color: var(--color-gris-medio);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.contenido-paso h4 {
+    color: var(--color-texto);
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.lista-pasos {
+    list-style: none;
+    margin-left: 0;
+}
+
+.lista-pasos li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.lista-pasos li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-tercero);
+    font-weight: bold;
+}
+
+/* ========== EJEMPLO VISUAL ========== */
+.ejemplo-visual {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+    overflow-x: auto;
+}
+
+.codigo-simulado {
+    color: var(--color-primario);
+    line-height: 1.8;
+}
+
+/* ========== BLOQUES DE CÓDIGO ========== */
+.codigo-bloque {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', 'Monaco', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
+/* ========== GRID DE EJEMPLOS ========== */
+.ejemplos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.ejemplo-grid {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid var(--color-gris-claro);
+}
+
+.ejemplo-grid h5 {
+    margin-bottom: 15px;
+    color: var(--color-primario);
+}
+
+.grid-visual,
+.grid-visual-2 {
+    display: grid;
+    gap: 10px;
+}
+
+.grid-visual {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-visual-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.item-visual {
+    background: var(--color-primario);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* ========== EJEMPLOS DE COMPONENTES ========== */
+.ejemplo-componente {
+    margin-bottom: 50px;
+}
+
+.ejemplo-componente h3 {
+    color: var(--color-primario);
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.preview-componente {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid var(--color-gris-claro);
+    margin-bottom: 20px;
+}
+
+/* ========== HEADER EJEMPLO ========== */
+.header-ejemplo {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px 0;
+}
+
+.header-contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+.nav-ejemplo {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-ejemplo a {
+    text-decoration: none;
+    color: var(--color-texto);
+    transition: color 0.3s;
+    font-weight: 500;
+}
+
+.nav-ejemplo a:hover {
+    color: var(--color-primario);
+}
+
+.btn-contacto {
+    padding: 10px 20px;
+    background: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.btn-contacto:hover {
+    background: var(--color-secundario);
+    transform: scale(1.05);
+}
+
+/* ========== TARJETAS GRID ========== */
+.tarjetas-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tarjeta-ejemplo {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.tarjeta-ejemplo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-ejemplo h4 {
+    color: var(--color-primario);
+    margin-bottom: 10px;
+}
+
+.tarjeta-ejemplo p {
+    color: var(--color-gris-medio);
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.btn-tarjeta {
+    width: 100%;
+    padding: 10px;
+    background: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 600;
+}
+
+.btn-tarjeta:hover {
+    background: var(--color-secundario);
+}
+
+/* ========== CÓDIGO DESPLEGABLE ========== */
+.codigo-desplegable {
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.codigo-desplegable summary {
+    padding: 12px;
+    background: var(--color-gris-claro);
+    border-radius: 5px;
+    font-weight: 600;
+    color: var(--color-primario);
+    transition: all 0.3s;
+    user-select: none;
+}
+
+.codigo-desplegable summary:hover {
+    background: var(--color-gris-medio);
+}
+
+.codigo-desplegable[open] summary {
+    background: var(--color-primario);
+    color: white;
+}
+
+/* ========== CHECKLIST ========== */
+.checklist-container {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.checklist-container h3 {
+    color: var(--color-primario);
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.checklist-container h3:first-child {
+    margin-top: 0;
+}
+
+.checklist-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.checkbox-item:hover {
+    background: var(--color-gris-claro);
+}
+
+.checkbox-item input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    cursor: pointer;
+    accent-color: var(--color-primario);
+}
+
+.checkbox-item span {
+    flex: 1;
+}
+
+.checkbox-item input[type="checkbox"]:checked + span {
+    color: var(--color-tercero);
+    text-decoration: line-through;
+}
+
+/* ========== EJERCICIOS ========== */
+.ejercicios {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.tarjeta-ejercicio {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid var(--color-gris-claro);
+    transition: all 0.3s;
+}
+
+.tarjeta-ejercicio:hover {
+    border-color: var(--color-primario);
+    box-shadow: 0 8px 16px rgba(0, 102, 204, 0.15);
+    transform: translateY(-5px);
+}
+
+.tarjeta-ejercicio h3 {
+    color: var(--color-primario);
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.tarjeta-ejercicio p {
+    margin-bottom: 10px;
+    font-size: 15px;
+}
+
+.tarjeta-ejercicio ul {
+    list-style: none;
+    margin-bottom: 15px;
+}
+
+.tarjeta-ejercicio li {
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.tarjeta-ejercicio li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-tercero);
+    font-weight: bold;
+}
+
+.tiempo {
+    color: var(--color-tercero);
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+.dificultad {
+    color: var(--color-secundario);
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+/* ========== FOOTER ========== */
+.footer-replica {
+    background: linear-gradient(135deg, var(--color-primario) 0%, #0052a3 100%);
+    color: white;
+    padding: 30px 0;
+    margin-top: 60px;
+}
+
+.footer-replica .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-replica p {
+    margin: 0;
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.footer-links a:hover {
+    opacity: 0.8;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+    .header-replica h1 {
+        font-size: 28px;
+    }
+
+    .nav-replica .contenedor {
+        flex-wrap: wrap;
+    }
+
+    .btn-nav {
+        max-width: none;
+        flex: 0 1 50%;
+    }
+
+    .tarjeta-paso {
+        flex-direction: column;
+    }
+
+    .ejemplos-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tarjetas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ejercicios {
+        grid-template-columns: 1fr;
+    }
+
+    .header-contenedor {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .nav-ejemplo {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .footer-replica .contenedor {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-replica {
+        padding: 30px 0;
+    }
+
+    .header-replica h1 {
+        font-size: 24px;
+    }
+
+    .header-replica p {
+        font-size: 16px;
+    }
+
+    .btn-nav {
+        flex: 0 1 100%;
+        max-width: none;
+    }
+
+    .tarjetas-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .seccion h2 {
+        font-size: 24px;
+    }
+
+    .codigo-bloque {
+        font-size: 12px;
+    }
+
+    .tarjeta-ejercicio {
+        padding: 20px;
+    }
+}

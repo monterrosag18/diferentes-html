@@ -1,0 +1,161 @@
+<!-- 
+  ===============================
+  ARCHIVO: index.html
+  CARPETA: 3_Blog_Responsivo
+  PROPÓSITO: Blog moderno con sidebar, artículos y comentarios
+  
+  CARACTERÍSTICAS:
+  - Sidebar con información y búsqueda
+  - Artículos con etiquetas
+  - Sistema de comentarios
+  - Búsqueda de artículos
+  - Categorías
+  ===============================
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="description" content="Blog de desarrollo web con tutoriales, tips y novedades">
+  <title>DevBlog - Blog de Desarrollo Web</title>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- 
+    Header del blog
+    Contiene logo y descripción del blog
+  -->
+  <header class="header-blog">
+    <div class="contenedor-header">
+      <div class="logo-blog">
+        <h1>💻 DevBlog</h1>
+        <p>Tutoriales y Tips de Desarrollo Web</p>
+      </div>
+      
+      <!-- 
+        Buscador
+        Permite buscar artículos por título
+      -->
+      <div class="buscador">
+        <input type="text" id="input-buscar" placeholder="Buscar artículos...">
+        <button id="btn-buscar">Buscar</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navegación -->
+  <nav class="nav-blog">
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#articulos">Artículos</a></li>
+      <li><a href="#categorias">Categorías</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenido principal con layout de dos columnas -->
+  <div class="contenedor-principal">
+    <!-- 
+      Main: Artículos del blog
+      En la izquierda (columna principal)
+    -->
+    <main class="main-blog">
+      <section id="articulos" class="seccion-articulos">
+        <h2>Últimos Artículos</h2>
+        
+        <!-- 
+          div#listado-articulos: Aquí van los artículos
+          Se llenan dinámicamente con JavaScript
+        -->
+        <div id="listado-articulos" class="listado-articulos">
+          <!-- Los artículos se insertan aquí -->
+        </div>
+      </section>
+    </main>
+
+    <!-- 
+      Sidebar: Información adicional
+      En la derecha (columna secundaria)
+    -->
+    <aside class="sidebar-blog">
+      <!-- 
+        Sección: Acerca del Blog
+      -->
+      <div class="widget">
+        <h3>Acerca del Blog</h3>
+        <p>DevBlog es una plataforma dedicada a compartir conocimiento sobre desarrollo web moderno. Aquí encontrarás tutoriales, tips y mejores prácticas.</p>
+      </div>
+
+      <!-- 
+        Sección: Artículos Populares
+      -->
+      <div class="widget">
+        <h3>Artículos Populares</h3>
+        <ul id="populares" class="lista-populares">
+          <!-- Se llenan con JavaScript -->
+        </ul>
+      </div>
+
+      <!-- 
+        Sección: Categorías
+      -->
+      <div class="widget">
+        <h3 id="categorias">Categorías</h3>
+        <ul id="lista-categorias" class="lista-categorias">
+          <!-- Se llenan con JavaScript -->
+        </ul>
+      </div>
+
+      <!-- 
+        Sección: Suscripción
+      -->
+      <div class="widget widget-suscripcion">
+        <h3>Suscribirse</h3>
+        <form id="form-suscripcion">
+          <input type="email" placeholder="tu@email.com" required>
+          <button type="submit" class="btn btn-primario">Suscribirse</button>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <!-- Footer -->
+  <footer id="contacto" class="footer-blog">
+    <div class="contenedor">
+      <div class="footer-content">
+        <div class="footer-seccion">
+          <h4>DevBlog</h4>
+          <p>Blog especializado en desarrollo web</p>
+        </div>
+        <div class="footer-seccion">
+          <h4>Enlaces Rápidos</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#articulos">Blog</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="footer-seccion">
+          <h4>Contacto</h4>
+          <p>Email: info@devblog.com</p>
+          <p>Teléfono: +57 300 123 4567</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2024 DevBlog. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>

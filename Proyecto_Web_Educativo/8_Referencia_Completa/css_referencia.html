@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referencia CSS3 - Propiedades y Ejemplos</title>
+    <link rel="stylesheet" href="estilos_referencia.css">
+    
+    <style>
+        /* Este bloque style aquí es SOLO para estos ejemplos */
+        /* En un proyecto real, colocarías esto en un archivo .css externo */
+        
+        /* ========== COLORES ========== */
+        .color-ejemplo {
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            color: white;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .color-rojo { background-color: #FF6B6B; /* Rojo */ }
+        .color-azul { background-color: #667eea; /* Azul */ }
+        .color-verde { background-color: #51CF66; /* Verde */ }
+        .color-naranja { background-color: #FFA94D; /* Naranja */ }
+        .color-purpura { background-color: #9775FA; /* Púrpura */ }
+        .color-cian { background-color: #22B8CF; /* Cian */ }
+        
+        /* ========== BORDES ========== */
+        .borde-ejemplo {
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .borde-solido { 
+            border: 3px solid #FF6B6B; 
+            padding: 15px;
+        }
+        
+        .borde-punteado { 
+            border: 3px dotted #667eea; 
+            padding: 15px;
+        }
+        
+        .borde-rayado { 
+            border: 3px dashed #51CF66; 
+            padding: 15px;
+        }
+        
+        .borde-doble { 
+            border: 5px double #9775FA; 
+            padding: 15px;
+        }
+        
+        .borde-individual {
+            border-top: 4px solid #FF6B6B;
+            border-right: 4px solid #667eea;
+            border-bottom: 4px solid #51CF66;
+            border-left: 4px solid #FFA94D;
+            padding: 15px;
+        }
+        
+        .borde-redondeado {
+            border: 3px solid #667eea;
+            border-radius: 15px;
+            padding: 15px;
+        }
+        
+        .borde-circulo {
+            width: 100px;
+            height: 100px;
+            border: 3px solid #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        
+        /* ========== SOMBRAS ========== */
+        .sombra-ejemplo {
+            padding: 15px;
+            margin: 10px 0;
+            background-color: white;
+        }
+        
+        .sombra-leve {
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+        }
+        
+        .sombra-media {
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+        }
+        
+        .sombra-fuerte {
+            box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+            padding: 15px;
+        }
+        
+        .sombra-multiple {
+            box-shadow: 
+                0 0 10px rgba(102, 126, 234, 0.5),
+                0 0 20px rgba(100, 181, 246, 0.3);
+            padding: 15px;
+        }
+        
+        .sombra-texto {
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            margin: 10px 0;
+        }
+        
+        /* ========== TIPOGRAFÍA ========== */
+        .tipografia-ejemplo {
+            padding: 15px;
+            margin: 10px 0;
+            background-color: #f9f9f9;
+        }
+        
+        .fuente-grande {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        
+        .fuente-mediana {
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .fuente-pequena {
+            font-size: 12px;
+            font-weight: 400;
+        }
+        
+        .fuente-decorativa {
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            font-style: italic;
+        }
+        
+        .fuente-monoespaciada {
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            background-color: #2c3e50;
+            color: #00FF00;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        
+        .texto-alineado-izquierda {
+            text-align: left;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        
+        .texto-alineado-centro {
+            text-align: center;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        
+        .texto-alineado-derecha {
+            text-align: right;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        
+        .texto-justificado {
+            text-align: justify;
+            padding: 10px;
+            background-color: #f0f0f0;
+        }
+        
+        /* ========== ESPACIADO (MARGIN Y PADDING) ========== */
+        .espaciado-ejemplo {
+            background-color: #667eea;
+            color: white;
+            margin: 20px 0;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        
+        .padding-grande {
+            background-color: #51CF66;
+            color: white;
+            padding: 40px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        
+        .padding-pequeno {
+            background-color: #FFA94D;
+            color: white;
+            padding: 5px;
+            margin: 10px 0;
+            border-radius: 8px;
+        }
+        
+        /* ========== DISPLAYS Y LAYOUTS ========== */
+        .display-flex {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        
+        .flex-item {
+            flex: 1;
+            background-color: #667eea;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .display-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 10px 0;
+        }
+        
+        .grid-item {
+            background-color: #51CF66;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+        }
+        
+        .display-inline-block {
+            display: inline-block;
+            background-color: #FFA94D;
+            color: white;
+            padding: 15px 20px;
+            margin: 5px;
+            border-radius: 8px;
+        }
+        
+        /* ========== TRANSFORMACIONES Y TRANSICIONES ========== */
+        .transformacion {
+            background-color: #667eea;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .transformacion:hover {
+            transform: scale(1.1) rotate(2deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .animacion-slide {
+            background-color: #51CF66;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            animation: deslizar 2s infinite;
+        }
+        
+        @keyframes deslizar {
+            0% { transform: translateX(0); }
+            50% { transform: translateX(20px); }
+            100% { transform: translateX(0); }
+        }
+        
+        /* ========== OPACIDAD Y VISIBILIDAD ========== */
+        .opacidad-1 {
+            background-color: #667eea;
+            color: white;
+            padding: 15px;
+            opacity: 1;
+            margin: 5px 0;
+        }
+        
+        .opacidad-075 {
+            background-color: #667eea;
+            color: white;
+            padding: 15px;
+            opacity: 0.75;
+            margin: 5px 0;
+        }
+        
+        .opacidad-05 {
+            background-color: #667eea;
+            color: white;
+            padding: 15px;
+            opacity: 0.5;
+            margin: 5px 0;
+        }
+        
+        .opacidad-025 {
+            background-color: #667eea;
+            color: white;
+            padding: 15px;
+            opacity: 0.25;
+            margin: 5px 0;
+        }
+        
+        /* ========== POSICIONAMIENTO ========== */
+        .posicionamiento-contenedor {
+            position: relative;
+            background-color: #f0f0f0;
+            height: 200px;
+            margin: 10px 0;
+            border: 2px dashed #667eea;
+        }
+        
+        .posicionamiento-absoluto {
+            position: absolute;
+            background-color: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            top: 10px;
+            right: 10px;
+        }
+        
+        /* ========== MEDIA QUERIES (RESPONSIVE) ========== */
+        .responsive-demo {
+            background-color: #667eea;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .responsive-demo {
+                background-color: #51CF66;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .responsive-demo {
+                background-color: #FFA94D;
+                font-size: 12px;
+            }
+        }
+        
+        /* ========== GRADIENTES ========== */
+        .gradiente-lineal {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .gradiente-radial {
+            background: radial-gradient(circle, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 10px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-principal">
+        <h1>🎨 Referencia Completa CSS3</h1>
+        <p class="subtitulo">Propiedades CSS con ejemplos visuales y código</p>
+    </header>
+
+    <nav class="nav-referencia">
+        <a href="#colores">Colores</a>
+        <a href="#bordes">Bordes</a>
+        <a href="#sombras">Sombras</a>
+        <a href="#tipografia">Tipografía</a>
+        <a href="#espaciado">Espaciado</a>
+        <a href="#layout">Layout</a>
+        <a href="#transformaciones">Transformaciones</a>
+        <a href="#responsive">Responsive</a>
+    </nav>
+
+    <main class="contenedor-referencia">
+
+        <!-- ====== COLORES ====== -->
+        <section id="colores" class="seccion-referencia">
+            <h2>1️⃣ COLORES</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Códigos de Color</h3>
+                
+                <div class="color-ejemplo color-rojo">background-color: #FF6B6B (Hexadecimal - Rojo)</div>
+                <div class="color-ejemplo color-azul">background-color: #667eea (Hexadecimal - Azul)</div>
+                <div class="color-ejemplo color-verde">background-color: #51CF66 (Hexadecimal - Verde)</div>
+                <div class="color-ejemplo color-naranja">background-color: #FFA94D (Hexadecimal - Naranja)</div>
+                <div class="color-ejemplo color-purpura">background-color: #9775FA (Hexadecimal - Púrpura)</div>
+                <div class="color-ejemplo color-cian">background-color: #22B8CF (Hexadecimal - Cian)</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Formato hexadecimal (más común) */
+background-color: #FF6B6B;
+
+/* Formato RGB */
+background-color: rgb(255, 107, 107);
+
+/* Formato RGBA (con transparencia) */
+background-color: rgba(255, 107, 107, 0.8);
+
+/* Colores nombrados */
+background-color: red;
+background-color: blue;
+
+/* Propiedades de color */
+color: #333; /* Color del texto */
+border-color: #667eea; /* Color del borde */
+background-color: #f5f5f5; /* Color de fondo */</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== BORDES ====== -->
+        <section id="bordes" class="seccion-referencia">
+            <h2>2️⃣ BORDES</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Estilos de Borde</h3>
+                
+                <div class="borde-solido">border: 3px solid #FF6B6B;</div>
+                <div class="borde-punteado">border: 3px dotted #667eea;</div>
+                <div class="borde-rayado">border: 3px dashed #51CF66;</div>
+                <div class="borde-doble">border: 5px double #9775FA;</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Borde completo */
+border: 3px solid #FF6B6B;
+/* Formato: grosor estilo color */
+
+/* Bordes individuales */
+border-top: 4px solid #FF6B6B;
+border-right: 4px solid #667eea;
+border-bottom: 4px solid #51CF66;
+border-left: 4px solid #FFA94D;
+
+/* Estilos disponibles */
+border-style: solid;    /* Línea continua */
+border-style: dotted;   /* Puntos */
+border-style: dashed;   /* Rayas */
+border-style: double;   /* Doble línea */
+border-style: groove;   /* Relieve */
+
+/* Grosor */
+border-width: 1px;   /* Muy delgado */
+border-width: 3px;   /* Normal */
+border-width: 5px;   /* Grueso */
+
+/* Color */
+border-color: #667eea;</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Bordes Redondeados</h3>
+                
+                <div class="borde-redondeado">border-radius: 15px;</div>
+                <div class="borde-circulo">border-radius: 50%</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Bordes ligeramente redondeados */
+border-radius: 8px;
+
+/* Bordes más redondeados */
+border-radius: 15px;
+
+/* Círculo perfecto */
+border-radius: 50%;
+
+/* Esquinas individuales */
+border-top-left-radius: 20px;
+border-top-right-radius: 10px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 10px;</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== SOMBRAS ====== -->
+        <section id="sombras" class="seccion-referencia">
+            <h2>3️⃣ SOMBRAS</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Sombras de Caja (box-shadow)</h3>
+                
+                <div class="sombra-leve">Sombra leve</div>
+                <div class="sombra-media">Sombra media</div>
+                <div class="sombra-fuerte">Sombra fuerte</div>
+                <div class="sombra-multiple">Sombra múltiple (efecto glow)</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Sombra básica */
+box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+/* Formato: offsetX offsetY blur spread color */
+
+/* Sombra más fuerte */
+box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.3);
+
+/* Múltiples sombras */
+box-shadow: 
+    0 0 10px rgba(102, 126, 234, 0.5),
+    0 0 20px rgba(100, 181, 246, 0.3);
+
+/* Sin desplazamiento (sombra redonda) */
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Sombra de Texto (text-shadow)</h3>
+                
+                <div class="sombra-texto">Texto con sombra</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Sombra de texto */
+text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+/* Formato: offsetX offsetY blur color */
+
+/* Sombra múltiple (efecto 3D) */
+text-shadow: 
+    1px 1px 0 #000,
+    2px 2px 0 #000,
+    3px 3px 0 #000;</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== TIPOGRAFÍA ====== -->
+        <section id="tipografia" class="seccion-referencia">
+            <h2>4️⃣ TIPOGRAFÍA</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Tamaños y Pesos de Fuente</h3>
+                
+                <div class="fuente-grande">Fuente Grande (32px, bold)</div>
+                <div class="fuente-mediana">Fuente Mediana (18px, 600)</div>
+                <div class="fuente-pequena">Fuente Pequeña (12px, 400)</div>
+                <div class="fuente-decorativa">Fuente Decorativa (Georgia, itálica)</div>
+                <div class="fuente-monoespaciada">const saludo = "Hola Mundo";</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Tamaño de fuente */
+font-size: 16px;    /* En píxeles */
+font-size: 1.5em;   /* Relativo al padre */
+font-size: 1rem;    /* Relativo a la raíz */
+
+/* Peso de fuente */
+font-weight: 400;    /* Normal */
+font-weight: 600;    /* Semi-bold */
+font-weight: 700;    /* Bold */
+font-weight: bold;   /* O simplemente: bold */
+
+/* Familia de fuente */
+font-family: 'Arial', sans-serif;
+font-family: 'Georgia', serif;
+font-family: 'Courier New', monospace;
+
+/* Estilo */
+font-style: normal;
+font-style: italic;
+font-style: oblique;
+
+/* Altura de línea */
+line-height: 1.5;    /* 1.5 veces el tamaño de fuente */
+line-height: 24px;</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Alineación de Texto</h3>
+                
+                <div class="texto-alineado-izquierda">Texto alineado a la izquierda (text-align: left)</div>
+                <div class="texto-alineado-centro">Texto alineado al centro (text-align: center)</div>
+                <div class="texto-alineado-derecha">Texto alineado a la derecha (text-align: right)</div>
+                <div class="texto-justificado">Texto justificado (text-align: justify) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Alineación horizontal */
+text-align: left;       /* Izquierda (por defecto) */
+text-align: center;     /* Centro */
+text-align: right;      /* Derecha */
+text-align: justify;    /* Justificado */
+
+/* Decoración */
+text-decoration: underline;    /* Subrayado */
+text-decoration: line-through; /* Tachado */
+text-decoration: overline;     /* Línea arriba */
+
+/* Transformación */
+text-transform: uppercase;   /* MAYÚSCULAS */
+text-transform: lowercase;   /* minúsculas */
+text-transform: capitalize;  /* Primer Carácter Mayúscula */
+
+/* Espaciado de letras */
+letter-spacing: 2px;  /* Espacio entre letras */
+word-spacing: 5px;    /* Espacio entre palabras */</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== ESPACIADO ====== -->
+        <section id="espaciado" class="seccion-referencia">
+            <h2>5️⃣ ESPACIADO (MARGIN Y PADDING)</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Padding vs Margin</h3>
+                
+                <div class="espaciado-ejemplo">
+                    Esto tiene margin: 20px 0 y padding: 30px
+                </div>
+                
+                <div class="padding-grande">Mucho padding (40px) - espacio interior</div>
+                <div class="padding-pequeno">Poco padding (5px) - espacio interior mínimo</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* PADDING = Espacio DENTRO de la caja (interior) */
+padding: 20px;                    /* Todos los lados */
+padding: 10px 20px;               /* Arriba/Abajo 10px, Izq/Der 20px */
+padding: 10px 20px 30px 40px;     /* Top Right Bottom Left */
+
+padding-top: 10px;
+padding-right: 20px;
+padding-bottom: 30px;
+padding-left: 40px;
+
+/* MARGIN = Espacio FUERA de la caja (exterior) */
+margin: 20px;                     /* Todos los lados */
+margin: 10px 20px;                /* Arriba/Abajo 10px, Izq/Der 20px */
+margin: 10px 20px 30px 40px;      /* Top Right Bottom Left */
+
+margin-top: 10px;
+margin-right: 20px;
+margin-bottom: 30px;
+margin-left: 40px;
+
+/* Centrar horizontalmente */
+margin: 0 auto;  /* Margin auto en izquierda/derecha */</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== LAYOUT ====== -->
+        <section id="layout" class="seccion-referencia">
+            <h2>6️⃣ LAYOUT (FLEXBOX Y GRID)</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Flexbox</h3>
+                
+                <div class="display-flex">
+                    <div class="flex-item">Item 1</div>
+                    <div class="flex-item">Item 2</div>
+                    <div class="flex-item">Item 3</div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Contenedor flex */
+.contenedor {
+    display: flex;
+    gap: 10px;              /* Espacio entre elementos */
+    justify-content: space-between;  /* Alineación horizontal */
+    align-items: center;            /* Alineación vertical */
+}
+
+/* Valores de justify-content */
+justify-content: flex-start;      /* Al inicio */
+justify-content: center;          /* Al centro */
+justify-content: flex-end;        /* Al final */
+justify-content: space-between;   /* Espacio entre */
+justify-content: space-around;    /* Espacio alrededor */
+
+/* Valores de align-items */
+align-items: flex-start;  /* Arriba */
+align-items: center;      /* Centro */
+align-items: flex-end;    /* Abajo */
+align-items: stretch;     /* Estirado */
+
+/* Items dentro de flex */
+flex: 1;  /* Todos ocupan espacio igual */</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>CSS Grid</h3>
+                
+                <div class="display-grid">
+                    <div class="grid-item">Celda 1</div>
+                    <div class="grid-item">Celda 2</div>
+                    <div class="grid-item">Celda 3</div>
+                    <div class="grid-item">Celda 4</div>
+                    <div class="grid-item">Celda 5</div>
+                    <div class="grid-item">Celda 6</div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Contenedor grid */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 columnas iguales */
+    gap: 15px;  /* Espacio entre celdas */
+}
+
+/* Diferentes configuraciones */
+grid-template-columns: 200px 1fr 200px;  /* Fijo-Flexible-Fijo */
+grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));  /* Responsivo */
+grid-template-columns: 1fr 2fr 1fr;      /* Proporción 1:2:1 */
+
+/* Grid de filas */
+grid-template-rows: 100px 200px 100px;
+
+/* Alineación en grid */
+justify-items: center;   /* Alineación horizontal */
+align-items: center;     /* Alineación vertical */</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Display Inline-Block</h3>
+                
+                <div>
+                    <span class="display-inline-block">Bloque 1</span>
+                    <span class="display-inline-block">Bloque 2</span>
+                    <span class="display-inline-block">Bloque 3</span>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Display */
+display: block;        /* Nueva línea (div por defecto) */
+display: inline;       /* En la misma línea (span por defecto) */
+display: inline-block; /* En línea pero con propiedades de bloque */
+display: flex;         /* Flexbox */
+display: grid;         /* Grid */
+display: none;         /* Oculto (no ocupa espacio) */
+
+/* Visibility */
+visibility: visible;   /* Visible */
+visibility: hidden;    /* Oculto pero ocupa espacio */</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== TRANSFORMACIONES ====== -->
+        <section id="transformaciones" class="seccion-referencia">
+            <h2>7️⃣ TRANSFORMACIONES Y TRANSICIONES</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Hover con Transform (Hover para ver cambio)</h3>
+                
+                <div class="transformacion">Hover aquí para ver transform + box-shadow</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Transición suave */
+transition: all 0.3s ease;
+
+/* Transformaciones */
+transform: scale(1.1);           /* Escala */
+transform: rotate(45deg);        /* Rotación */
+transform: translateX(20px);     /* Movimiento horizontal */
+transform: translateY(20px);     /* Movimiento vertical */
+transform: skew(10deg);          /* Sesgo */
+
+/* Múltiples transformaciones */
+transform: scale(1.2) rotate(5deg) translateX(10px);
+
+/* Hover */
+.elemento:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Animaciones</h3>
+                
+                <div class="animacion-slide">Esta caja se desliza infinitamente</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Definir animación */
+@keyframes deslizar {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Usar animación */
+.elemento {
+    animation: deslizar 2s infinite;
+    /* nombre duración repetición */
+}
+
+/* Más opciones */
+animation: deslizar 2s ease-in-out 1s infinite;
+/* nombre duración timing-function delay repetición */</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== OPACIDAD ====== -->
+        <section class="seccion-referencia">
+            <h2>8️⃣ OPACIDAD Y VISIBILIDAD</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Niveles de Opacidad</h3>
+                
+                <div class="opacidad-1">opacity: 1 (Completamente visible)</div>
+                <div class="opacidad-075">opacity: 0.75 (75% visible)</div>
+                <div class="opacidad-05">opacity: 0.5 (50% visible)</div>
+                <div class="opacidad-025">opacity: 0.25 (25% visible)</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Opacidad (0 a 1) */
+opacity: 1;     /* Totalmente visible */
+opacity: 0.75;  /* 75% visible */
+opacity: 0.5;   /* 50% visible (transparente) */
+opacity: 0.25;  /* 25% visible */
+opacity: 0;     /* Totalmente invisible (pero ocupa espacio) */
+
+/* Alternativa: rgba */
+background-color: rgba(255, 0, 0, 0.5);
+/* RGB rojo + Alpha (transparencia) */</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== POSICIONAMIENTO ====== -->
+        <section class="seccion-referencia">
+            <h2>9️⃣ POSICIONAMIENTO</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Position</h3>
+                
+                <div class="posicionamiento-contenedor">
+                    <div class="posicionamiento-absoluto">position: absolute; top: 10px; right: 10px;</div>
+                    Contenedor relativo
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Position */
+position: static;     /* Por defecto (flujo normal) */
+position: relative;   /* Relativo a su posición normal */
+position: absolute;   /* Relativo al padre position:relative */
+position: fixed;      /* Relativo a la ventana (no se mueve) */
+position: sticky;     /* Se queda en pantalla al hacer scroll */
+
+/* Junto con position */
+top: 10px;      /* Distancia desde arriba */
+right: 10px;    /* Distancia desde la derecha */
+bottom: 10px;   /* Distancia desde abajo */
+left: 10px;     /* Distancia desde la izquierda */
+z-index: 10;    /* Orden de capas (más grande = arriba) */</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== RESPONSIVE ====== -->
+        <section id="responsive" class="seccion-referencia">
+            <h2>🔟 RESPONSIVE (MOBILE FIRST)</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Media Queries</h3>
+                
+                <div class="responsive-demo">Redimensiona la ventana para ver cambios de color</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Mobile First (de menor a mayor) */
+
+/* Móvil: por defecto (hasta 480px) */
+body {
+    font-size: 14px;
+    background-color: #667eea;
+}
+
+/* Tablet: 481px a 768px */
+@media (min-width: 481px) {
+    body {
+        font-size: 16px;
+        background-color: #51CF66;
+    }
+}
+
+/* Desktop: 769px en adelante */
+@media (min-width: 769px) {
+    body {
+        font-size: 18px;
+        background-color: #FFA94D;
+    }
+}
+
+/* O también puedes usar max-width */
+@media (max-width: 768px) {
+    /* Estilos para tablets y menores */
+}
+
+@media (max-width: 480px) {
+    /* Estilos para móviles */
+}</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== GRADIENTES ====== -->
+        <section class="seccion-referencia">
+            <h2>1️⃣1️⃣ GRADIENTES</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Gradientes Lineales y Radiales</h3>
+                
+                <div class="gradiente-lineal">Gradiente Lineal (135deg)</div>
+                <div class="gradiente-radial">Gradiente Radial (círculo)</div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código CSS</summary>
+                    <pre><code>/* Gradiente lineal */
+background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+/* Formato: linear-gradient(dirección, color-inicio %, color-fin %) */
+
+/* Direcciones comunes */
+background: linear-gradient(to right, ...);      /* Izquierda a derecha */
+background: linear-gradient(to bottom, ...);     /* Arriba a abajo */
+background: linear-gradient(135deg, ...);        /* Diagonal (grados) */
+background: linear-gradient(45deg, ...);         /* Diagonal inversa */
+
+/* Con múltiples colores */
+background: linear-gradient(90deg, 
+    red 0%, 
+    yellow 50%, 
+    blue 100%
+);
+
+/* Gradiente radial */
+background: radial-gradient(circle, #667eea 0%, #764ba2 100%);
+background: radial-gradient(ellipse, #667eea 0%, #764ba2 100%);</code></pre>
+                </details>
+            </article>
+        </section>
+
+    </main>
+
+    <footer class="footer-referencia">
+        <p>&copy; 2024 Referencia CSS3 - Proyecto Educativo | Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>

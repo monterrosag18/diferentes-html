@@ -1,0 +1,458 @@
+/* ========== ESTILOS COMPARTIDOS PARA REFERENCIAS ========== */
+
+* {
+    /* Reset de estilos por defecto */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Estilos generales del body */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Familia de fuente moderna */
+    
+    line-height: 1.6;
+    /* Altura de línea para mejor legibilidad */
+    
+    color: #333;
+    /* Color de texto por defecto */
+    
+    background-color: #f8f9fa;
+    /* Color de fondo gris claro */
+}
+
+/* ========== HEADER ========== */
+
+.header-principal {
+    /* Encabezado principal */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* Gradiente de fondo (azul a púrpura) */
+    
+    color: white;
+    /* Texto blanco */
+    
+    padding: 40px 20px;
+    /* Espaciado interno */
+    
+    text-align: center;
+    /* Alineado al centro */
+    
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+}
+
+.header-principal h1 {
+    /* Título principal en header */
+    font-size: 36px;
+    /* Tamaño grande */
+    
+    margin-bottom: 10px;
+    /* Espacio abajo */
+    
+    font-weight: bold;
+    /* Texto en negritas */
+}
+
+.subtitulo {
+    /* Subtítulo */
+    font-size: 16px;
+    /* Tamaño mediano */
+    
+    opacity: 0.95;
+    /* Ligeramente transparente */
+}
+
+/* ========== NAVEGACIÓN ========== */
+
+.nav-referencia {
+    /* Barra de navegación */
+    background-color: #2c3e50;
+    /* Fondo gris oscuro */
+    
+    padding: 15px;
+    /* Espaciado interno */
+    
+    text-align: center;
+    /* Centrado */
+    
+    position: sticky;
+    /* Se queda en pantalla al hacer scroll */
+    
+    top: 0;
+    /* Posición arriba */
+    
+    z-index: 100;
+    /* Encima de otros elementos */
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+}
+
+.nav-referencia a {
+    /* Enlaces de navegación */
+    color: white;
+    /* Texto blanco */
+    
+    text-decoration: none;
+    /* Sin subrayado */
+    
+    margin: 0 15px;
+    /* Espacio entre enlaces */
+    
+    padding: 10px 15px;
+    /* Espaciado interno */
+    
+    display: inline-block;
+    /* En línea pero con propiedades de bloque */
+    
+    border-radius: 8px;
+    /* Esquinas redondeadas */
+    
+    transition: all 0.3s ease;
+    /* Transición suave */
+}
+
+.nav-referencia a:hover {
+    /* Hover del enlace */
+    background-color: #667eea;
+    /* Fondo azul al pasar ratón */
+    
+    transform: translateY(-2px);
+    /* Sube 2px */
+}
+
+/* ========== CONTENEDOR PRINCIPAL ========== */
+
+.contenedor-referencia {
+    /* Contenedor principal */
+    max-width: 1000px;
+    /* Ancho máximo */
+    
+    margin: 30px auto;
+    /* Margen automático (centra) */
+    
+    padding: 20px;
+    /* Espaciado interno */
+}
+
+/* ========== SECCIONES ========== */
+
+.seccion-referencia {
+    /* Cada sección */
+    margin-bottom: 40px;
+    /* Espacio entre secciones */
+    
+    padding: 30px 0;
+    /* Espaciado vertical */
+    
+    border-bottom: 2px solid #e0e0e0;
+    /* Línea divisora */
+}
+
+.seccion-referencia h2 {
+    /* Encabezados de sección */
+    font-size: 28px;
+    /* Tamaño grande */
+    
+    color: #667eea;
+    /* Azul */
+    
+    margin-bottom: 20px;
+    /* Espacio abajo */
+    
+    padding-bottom: 10px;
+    /* Espaciado interno inferior */
+}
+
+/* ========== ARTÍCULOS ========== */
+
+.ejemplo-card {
+    /* Tarjeta de ejemplo */
+    background-color: white;
+    /* Fondo blanco */
+    
+    padding: 25px;
+    /* Espaciado interno */
+    
+    margin-bottom: 20px;
+    /* Espacio abajo */
+    
+    border-radius: 12px;
+    /* Esquinas redondeadas */
+    
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    /* Sombra sutil */
+    
+    transition: all 0.3s ease;
+    /* Transición suave */
+}
+
+.ejemplo-card:hover {
+    /* Al pasar el ratón */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    /* Sombra más fuerte */
+    
+    transform: translateY(-2px);
+    /* Sube 2px */
+}
+
+.ejemplo-card h3 {
+    /* Encabezados dentro de tarjetas */
+    font-size: 20px;
+    /* Tamaño mediano */
+    
+    color: #333;
+    /* Gris oscuro */
+    
+    margin-bottom: 15px;
+    /* Espacio abajo */
+    
+    padding-bottom: 10px;
+    /* Espaciado interno inferior */
+    
+    border-bottom: 2px solid #f0f0f0;
+    /* Línea divisora */
+}
+
+/* ========== EJEMPLOS EN HTML ========== */
+
+.ejemplo-html {
+    /* Contenedor de ejemplos visuales */
+    background-color: #f9f9f9;
+    /* Fondo gris claro */
+    
+    padding: 20px;
+    /* Espaciado interno */
+    
+    border-radius: 8px;
+    /* Esquinas redondeadas */
+    
+    margin: 15px 0;
+    /* Margen arriba y abajo */
+    
+    border-left: 4px solid #667eea;
+    /* Línea azul a la izquierda */
+}
+
+/* ========== CÓDIGO ========== */
+
+.codigo-html {
+    /* Bloque de código expandible */
+    margin-top: 15px;
+    /* Espacio arriba */
+}
+
+.codigo-html summary {
+    /* Título del bloque expandible */
+    cursor: pointer;
+    /* Cursor puntero */
+    
+    color: #667eea;
+    /* Azul */
+    
+    font-weight: bold;
+    /* Negritas */
+    
+    padding: 10px;
+    /* Espaciado interno */
+    
+    background-color: #f0f0f0;
+    /* Fondo gris */
+    
+    border-radius: 8px;
+    /* Esquinas redondeadas */
+    
+    transition: all 0.3s ease;
+    /* Transición suave */
+}
+
+.codigo-html summary:hover {
+    /* Al pasar ratón */
+    background-color: #e0e0e0;
+    /* Fondo más oscuro */
+}
+
+pre {
+    /* Bloque preformateado (código) */
+    background-color: #2c3e50;
+    /* Fondo gris oscuro */
+    
+    color: #00FF00;
+    /* Texto verde neón */
+    
+    padding: 20px;
+    /* Espaciado interno */
+    
+    border-radius: 8px;
+    /* Esquinas redondeadas */
+    
+    overflow-x: auto;
+    /* Scroll horizontal si es muy ancho */
+    
+    font-family: 'Courier New', monospace;
+    /* Fuente monoespaciada */
+    
+    font-size: 14px;
+    /* Tamaño pequeño */
+    
+    line-height: 1.5;
+    /* Altura de línea */
+    
+    margin: 10px 0;
+    /* Margen arriba y abajo */
+}
+
+code {
+    /* Código inline */
+    font-family: 'Courier New', monospace;
+    /* Fuente monoespaciada */
+    
+    background-color: #f0f0f0;
+    /* Fondo gris */
+    
+    padding: 2px 6px;
+    /* Espaciado interno */
+    
+    border-radius: 4px;
+    /* Esquinas ligeramente redondeadas */
+}
+
+pre code {
+    /* Código dentro de pre */
+    background-color: transparent;
+    /* Sin fondo (ya lo tiene pre) */
+    
+    padding: 0;
+    /* Sin espaciado */
+    
+    color: inherit;
+    /* Hereda el color */
+}
+
+/* ========== DETALLES (EXPANDIBLES) ========== */
+
+details {
+    /* Contenido expandible */
+    margin: 15px 0;
+    /* Margen vertical */
+}
+
+/* ========== FOOTER ========== */
+
+.footer-referencia {
+    /* Pie de página */
+    background-color: #2c3e50;
+    /* Fondo gris oscuro */
+    
+    color: white;
+    /* Texto blanco */
+    
+    text-align: center;
+    /* Centrado */
+    
+    padding: 20px;
+    /* Espaciado interno */
+    
+    margin-top: 40px;
+    /* Espacio arriba */
+}
+
+/* ========== RESPONSIVE (MOBILE) ========== */
+
+@media (max-width: 768px) {
+    /* Tablet y menor */
+    
+    .header-principal {
+        padding: 30px 15px;
+    }
+    
+    .header-principal h1 {
+        font-size: 28px;
+    }
+    
+    .nav-referencia a {
+        margin: 0 10px;
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    .contenedor-referencia {
+        padding: 15px;
+    }
+    
+    .seccion-referencia h2 {
+        font-size: 24px;
+    }
+    
+    .ejemplo-card {
+        padding: 20px;
+    }
+    
+    .ejemplo-html {
+        padding: 15px;
+    }
+    
+    pre {
+        padding: 15px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Móvil */
+    
+    .header-principal {
+        padding: 20px 10px;
+    }
+    
+    .header-principal h1 {
+        font-size: 24px;
+    }
+    
+    .subtitulo {
+        font-size: 14px;
+    }
+    
+    .nav-referencia {
+        padding: 10px;
+    }
+    
+    .nav-referencia a {
+        display: block;
+        margin: 5px 0;
+        width: 100%;
+    }
+    
+    .seccion-referencia h2 {
+        font-size: 20px;
+    }
+    
+    .ejemplo-card h3 {
+        font-size: 18px;
+    }
+    
+    pre {
+        font-size: 11px;
+        padding: 10px;
+    }
+}
+
+/* ========== UTILIDADES ========== */
+
+.text-center {
+    /* Centrar texto */
+    text-align: center;
+}
+
+.mt-1 { margin-top: 10px; }
+.mt-2 { margin-top: 20px; }
+.mt-3 { margin-top: 30px; }
+
+.mb-1 { margin-bottom: 10px; }
+.mb-2 { margin-bottom: 20px; }
+.mb-3 { margin-bottom: 30px; }
+
+.p-1 { padding: 10px; }
+.p-2 { padding: 20px; }
+.p-3 { padding: 30px; }

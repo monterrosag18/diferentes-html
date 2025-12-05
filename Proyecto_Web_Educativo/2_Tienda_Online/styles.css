@@ -1,0 +1,645 @@
+/* 
+  ===============================
+  ARCHIVO: styles.css
+  CARPETA: 2_Tienda_Online
+  PROPÓSITO: Estilos de tienda online moderna
+  
+  TÉCNICAS AVANZADAS DE CSS:
+  - CSS Grid para el catálogo de productos
+  - Flexbox para layouts
+  - Modal overlays
+  - Transiciones y animaciones
+  - Responsive design
+  ===============================
+*/
+
+/* Reset global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 
+  ========== HEADER ==========
+  Encabezado con logo y carrito
+*/
+
+.header-tienda {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Contenedor del header con flexbox */
+.contenedor-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  /* 
+    justify-content: space-between
+    Distribuye elementos al máximo espacio posible
+    Logo a la izquierda, Carrito a la derecha
+  */
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo h1 {
+  font-size: 2rem;
+  margin-bottom: 5px;
+}
+
+.logo p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* 
+  ========== CARRITO ICON ==========
+  Icono del carrito con cantidad
+*/
+
+.carrito-icon {
+  /* 
+    position: relative
+    Se usa aquí porque el contador es posicionado relative a esto
+  */
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  
+  /* Efecto al pasar mouse */
+  transition: transform 0.2s;
+}
+
+.carrito-icon:hover {
+  transform: scale(1.1);
+}
+
+.carrito-icon .icono {
+  font-size: 2rem;
+}
+
+.carrito-icon p {
+  font-size: 0.9rem;
+}
+
+/* 
+  Cantidad de productos en carrito
+  Badge rojo con número
+*/
+
+.cantidad {
+  /* 
+    position: absolute
+    Se posiciona fuera del flujo normal
+    top y right: en la esquina superior derecha
+  */
+  position: absolute;
+  top: -5px;
+  right: -10px;
+  
+  /* Badge circular */
+  background-color: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  
+  /* Centrar el número dentro del círculo */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Tipografía */
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+/* 
+  ========== NAVEGACIÓN ==========
+  Barra de navegación
+*/
+
+.navegacion {
+  background-color: #2c3e50;
+  padding: 0;
+  /* 
+    position: sticky
+    Se queda pegada al scroll
+    z-index: para que esté encima
+  */
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.navegacion ul {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  
+  /* Horizontal con flexbox */
+  display: flex;
+  list-style: none;
+}
+
+.navegacion li {
+  margin: 0;
+}
+
+.navegacion a {
+  color: white;
+  text-decoration: none;
+  padding: 15px 20px;
+  display: block;
+  
+  transition: background-color 0.3s;
+}
+
+.navegacion a:hover {
+  background-color: #1abc9c;
+}
+
+/* 
+  ========== SECCIÓN CATÁLOGO ==========
+  Área principal con productos
+*/
+
+.seccion-catalogo {
+  padding: 40px 0;
+  background-color: white;
+}
+
+.seccion-catalogo h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  border-bottom: 3px solid #667eea;
+  padding-bottom: 10px;
+}
+
+/* 
+  ========== FILTROS ==========
+  Botones para filtrar productos
+*/
+
+.filtros {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+/* Botón de filtro */
+.btn-filtro {
+  /* 
+    Estilo: botones sin relleno
+    border: Solo borde
+    background: transparent (transparente)
+  */
+  background-color: transparent;
+  border: 2px solid #667eea;
+  color: #667eea;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  
+  transition: all 0.3s;
+}
+
+/* Botón activo o al pasar mouse */
+.btn-filtro:hover,
+.btn-filtro.activo {
+  background-color: #667eea;
+  color: white;
+}
+
+/* 
+  ========== GRID DE PRODUCTOS ==========
+  Mostrar productos en forma de tabla
+  
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))
+  - repeat: Repetir patrón
+  - auto-fit: Ajustar cantidad de columnas automáticamente
+  - minmax(250px, 1fr): Cada producto ocupa mín 250px, máx 1fr
+  - Esto hace que sea responsive
+*/
+
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* 
+  ========== TARJETA DE PRODUCTO ==========
+  Cada tarjeta de producto
+*/
+
+.tarjeta-producto {
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  
+  /* Sombra para efecto de profundidad */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  
+  /* Transición suave */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Efecto al pasar mouse: levantarse */
+.tarjeta-producto:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen del producto */
+.producto-imagen {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  background-color: #f0f0f0;
+}
+
+/* Contenido de la tarjeta */
+.producto-contenido {
+  padding: 15px;
+}
+
+.producto-nombre {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 5px;
+}
+
+.producto-categoria {
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 10px;
+  
+  /* 
+    text-transform: uppercase
+    Convierte a mayúsculas automáticamente
+  */
+  text-transform: uppercase;
+}
+
+.producto-descripcion {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+/* Precio prominente */
+.producto-precio {
+  font-size: 1.5rem;
+  color: #667eea;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* 
+  ========== BOTONES ==========
+  Estilos genéricos de botones
+*/
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  
+  font-size: 0.95rem;
+  font-weight: 600;
+  
+  transition: all 0.3s;
+}
+
+/* Botón primario (color principal) */
+.btn-primario {
+  background-color: #667eea;
+  color: white;
+}
+
+.btn-primario:hover {
+  background-color: #5568d3;
+  transform: translateY(-2px);
+}
+
+/* Botón secundario (contorno) */
+.btn-secundario {
+  background-color: transparent;
+  color: #667eea;
+  border: 2px solid #667eea;
+}
+
+.btn-secundario:hover {
+  background-color: #667eea;
+  color: white;
+}
+
+/* Botón para agregar al carrito */
+.btn-agregar-carrito {
+  width: 100%;
+  background-color: #1abc9c;
+  color: white;
+}
+
+.btn-agregar-carrito:hover {
+  background-color: #16a085;
+}
+
+/* 
+  ========== SECCIÓN DE OFERTAS ==========
+*/
+
+.seccion-ofertas {
+  padding: 40px 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.seccion-ofertas h2 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.banner-ofertas {
+  text-align: center;
+  padding: 30px;
+}
+
+.banner-ofertas h3 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* 
+  ========== MODAL DEL CARRITO ==========
+  Ventana emergente del carrito
+*/
+
+.modal {
+  /* 
+    display: none: Oculto por defecto
+    Se muestra con JavaScript cuando se necesita
+  */
+  display: none;
+  
+  /* 
+    position: fixed
+    Se queda fijo en la pantalla aunque scrollees
+  */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  
+  /* 
+    transform: translate(-50%, -50%)
+    Centra el modal en la pantalla
+    -50% ancho/alto del elemento
+  */
+  transform: translate(-50%, -50%);
+  
+  /* z-index: Por encima del overlay */
+  z-index: 1000;
+  
+  /* Tamaño */
+  width: 90%;
+  max-width: 600px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  
+  /* max-height con scroll si es muy grande */
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.contenido-modal {
+  padding: 30px;
+}
+
+/* Botón para cerrar modal */
+.cerrar-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #999;
+  
+  transition: color 0.2s;
+}
+
+.cerrar-modal:hover {
+  color: #333;
+}
+
+/* Overlay (fondo oscuro) */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+/* Mostrar modal y overlay (clase agregada por JavaScript) */
+.modal.activo,
+.overlay.activo {
+  display: block;
+}
+
+/* 
+  ========== TABLA DEL CARRITO ==========
+*/
+
+.tabla-carrito {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.tabla-carrito thead {
+  background-color: #f5f5f5;
+}
+
+.tabla-carrito th,
+.tabla-carrito td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabla-carrito th {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Botón eliminar del carrito */
+.btn-eliminar {
+  background-color: #e74c3c;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background-color: #c0392b;
+}
+
+/* 
+  ========== RESUMEN DEL CARRITO ==========
+*/
+
+.resumen-carrito {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.resumen-carrito .fila {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+.resumen-carrito .total {
+  border-top: 2px solid #ddd;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #667eea;
+}
+
+/* 
+  ========== BOTONES DEL CARRITO ==========
+*/
+
+.botones-carrito {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.botones-carrito .btn {
+  flex: 1;
+}
+
+/* 
+  ========== FOOTER ==========
+*/
+
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  margin-top: 40px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* 
+  ========== RESPONSIVE DESIGN ==========
+*/
+
+@media (max-width: 768px) {
+  /* Header vertical en móvil */
+  .contenedor-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  /* Navegación en columnas en móvil */
+  .navegacion ul {
+    flex-direction: column;
+  }
+  
+  /* Filtros en columnas */
+  .filtros {
+    flex-direction: column;
+  }
+  
+  .btn-filtro {
+    width: 100%;
+  }
+  
+  /* Grid productos: 1 columna en móvil */
+  .grid-productos {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Modal más grande en móvil */
+  .modal {
+    width: 95%;
+  }
+  
+  /* Tabla más pequeña */
+  .tabla-carrito th,
+  .tabla-carrito td {
+    padding: 8px;
+    font-size: 0.85rem;
+  }
+  
+  /* Botones carrito en columnas */
+  .botones-carrito {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Encabezados más pequeños */
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+  
+  /* Productos muy pequeños */
+  .grid-productos {
+    gap: 10px;
+  }
+  
+  .producto-imagen {
+    height: 150px;
+  }
+  
+  .producto-contenido {
+    padding: 10px;
+  }
+}

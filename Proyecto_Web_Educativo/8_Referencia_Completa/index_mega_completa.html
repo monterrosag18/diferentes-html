@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MEGA Referencia Web Completa - La más completa del mundo. HTML5, CSS3, JavaScript. Cards, Carrusel, Consola Interactiva, Código Desplegable">
+    <title>🚀 MEGA REFERENCIA WEB COMPLETA - Lo Más Completo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* HEADER ESPECTACULAR */
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="100" cy="100" r="50" fill="rgba(255,255,255,0.1)"/><circle cx="500" cy="500" r="100" fill="rgba(255,255,255,0.05)"/><circle cx="900" cy="900" r="70" fill="rgba(255,255,255,0.1)"/></svg>');
+            opacity: 0.5;
+        }
+
+        .header > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+            animation: slideDown 0.8s ease;
+        }
+
+        .header p {
+            font-size: 1.3em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+
+        .header .subtitulo {
+            font-size: 0.95em;
+            opacity: 0.85;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* BADGES ESTADÍSTICAS */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .stat {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .stat:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .stat-numero {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .stat-texto {
+            font-size: 0.95em;
+            color: #666;
+        }
+
+        /* CONTENEDOR PRINCIPAL */
+        .contenedor {
+            max-width: 1400px;
+            margin: -60px auto 0;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* TARJETAS PRINCIPALES */
+        .referencias {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .referencia-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .referencia-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+        }
+
+        .referencia-header {
+            padding: 40px 20px 20px;
+            text-align: center;
+            position: relative;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .referencia-header.html {
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF4757 100%);
+        }
+
+        .referencia-header.css {
+            background: linear-gradient(135deg, #4ECDC4 0%, #44A08D 100%);
+        }
+
+        .referencia-header.js {
+            background: linear-gradient(135deg, #FFB84D 0%, #FF9F1C 100%);
+        }
+
+        .referencia-header .icono {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .referencia-header h2 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+
+        .referencia-header .version {
+            font-size: 0.85em;
+            opacity: 0.9;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 4px 12px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        /* CONTENIDO DE CARD */
+        .referencia-contenido {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .referencia-lista {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .referencia-lista li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        .referencia-lista li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* BOTONES */
+        .botones {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+        }
+
+        .boton {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-size: 0.95em;
+        }
+
+        .boton-principal {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .boton-principal:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .boton-secundario {
+            background: #f0f0f0;
+            color: #667eea;
+            border: 2px solid #667eea;
+        }
+
+        .boton-secundario:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* SECCIÓN CARACTERÍSTICAS */
+        .caracteristicas {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .caracteristicas h2 {
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .feature {
+            text-align: center;
+        }
+
+        .feature-icono {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .feature h3 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* SECCIÓN CASOS DE USO */
+        .casos-uso {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+        }
+
+        .casos-uso h2 {
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2em;
+            text-align: center;
+        }
+
+        .casos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .caso {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .caso h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .caso p {
+            color: #666;
+            font-size: 0.95em;
+        }
+
+        /* VERSIONES ORIGINALES */
+        .versiones-originales {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .versiones-originales h2 {
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 1.8em;
+        }
+
+        .versiones-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .version-link {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .version-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        /* FOOTER */
+        footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+            font-size: 1.5em;
+        }
+
+        footer p {
+            margin: 8px 0;
+            opacity: 0.95;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .referencias {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* ANIMACIÓN ENTRADA */
+        .referencia-card {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .referencia-card:nth-child(1) { animation-delay: 0.1s; }
+        .referencia-card:nth-child(2) { animation-delay: 0.2s; }
+        .referencia-card:nth-child(3) { animation-delay: 0.3s; }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Estilos especiales */
+        .badge-nuevo {
+            background: #FF6B6B;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- HEADER ESPECTACULAR -->
+    <header class="header">
+        <h1>🚀 MEGA REFERENCIA WEB COMPLETA</h1>
+        <p class="subtitulo">La más completa jamás creada</p>
+        <p>HTML5 • CSS3 • JavaScript ES6+ • Código Desplegable • Consola Interactiva • Casos de Uso • Ejemplos Visuales</p>
+    </header>
+
+    <!-- ESTADÍSTICAS -->
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-numero">60+</div>
+            <div class="stat-texto">Conceptos HTML5</div>
+        </div>
+        <div class="stat">
+            <div class="stat-numero">100+</div>
+            <div class="stat-texto">Propiedades CSS3</div>
+        </div>
+        <div class="stat">
+            <div class="stat-numero">70+</div>
+            <div class="stat-texto">Conceptos JavaScript</div>
+        </div>
+        <div class="stat">
+            <div class="stat-numero">300+</div>
+            <div class="stat-texto">Ejemplos Totales</div>
+        </div>
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="contenedor">
+
+        <!-- REFERENCIAS PRINCIPALES -->
+        <section class="referencias">
+
+            <!-- REFERENCIA HTML -->
+            <div class="referencia-card">
+                <div class="referencia-header html">
+                    <div class="icono">📝</div>
+                    <h2>HTML5</h2>
+                    <span class="version">MEGA COMPLETA <span class="badge-nuevo">NUEVA</span></span>
+                </div>
+                <div class="referencia-contenido">
+                    <p>La guía más completa de etiquetas HTML5 con cards, carrusel, formularios y componentes interactivos.</p>
+                    <ul class="referencia-lista">
+                        <li>60+ Etiquetas HTML5</li>
+                        <li>Cards y Tarjetas</li>
+                        <li>Carrusel/Slider</li>
+                        <li>Formularios Completos</li>
+                        <li>Etiquetas Semánticas</li>
+                        <li>Código Desplegable</li>
+                    </ul>
+                    <div class="botones">
+                        <a href="html_referencia_mega_completa.html" class="boton boton-principal">Abrir 🚀</a>
+                        <a href="html_referencia_expandida.html" class="boton boton-secundario">Expandida</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REFERENCIA CSS -->
+            <div class="referencia-card">
+                <div class="referencia-header css">
+                    <div class="icono">🎨</div>
+                    <h2>CSS3</h2>
+                    <span class="version">MEGA COMPLETA <span class="badge-nuevo">NUEVA</span></span>
+                </div>
+                <div class="referencia-contenido">
+                    <p>Más de 100 propiedades CSS con gradientes, animaciones, filtros y transformaciones interactivas.</p>
+                    <ul class="referencia-lista">
+                        <li>100+ Propiedades CSS</li>
+                        <li>Gradientes Avanzados</li>
+                        <li>Animaciones @keyframes</li>
+                        <li>Filtros y Efectos</li>
+                        <li>Flexbox y Grid</li>
+                        <li>Ejemplos Visuales</li>
+                    </ul>
+                    <div class="botones">
+                        <a href="css_referencia_mega_completa.html" class="boton boton-principal">Abrir 🚀</a>
+                        <a href="css_referencia_expandida.html" class="boton boton-secundario">Expandida</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- REFERENCIA JAVASCRIPT -->
+            <div class="referencia-card">
+                <div class="referencia-header js">
+                    <div class="icono">⚙️</div>
+                    <h2>JavaScript</h2>
+                    <span class="version">MEGA COMPLETA <span class="badge-nuevo">NUEVA</span></span>
+                </div>
+                <div class="referencia-contenido">
+                    <p>Consola interactiva con 70+ conceptos, métodos Array, APIs y patrones de programación.</p>
+                    <ul class="referencia-lista">
+                        <li>70+ Conceptos JavaScript</li>
+                        <li>Consola Interactiva</li>
+                        <li>Métodos Array Avanzados</li>
+                        <li>Async/Await y Promesas</li>
+                        <li>DOM y Eventos</li>
+                        <li>Patrones de Código</li>
+                    </ul>
+                    <div class="botones">
+                        <a href="javascript_referencia_mega_completa.html" class="boton boton-principal">Abrir 🚀</a>
+                        <a href="javascript_referencia_expandida.html" class="boton boton-secundario">Expandida</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- CARACTERÍSTICAS ESPECIALES -->
+        <section class="caracteristicas">
+            <h2>✨ Características Especiales</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="feature-icono">💻</div>
+                    <h3>Código Desplegable</h3>
+                    <p>Todo el código está disponible para ver y copiar directamente de cada sección.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icono">▶️</div>
+                    <h3>Ejemplos Interactivos</h3>
+                    <p>Ejecuta ejemplos en vivo y ve los resultados instantáneamente en la consola.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icono">📊</div>
+                    <h3>Tablas Comparativas</h3>
+                    <p>Tablas detalladas con atributos, métodos y opciones de cada elemento.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icono">🎬</div>
+                    <h3>Demos Visuales</h3>
+                    <p>Visualiza los efectos en tiempo real. Colores, animaciones, transformaciones.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icono">📱</div>
+                    <h3>100% Responsive</h3>
+                    <p>Perfecto en desktop, tablet y móvil. Funciona sin conexión a internet.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icono">🎓</div>
+                    <h3>Educativo</h3>
+                    <p>Todo está comentado en español. Ideal para aprender desde cero.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CASOS DE USO -->
+        <section class="casos-uso">
+            <h2>🎯 Casos de Uso Comunes</h2>
+            <div class="casos-grid">
+                <div class="caso">
+                    <h4>🛒 E-commerce</h4>
+                    <p>Descubre cómo crear cards de productos, galerías de imágenes y carruseles de destacados.</p>
+                </div>
+                <div class="caso">
+                    <h4>📱 App Web</h4>
+                    <p>Aprende a estructurar formularios, manejar eventos y trabajar con el DOM.</p>
+                </div>
+                <div class="caso">
+                    <h4>🎨 Portfolio</h4>
+                    <p>Crea galerías hermosas con CSS Grid, animaciones y efectos hover.</p>
+                </div>
+                <div class="caso">
+                    <h4>📊 Dashboard</h4>
+                    <p>Estructura compleja con Flexbox, tablas y gráficos interactivos.</p>
+                </div>
+                <div class="caso">
+                    <h4>📰 Blog</h4>
+                    <p>Diseña artículos, comentarios y navegación con HTML semántico.</p>
+                </div>
+                <div class="caso">
+                    <h4>💬 Red Social</h4>
+                    <p>Posts, likes, comentarios, notificaciones con JavaScript interactivo.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- VERSIONES ORIGINALES -->
+        <section class="versiones-originales">
+            <h2>📚 Versiones Originales (Más Compactas)</h2>
+            <p style="color: #666; margin-bottom: 20px;">Si prefieres referencias más concisas, aquí están las versiones originales:</p>
+            <div class="versiones-grid">
+                <a href="index.html" class="version-link">🏠 Index Original</a>
+                <a href="html_referencia.html" class="version-link">📝 HTML Original</a>
+                <a href="css_referencia.html" class="version-link">🎨 CSS Original</a>
+                <a href="javascript_referencia.html" class="version-link">⚙️ JS Original</a>
+            </div>
+        </section>
+
+        <!-- CÓMO EMPEZAR -->
+        <section class="caracteristicas">
+            <h2>🚀 Cómo Empezar</h2>
+            <div style="max-width: 800px; margin: 0 auto; color: #666;">
+                <ol style="padding-left: 25px; line-height: 2;">
+                    <li><strong>Elige una referencia:</strong> HTML, CSS o JavaScript</li>
+                    <li><strong>Haz clic en "Abrir":</strong> Se abrirá la referencia completa</li>
+                    <li><strong>Explora las secciones:</strong> Usa la navegación sticky para navegar</li>
+                    <li><strong>Despliega el código:</strong> Haz clic en los botones para ver ejemplos</li>
+                    <li><strong>Ejecuta ejemplos:</strong> En JavaScript, prueba los botones interactivos</li>
+                    <li><strong>Copia y aprende:</strong> Toma los fragmentos de código que necesites</li>
+                    <li><strong>Experimenta:</strong> Modifica los ejemplos y crea los tuyos propios</li>
+                </ol>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>🎉 MEGA Referencia Web Completa - Listos para Aprender</h3>
+        <p>60+ Etiquetas HTML • 100+ Propiedades CSS • 70+ Conceptos JavaScript</p>
+        <p>300+ Ejemplos • Código Desplegable • Consola Interactiva • 100% Funcional</p>
+        <p style="font-size: 12px; margin-top: 20px; opacity: 0.8;">
+            Última actualización: 3 de Diciembre de 2025 | Diseño Moderno | Código 100% Educativo | Offline Compatible
+        </p>
+        <p style="font-size: 12px; opacity: 0.7;">
+            📁 Carpeta: /8_Referencia_Completa | 🌐 Totalmente funcional sin dependencias externas
+        </p>
+    </footer>
+
+</body>
+</html>

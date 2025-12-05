@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metadatos del documento -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7_Dashboard_Admin - Panel de Control Administrativo</title>
+  <!-- Enlace al CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ========== LAYOUT PRINCIPAL ========== -->
+  <!-- El body tiene flex para layout sidebar + main -->
+  
+  <!-- ========== SIDEBAR (NAVEGACIÓN LATERAL) ========== -->
+  <aside class="sidebar">
+    <!-- Logo del dashboard -->
+    <div class="logo-sidebar">
+      <h2>📊 Dashboard</h2>
+    </div>
+
+    <!-- Menú de navegación -->
+    <nav class="menu-sidebar">
+      <!-- Item: Dashboard (inicio) -->
+      <a href="#" class="menu-item activo" data-seccion="inicio">
+        <span class="icono">📈</span>
+        <span class="texto">Dashboard</span>
+      </a>
+
+      <!-- Item: Usuarios -->
+      <a href="#" class="menu-item" data-seccion="usuarios">
+        <span class="icono">👥</span>
+        <span class="texto">Usuarios</span>
+      </a>
+
+      <!-- Item: Productos -->
+      <a href="#" class="menu-item" data-seccion="productos">
+        <span class="icono">📦</span>
+        <span class="texto">Productos</span>
+      </a>
+
+      <!-- Item: Ventas -->
+      <a href="#" class="menu-item" data-seccion="ventas">
+        <span class="icono">💰</span>
+        <span class="texto">Ventas</span>
+      </a>
+
+      <!-- Item: Reportes -->
+      <a href="#" class="menu-item" data-seccion="reportes">
+        <span class="icono">📋</span>
+        <span class="texto">Reportes</span>
+      </a>
+
+      <!-- Item: Configuración -->
+      <a href="#" class="menu-item" data-seccion="config">
+        <span class="icono">⚙️</span>
+        <span class="texto">Configuración</span>
+      </a>
+    </nav>
+
+    <!-- Sección inferior del sidebar -->
+    <div class="sidebar-footer">
+      <!-- Usuario actual -->
+      <div class="usuario-info">
+        <div class="avatar-usuario">👤</div>
+        <div class="datos-usuario">
+          <p class="nombre-usuario">Admin</p>
+          <p class="email-usuario">admin@empresa.com</p>
+        </div>
+      </div>
+      <!-- Botón logout -->
+      <button class="btn-logout">Salir</button>
+    </div>
+  </aside>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="main-content">
+    <!-- ========== HEADER DEL DASHBOARD ========== -->
+    <header class="header-dashboard">
+      <!-- Botón menu móvil (para menú colapsable) -->
+      <button class="btn-menu-mobile">☰</button>
+
+      <!-- Título de la página -->
+      <h1 class="titulo-pagina">Dashboard</h1>
+
+      <!-- Controles derechos -->
+      <div class="controles-header">
+        <!-- Input de búsqueda -->
+        <input type="text" class="buscar-dashboard" placeholder="Buscar...">
+
+        <!-- Notificaciones -->
+        <div class="icono-notificacion">
+          🔔
+          <span class="badge-notificacion">3</span>
+        </div>
+
+        <!-- Tema oscuro/claro -->
+        <button class="btn-tema">🌙</button>
+      </div>
+    </header>
+
+    <!-- ========== CONTENIDO PRINCIPAL ========== -->
+    <div class="contenedor-contenido">
+      <!-- ========== SECCIÓN INICIO ========== -->
+      <section id="seccion-inicio" class="seccion activa">
+        <!-- Título -->
+        <h2 class="titulo-seccion">Resumen General</h2>
+
+        <!-- Grid de tarjetas de estadísticas -->
+        <div class="grid-estadisticas">
+          <!-- Tarjeta 1: Total Usuarios -->
+          <div class="tarjeta-estadistica">
+            <div class="icono-tarjeta">👥</div>
+            <div class="info-tarjeta">
+              <h4>Usuarios Totales</h4>
+              <p class="numero-grande">1,245</p>
+              <p class="cambio-positivo">+12% esta semana</p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 2: Ingresos -->
+          <div class="tarjeta-estadistica">
+            <div class="icono-tarjeta">💰</div>
+            <div class="info-tarjeta">
+              <h4>Ingresos Totales</h4>
+              <p class="numero-grande">$45,230</p>
+              <p class="cambio-positivo">+8% este mes</p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 3: Órdenes -->
+          <div class="tarjeta-estadistica">
+            <div class="icono-tarjeta">📦</div>
+            <div class="info-tarjeta">
+              <h4>Órdenes Completadas</h4>
+              <p class="numero-grande">892</p>
+              <p class="cambio-positivo">+5% esta semana</p>
+            </div>
+          </div>
+
+          <!-- Tarjeta 4: Tasa de Conversión -->
+          <div class="tarjeta-estadistica">
+            <div class="icono-tarjeta">📈</div>
+            <div class="info-tarjeta">
+              <h4>Tasa de Conversión</h4>
+              <p class="numero-grande">3.8%</p>
+              <p class="cambio-negativo">-0.2% esta semana</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grid con gráficos y tabla -->
+        <div class="grid-contenido-principal">
+          <!-- Sección izquierda: Gráfico -->
+          <div class="seccion-grafico">
+            <h3>Ventas por Mes</h3>
+            <!-- Placeholder para gráfico -->
+            <div class="grafico-placeholder">
+              <div class="barra-grafico" style="height: 70%;">📊</div>
+              <div class="barra-grafico" style="height: 50%;">📊</div>
+              <div class="barra-grafico" style="height: 85%;">📊</div>
+              <div class="barra-grafico" style="height: 60%;">📊</div>
+              <div class="barra-grafico" style="height: 90%;">📊</div>
+              <div class="barra-grafico" style="height: 75%;">📊</div>
+            </div>
+          </div>
+
+          <!-- Sección derecha: Top productos -->
+          <div class="seccion-top-productos">
+            <h3>Productos Más Vendidos</h3>
+            <div class="lista-top">
+              <!-- Producto 1 -->
+              <div class="item-top">
+                <span class="ranking">1</span>
+                <div class="info-item">
+                  <p class="nombre-item">Laptop HP Pavilion</p>
+                  <p class="valor-item">245 ventas</p>
+                </div>
+                <span class="precio-item">$650</span>
+              </div>
+
+              <!-- Producto 2 -->
+              <div class="item-top">
+                <span class="ranking">2</span>
+                <div class="info-item">
+                  <p class="nombre-item">Monitor Dell 27"</p>
+                  <p class="valor-item">189 ventas</p>
+                </div>
+                <span class="precio-item">$350</span>
+              </div>
+
+              <!-- Producto 3 -->
+              <div class="item-top">
+                <span class="ranking">3</span>
+                <div class="info-item">
+                  <p class="nombre-item">Audífonos Sony</p>
+                  <p class="valor-item">156 ventas</p>
+                </div>
+                <span class="precio-item">$180</span>
+              </div>
+
+              <!-- Producto 4 -->
+              <div class="item-top">
+                <span class="ranking">4</span>
+                <div class="info-item">
+                  <p class="nombre-item">Mouse Logitech</p>
+                  <p class="valor-item">142 ventas</p>
+                </div>
+                <span class="precio-item">$75</span>
+              </div>
+
+              <!-- Producto 5 -->
+              <div class="item-top">
+                <span class="ranking">5</span>
+                <div class="info-item">
+                  <p class="nombre-item">Teclado Mecánico</p>
+                  <p class="valor-item">128 ventas</p>
+                </div>
+                <span class="precio-item">$140</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabla de últimas transacciones -->
+        <div class="tabla-contenedor">
+          <h3>Últimas Transacciones</h3>
+          <table class="tabla-dashboard">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Cliente</th>
+                <th>Producto</th>
+                <th>Monto</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#001</td>
+                <td>Juan García</td>
+                <td>Laptop HP</td>
+                <td>$650</td>
+                <td>2024-01-15</td>
+                <td><span class="badge-completado">Completado</span></td>
+              </tr>
+              <tr>
+                <td>#002</td>
+                <td>María López</td>
+                <td>Monitor Dell</td>
+                <td>$350</td>
+                <td>2024-01-14</td>
+                <td><span class="badge-completado">Completado</span></td>
+              </tr>
+              <tr>
+                <td>#003</td>
+                <td>Carlos R.</td>
+                <td>Audífonos Sony</td>
+                <td>$180</td>
+                <td>2024-01-14</td>
+                <td><span class="badge-pendiente">Pendiente</span></td>
+              </tr>
+              <tr>
+                <td>#004</td>
+                <td>Ana Martínez</td>
+                <td>Teclado Mecánico</td>
+                <td>$140</td>
+                <td>2024-01-13</td>
+                <td><span class="badge-completado">Completado</span></td>
+              </tr>
+              <tr>
+                <td>#005</td>
+                <td>Roberto Díaz</td>
+                <td>Mouse Logitech</td>
+                <td>$75</td>
+                <td>2024-01-13</td>
+                <td><span class="badge-cancelado">Cancelado</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ========== SECCIÓN USUARIOS ========== -->
+      <section id="seccion-usuarios" class="seccion">
+        <h2 class="titulo-seccion">Gestión de Usuarios</h2>
+        
+        <!-- Botón agregar usuario -->
+        <button class="btn btn-primario" onclick="agregarUsuario()">
+          ➕ Nuevo Usuario
+        </button>
+
+        <!-- Tabla de usuarios -->
+        <table class="tabla-dashboard tabla-usuarios">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Email</th>
+              <th>Rol</th>
+              <th>Estado</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Juan García</td>
+              <td>juan@empresa.com</td>
+              <td>Admin</td>
+              <td><span class="badge-activo">Activo</span></td>
+              <td>
+                <button class="btn-accion">Editar</button>
+                <button class="btn-accion btn-peligro">Eliminar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>María López</td>
+              <td>maria@empresa.com</td>
+              <td>Editor</td>
+              <td><span class="badge-activo">Activo</span></td>
+              <td>
+                <button class="btn-accion">Editar</button>
+                <button class="btn-accion btn-peligro">Eliminar</button>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Carlos Rodríguez</td>
+              <td>carlos@empresa.com</td>
+              <td>Visitante</td>
+              <td><span class="badge-inactivo">Inactivo</span></td>
+              <td>
+                <button class="btn-accion">Editar</button>
+                <button class="btn-accion btn-peligro">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========== SECCIÓN PRODUCTOS ========== -->
+      <section id="seccion-productos" class="seccion">
+        <h2 class="titulo-seccion">Gestión de Productos</h2>
+        
+        <!-- Botón agregar producto -->
+        <button class="btn btn-primario" onclick="agregarProducto()">
+          ➕ Nuevo Producto
+        </button>
+
+        <!-- Grid de productos -->
+        <div class="grid-productos-admin">
+          <div class="tarjeta-producto-admin">
+            <div class="imagen-producto">💻</div>
+            <h4>Laptop HP Pavilion</h4>
+            <p class="precio">$650</p>
+            <p class="stock">Stock: 5</p>
+            <div class="acciones-producto">
+              <button class="btn-accion">Editar</button>
+              <button class="btn-accion btn-peligro">Eliminar</button>
+            </div>
+          </div>
+
+          <div class="tarjeta-producto-admin">
+            <div class="imagen-producto">🖥️</div>
+            <h4>Monitor Dell 27"</h4>
+            <p class="precio">$350</p>
+            <p class="stock">Stock: 8</p>
+            <div class="acciones-producto">
+              <button class="btn-accion">Editar</button>
+              <button class="btn-accion btn-peligro">Eliminar</button>
+            </div>
+          </div>
+
+          <div class="tarjeta-producto-admin">
+            <div class="imagen-producto">🎧</div>
+            <h4>Audífonos Sony</h4>
+            <p class="precio">$180</p>
+            <p class="stock">Stock: 15</p>
+            <div class="acciones-producto">
+              <button class="btn-accion">Editar</button>
+              <button class="btn-accion btn-peligro">Eliminar</button>
+            </div>
+          </div>
+
+          <div class="tarjeta-producto-admin">
+            <div class="imagen-producto">⌨️</div>
+            <h4>Teclado Mecánico</h4>
+            <p class="precio">$140</p>
+            <p class="stock">Stock: 12</p>
+            <div class="acciones-producto">
+              <button class="btn-accion">Editar</button>
+              <button class="btn-accion btn-peligro">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== SECCIÓN VENTAS ========== -->
+      <section id="seccion-ventas" class="seccion">
+        <h2 class="titulo-seccion">Análisis de Ventas</h2>
+        
+        <!-- Controles de filtro -->
+        <div class="filtros-ventas">
+          <label>
+            Desde:
+            <input type="date" class="input-fecha">
+          </label>
+          <label>
+            Hasta:
+            <input type="date" class="input-fecha">
+          </label>
+          <button class="btn btn-secundario">Filtrar</button>
+        </div>
+
+        <!-- Tabla de ventas detalladas -->
+        <table class="tabla-dashboard">
+          <thead>
+            <tr>
+              <th>Orden</th>
+              <th>Cliente</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+              <th>Comisión</th>
+              <th>Fecha</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#001</td>
+              <td>Juan García</td>
+              <td>1</td>
+              <td>$650</td>
+              <td>$65</td>
+              <td>2024-01-15</td>
+            </tr>
+            <tr>
+              <td>#002</td>
+              <td>María López</td>
+              <td>2</td>
+              <td>$700</td>
+              <td>$70</td>
+              <td>2024-01-14</td>
+            </tr>
+            <tr>
+              <td>#003</td>
+              <td>Carlos R.</td>
+              <td>1</td>
+              <td>$180</td>
+              <td>$18</td>
+              <td>2024-01-14</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- ========== SECCIÓN REPORTES ========== -->
+      <section id="seccion-reportes" class="seccion">
+        <h2 class="titulo-seccion">Reportes</h2>
+        
+        <div class="botones-reporte">
+          <button class="btn btn-primario">📥 Descargar Reporte PDF</button>
+          <button class="btn btn-primario">📊 Exportar a Excel</button>
+        </div>
+
+        <div class="info-reportes">
+          <p>📌 Reportes disponibles: Ventas, Usuarios, Inventario, Ingresos</p>
+        </div>
+      </section>
+
+      <!-- ========== SECCIÓN CONFIGURACIÓN ========== -->
+      <section id="seccion-config" class="seccion">
+        <h2 class="titulo-seccion">Configuración</h2>
+        
+        <div class="formulario-config">
+          <div class="grupo-config">
+            <label>Nombre de la Empresa</label>
+            <input type="text" value="Mi Empresa" class="input-config">
+          </div>
+
+          <div class="grupo-config">
+            <label>Email de Contacto</label>
+            <input type="email" value="info@empresa.com" class="input-config">
+          </div>
+
+          <div class="grupo-config">
+            <label>Teléfono</label>
+            <input type="tel" value="+57 300 000 0000" class="input-config">
+          </div>
+
+          <button class="btn btn-primario">💾 Guardar Cambios</button>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ========== SCRIPT ========== -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MEGA Referencia CSS3 - La más completa con 100+ propiedades, gradientes, animaciones, filtros, transformaciones">
+    <title>🚀 MEGA Referencia CSS3 - Completa Total con Código Desplegable</title>
+    <style>
+        /* ═══════════════════════════════════════════════════════════ */
+        /* RESET Y ESTILOS GLOBALES */
+        /* ═══════════════════════════════════════════════════════════ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* HEADER Y NAVEGACIÓN */
+        /* ═══════════════════════════════════════════════════════════ */
+        .header-principal {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.4);
+            margin-bottom: 30px;
+        }
+
+        .header-principal h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-principal p {
+            font-size: 1.1em;
+            opacity: 0.95;
+        }
+
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            background: white;
+            padding: 15px 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            border-bottom: 3px solid #667eea;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-sticky a {
+            color: #667eea;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-sticky a:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* CONTENEDOR PRINCIPAL */
+        /* ═══════════════════════════════════════════════════════════ */
+        .contenedor {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background: white;
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        section h2 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+            font-size: 2.2em;
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* BADGES */
+        /* ═══════════════════════════════════════════════════════════ */
+        .badge {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-right: 8px;
+        }
+
+        .badge-nuevo { background: #FF6B6B; color: white; }
+        .badge-propiedad { background: #4ECDC4; color: white; }
+        .badge-animacion { background: #FFB84D; color: white; }
+        .badge-efecto { background: #95E1D3; color: #333; }
+        .badge-layout { background: #667eea; color: white; }
+        .badge-avanzado { background: #AA96DA; color: white; }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* TARJETAS DE EJEMPLO */
+        /* ═══════════════════════════════════════════════════════════ */
+        .ejemplo {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 25px;
+            margin: 25px 0;
+            transition: all 0.3s ease;
+        }
+
+        .ejemplo:hover {
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.15);
+        }
+
+        .ejemplo h3 {
+            color: #667eea;
+            margin: 0 0 10px 0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .ejemplo p {
+            color: #666;
+            margin: 10px 0;
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* DEMO VISUAL */
+        /* ═══════════════════════════════════════════════════════════ */
+        .demo {
+            background: linear-gradient(to right, #f0f0f0 0%, #ffffff 100%);
+            border: 2px dashed #667eea;
+            border-radius: 8px;
+            padding: 30px;
+            margin: 20px 0;
+            text-align: center;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .demo-item {
+            display: inline-block;
+            padding: 20px 30px;
+            margin: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* CÓDIGO DESPLEGABLE */
+        /* ═══════════════════════════════════════════════════════════ */
+        .boton-codigo {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .boton-codigo:hover {
+            background: #764ba2;
+            transform: scale(1.02);
+        }
+
+        .boton-codigo::before {
+            content: "▼";
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .boton-codigo.abierto::before {
+            transform: rotate(180deg);
+        }
+
+        .codigo {
+            display: none;
+            background: #1e1e1e;
+            color: #00ff00;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 13px;
+            line-height: 1.8;
+            border-left: 4px solid #667eea;
+        }
+
+        .codigo.abierto {
+            display: block;
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* TABLAS */
+        /* ═══════════════════════════════════════════════════════════ */
+        .tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        .tabla th,
+        .tabla td {
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .tabla th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: bold;
+        }
+
+        .tabla tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .tabla tr:hover {
+            background: #e8f4f8;
+        }
+
+        .tabla code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* INFO BOXES */
+        /* ═══════════════════════════════════════════════════════════ */
+        .info-box {
+            border-left: 4px solid #667eea;
+            background: #f0f7ff;
+            padding: 15px 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .info-box.tip {
+            border-left-color: #FFB84D;
+            background: #fff8f0;
+        }
+
+        .info-box.warning {
+            border-left-color: #FF6B6B;
+            background: #ffe8e8;
+        }
+
+        .info-box strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* GRID DE EJEMPLOS */
+        /* ═══════════════════════════════════════════════════════════ */
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .grid-item {
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            color: white;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .grid-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* CASOS DE USO */
+        /* ═══════════════════════════════════════════════════════════ */
+        .caso-uso {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 1px solid #667eea;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .caso-uso h4 {
+            color: #667eea;
+            margin: 0 0 15px 0;
+        }
+
+        .caso-uso ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .caso-uso li {
+            margin: 8px 0;
+            color: #333;
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* FOOTER */
+        /* ═══════════════════════════════════════════════════════════ */
+        footer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        footer h3 {
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            opacity: 0.95;
+        }
+
+        /* ═══════════════════════════════════════════════════════════ */
+        /* EJEMPLOS VISUALES ESPECÍFICOS */
+        /* ═══════════════════════════════════════════════════════════ */
+
+        /* Colores */
+        .color-item {
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            color: white;
+            margin: 10px;
+            display: inline-block;
+            min-width: 150px;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .color-hex { background: #667eea; }
+        .color-rgb { background: rgb(102, 126, 234); }
+        .color-rgba { background: rgba(102, 126, 234, 0.7); }
+        .color-hsl { background: hsl(233, 68%, 66%); }
+
+        /* Bordes */
+        .borde-demo {
+            padding: 15px;
+            margin: 10px;
+            width: 150px;
+            height: 100px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 5px;
+            background: white;
+        }
+
+        .borde-solid { border: 3px solid #667eea; }
+        .borde-dashed { border: 3px dashed #667eea; }
+        .borde-dotted { border: 3px dotted #667eea; }
+        .borde-double { border: 3px double #667eea; }
+        .borde-groove { border: 3px groove #667eea; }
+        .borde-ridge { border: 3px ridge #667eea; }
+
+        /* Sombras */
+        .sombra-demo {
+            padding: 20px;
+            margin: 15px;
+            text-align: center;
+            background: white;
+            display: inline-block;
+            border-radius: 8px;
+            width: 120px;
+        }
+
+        .sombra-leve { box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+        .sombra-media { box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); }
+        .sombra-fuerte { box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); }
+        .sombra-inset { box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); }
+
+        /* Transformaciones */
+        .transform-demo {
+            display: inline-block;
+            padding: 20px;
+            margin: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            font-weight: bold;
+        }
+
+        .transform-demo:hover {
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .scale-demo:hover { transform: scale(1.2); }
+        .rotate-demo:hover { transform: rotate(15deg); }
+        .skew-demo:hover { transform: skewY(10deg); }
+        .translate-demo:hover { transform: translateX(20px); }
+
+        /* Gradientes */
+        .gradiente {
+            padding: 30px;
+            text-align: center;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .grad-lineal { background: linear-gradient(90deg, #667eea 0%, #764ba2 100%); }
+        .grad-radial { background: radial-gradient(circle, #667eea 0%, #764ba2 100%); }
+        .grad-conico { background: conic-gradient(#667eea, #764ba2, #667eea); }
+        .grad-multicolor { background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #FF6B6B 50%, #FFB84D 75%, #4ECDC4 100%); }
+
+        /* Animaciones de demostración */
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(-30px); }
+            50% { transform: translateX(30px); }
+            100% { transform: translateX(-30px); }
+        }
+
+        @keyframes rotate-spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fade-in-out {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .anim-pulse { animation: pulse 2s infinite; }
+        .anim-slide { animation: slide 3s infinite; }
+        .anim-rotate { animation: rotate-spin 2s linear infinite; }
+        .anim-fade { animation: fade-in-out 2s infinite; }
+        .anim-bounce { animation: bounce 1.5s infinite; }
+
+        .demo-anim {
+            display: inline-block;
+            padding: 15px 30px;
+            margin: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 8px;
+            font-weight: bold;
+            text-align: center;
+            min-width: 120px;
+        }
+
+        /* Filtros */
+        .filtro-demo {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .filtro-demo img, .filtro-demo > div {
+            width: 150px;
+            height: 150px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 5px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .blur { filter: blur(5px); }
+        .brightness { filter: brightness(1.5); }
+        .contrast { filter: contrast(2); }
+        .grayscale { filter: grayscale(100%); }
+        .sepia { filter: sepia(100%); }
+        .hue { filter: hue-rotate(90deg); }
+        .saturate { filter: saturate(200%); }
+        .invert { filter: invert(1); }
+
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <div class="header-principal">
+        <h1>🚀 MEGA Referencia CSS3 Completa</h1>
+        <p>Más de 100 propiedades • Gradientes • Animaciones • Filtros • Transformaciones • Código Desplegable</p>
+    </div>
+
+    <!-- NAVEGACIÓN STICKY -->
+    <nav class="nav-sticky">
+        <a href="#colores">🎨 Colores</a>
+        <a href="#bordes">📍 Bordes</a>
+        <a href="#sombras">🌑 Sombras</a>
+        <a href="#tipografia">✍️ Tipografía</a>
+        <a href="#gradientes">🌈 Gradientes</a>
+        <a href="#transformaciones">🔄 Transformaciones</a>
+        <a href="#animaciones">✨ Animaciones</a>
+        <a href="#filtros">📷 Filtros</a>
+        <a href="#layout">📐 Layout</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN: COLORES -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="colores">
+            <h2>🎨 COLORES - Formatos y Uso</h2>
+
+            <div class="info-box">
+                <strong>💡 Formatos de Color en CSS</strong>
+                CSS permite definir colores de diferentes formas. Todos funcionan igual, elige el que prefieras según el contexto.
+            </div>
+
+            <div class="ejemplo">
+                <h3><span class="badge badge-propiedad">COLORES</span> Diferentes Formatos</h3>
+                <p>Los mismos colores en diferentes formatos:</p>
+
+                <div class="demo">
+                    <div class="color-item color-hex" title="Hexadecimal">#667eea</div>
+                    <div class="color-item color-rgb" title="RGB">RGB</div>
+                    <div class="color-item color-rgba" title="RGBA con transparencia">RGBA (70%)</div>
+                    <div class="color-item color-hsl" title="HSL">HSL</div>
+                </div>
+
+                <table class="tabla">
+                    <tr>
+                        <th>Formato</th>
+                        <th>Sintaxis</th>
+                        <th>Caso de Uso</th>
+                        <th>Soporte</th>
+                    </tr>
+                    <tr>
+                        <td><strong>Hexadecimal</strong></td>
+                        <td><code>#667eea</code></td>
+                        <td>Uso general, diseños web</td>
+                        <td>✅ 100%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RGB</strong></td>
+                        <td><code>rgb(102, 126, 234)</code></td>
+                        <td>Cuando necesitas valores numéricos</td>
+                        <td>✅ 100%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>RGBA</strong></td>
+                        <td><code>rgba(102, 126, 234, 0.7)</code></td>
+                        <td>Con transparencia/opacidad</td>
+                        <td>✅ 100%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>HSL</strong></td>
+                        <td><code>hsl(233, 68%, 66%)</code></td>
+                        <td>Más intuitivo para diseñadores</td>
+                        <td>✅ 100%</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Nombrado</strong></td>
+                        <td><code>blue, red, tomato</code></td>
+                        <td>Colores básicos comunes</td>
+                        <td>✅ 100%</td>
+                    </tr>
+                </table>
+
+                <div class="boton-codigo" onclick="toggleCodigo(this)">Ver Código CSS</div>
+                <div class="codigo">
+/* Diferentes formas de definir colores */
+.color-hex {
+    background: #667eea;  /* Hexadecimal */
+}
+
+.color-rgb {
+    background: rgb(102, 126, 234);  /* RGB */
+}
+
+.color-rgba {
+    background: rgba(102, 126, 234, 0.7);  /* RGBA con 70% opacidad */
+}
+
+.color-hsl {
+    background: hsl(233, 68%, 66%);  /* HSL - H: Hue, S: Saturation, L: Lightness */
+}
+
+.color-nombrado {
+    background: cornflowerblue;  /* Color nombrado */
+}
+                </div>
+
+                <div class="caso-uso">
+                    <h4>📌 Casos de Uso Reales</h4>
+                    <ul>
+                        <li>🎨 <strong>Diseño temático:</strong> Usa HSL para crear paletas coherentes</li>
+                        <li>🔲 <strong>Fondos transparentes:</strong> RGBA para overlays y efectos</li>
+                        <li>🏷️ <strong>Variables de diseño:</strong> Guarda colores en <code>--color-primary: #667eea</code></li>
+                        <li>🌙 <strong>Modo oscuro:</strong> Cambia colores dinámicamente</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN: BORDES -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="bordes">
+            <h2>📍 BORDES - Estilos y Propiedades</h2>
+
+            <div class="ejemplo">
+                <h3><span class="badge badge-propiedad">BORDES</span> Diferentes Estilos</h3>
+                <p>Explora los diferentes estilos de borde disponibles:</p>
+
+                <div class="demo" style="padding: 10px; display: flex; flex-wrap: wrap; justify-content: center;">
+                    <div class="borde-demo borde-solid">Solid</div>
+                    <div class="borde-demo borde-dashed">Dashed</div>
+                    <div class="borde-demo borde-dotted">Dotted</div>
+                    <div class="borde-demo borde-double">Double</div>
+                    <div class="borde-demo borde-groove">Groove</div>
+                    <div class="borde-demo borde-ridge">Ridge</div>
+                </div>
+
+                <div class="boton-codigo" onclick="toggleCodigo(this)">Ver Código CSS - Bordes</div>
+                <div class="codigo">
+/* Sintaxis: border: grosor estilo color; */
+
+.borde-solid {
+    border: 3px solid #667eea;
+}
+
+.borde-dashed {
+    border: 3px dashed #667eea;
+}
+
+.borde-dotted {
+    border: 3px dotted #667eea;
+}
+
+.borde-double {
+    border: 3px double #667eea;
+}
+
+.borde-groove {
+    border: 3px groove #667eea;
+}
+
+.borde-ridge {
+    border: 3px ridge #667eea;
+}
+
+/* Bordes individuales */
+.borde-individual {
+    border-top: 3px solid #667eea;
+    border-right: 2px dashed #764ba2;
+    border-bottom: 3px solid #4ECDC4;
+    border-left: 2px dotted #FFB84D;
+}
+
+/* Border radius para esquinas redondeadas */
+.borde-redondeado {
+    border: 2px solid #667eea;
+    border-radius: 10px;  /* Todas las esquinas */
+    /* O individuales: */
+    border-radius: 10px 20px 30px 40px;  /* Top-left, top-right, bottom-right, bottom-left */
+}
+
+/* Circulo perfecto */
+.circulo {
+    width: 100px;
+    height: 100px;
+    border: 3px solid #667eea;
+    border-radius: 50%;  /* 50% hace un circulo */
+}
+                </div>
+            </div>
+
+            <div class="info-box tip">
+                <strong>💡 Border Radius Avanzado</strong>
+                <code>border-radius: 10px 20px 30px 40px / 50px 60px 70px 80px;</code> - La diagonal cambia la forma
+            </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN: SOMBRAS -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="sombras">
+            <h2>🌑 SOMBRAS - Box Shadow y Text Shadow</h2>
+
+            <div class="ejemplo">
+                <h3><span class="badge badge-efecto">SOMBRAS</span> Efectos de Profundidad</h3>
+
+                <div class="demo" style="padding: 10px; display: flex; flex-wrap: wrap; justify-content: center;">
+                    <div class="sombra-demo sombra-leve">Leve</div>
+                    <div class="sombra-demo sombra-media">Media</div>
+                    <div class="sombra-demo sombra-fuerte">Fuerte</div>
+                    <div class="sombra-demo sombra-inset">Inset</div>
+                </div>
+
+                <div class="boton-codigo" onclick="toggleCodigo(this)">Ver Código CSS - Sombras</div>
+                <div class="codigo">
+/* Sintaxis: box-shadow: offsetX offsetY blurRadius color; */
+
+.sombra-leve {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sombra-media {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.sombra-fuerte {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Sombra inset (hacia adentro) */
+.sombra-inset {
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Múltiples sombras */
+.sombra-multiple {
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        0 4px 8px rgba(0, 0, 0, 0.15),
+        0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Sombra de texto */
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Sombra de texto múltiple (efecto neón) */
+.text-shadow-neon {
+    text-shadow: 
+        0 0 10px #667eea,
+        0 0 20px #764ba2,
+        0 0 30px #FF6B6B;
+}
+                </div>
+
+                <div class="caso-uso">
+                    <h4>📌 Profundidad Visual</h4>
+                    <ul>
+                        <li>🎴 Card con sombra media = Elevación visual</li>
+                        <li>🔘 Botón con sombra fuerte en hover = Feedback interactivo</li>
+                        <li>🆃 Sombra inset = Elemento hundido/grabado</li>
+                        <li>✨ Text-shadow con color = Efecto artístico</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN: GRADIENTES -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="gradientes">
+            <h2>🌈 GRADIENTES - Lineales, Radiales y Cónicos</h2>
+
+            <div class="ejemplo">
+                <h3><span class="badge badge-nuevo">GRADIENTES</span> Múltiples Tipos</h3>
+
+                <div class="demo" style="padding: 10px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+                    <div class="gradiente grad-lineal">Lineal 90°</div>
+                    <div class="gradiente grad-radial">Radial</div>
+                    <div class="gradiente grad-conico">Cónico</div>
+                    <div class="gradiente grad-multicolor">Multicolor</div>
+                </div>
+
+                <div class="boton-codigo" onclick="toggleCodigo(this)">Ver Código CSS - Gradientes</div>
+                <div class="codigo">
+/* Gradiente Lineal */
+.grad-lineal {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+    /* Ángulos: 0deg=arriba, 90deg=derecha, 180deg=abajo, 270deg=izquierda */
+}
+
+.grad-lineal-45 {
+    background: linear-gradient(45deg, #667eea, #764ba2);  /* Diagonal */
+}
+
+.grad-lineal-3colores {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 50%, #FF6B6B 100%);
+}
+
+/* Gradiente Radial */
+.grad-radial {
+    background: radial-gradient(circle, #667eea 0%, #764ba2 100%);
+    /* Formas: circle, ellipse */
+    /* Con posición: radial-gradient(circle at 50% 0%, ...) */
+}
+
+/* Gradiente Cónico */
+.grad-conico {
+    background: conic-gradient(#667eea, #764ba2, #667eea);
+    /* Tipo rueda de colores */
+}
+
+/* Gradiente Repetido */
+.grad-repetido {
+    background: repeating-linear-gradient(
+        45deg,
+        #667eea,
+        #667eea 10px,
+        #764ba2 10px,
+        #764ba2 20px
+    );
+}
+
+/* Multicolor avanzado */
+.grad-multicolor {
+    background: linear-gradient(
+        135deg,
+        #667eea 0%,
+        #764ba2 25%,
+        #FF6B6B 50%,
+        #FFB84D 75%,
+        #4ECDC4 100%
+    );
+}
+                </div>
+
+                <div class="info-box">
+                    <strong>💡 Gradietes con Opacidad</strong>
+                    <code>linear-gradient(90deg, rgba(102,126,234,0) 0%, rgba(102,126,234,1) 100%)</code> - Transición suave
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN: TRANSFORMACIONES -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="transformaciones">
+            <h2>🔄 TRANSFORMACIONES - Scale, Rotate, Skew, Translate</h2>
+
+            <div class="ejemplo">
+                <h3><span class="badge badge-efecto">TRANSFORMACIONES</span> Efectos 2D</h3>
+                <p>Pasa el mouse sobre los elementos para ver el efecto:</p>
+
+                <div class="demo" style="padding: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                    <div class="transform-demo scale-demo">Scale 1.2</div>
+                    <div class="transform-demo rotate-demo">Rotate 15°</div>
+                    <div class="transform-demo skew-demo">Skew Y</div>
+                    <div class="transform-demo translate-demo">Translate X</div>
+                </div>
+
+                <div class="boton-codigo" onclick="toggleCodigo(this)">Ver Código CSS - Transformaciones</div>
+                <div class="codigo">
+/* Transform: scale - Cambiar tamaño */
+.scale-demo:hover {
+    transform: scale(1.2);  /* 120% del tamaño original */
+}
+
+.scale-asimetrico {
+    transform: scaleX(1.5) scaleY(0.8);  /* Ancho 150%, alto 80% */
+}
+
+/* Transform: rotate - Girar */
+.rotate-demo:hover {
+    transform: rotate(15deg);  /* 15 grados en sentido horario */
+}
+
+.rotate-3d {
+    transform: rotateX(45deg);  /* Girar en eje X (3D) */
+    transform: rotateY(45deg);  /* Girar en eje Y (3D) */
+    transform: rotateZ(45deg);  /* Girar en eje Z (igual a rotate) */
+}
+
+/* Transform: skew - Sesgar */
+.skew-demo:hover {
+    transform: skewY(10deg);  /* Sesgar verticalmente */
+}
+
+.skew-combined {
+    transform: skewX(10deg) skewY(5deg);  /* Sesgar en ambos ejes */
+}
+
+/* Transform: translate - Mover */
+.translate-demo:hover {
+    transform: translateX(20px);  /* Mover 20px a la derecha */
+}
+
+.translate-3d {
+    transform: translateX(10px) translateY(-5px) translateZ(20px);
+}
+
+/* Múltiples transformaciones */
+.transform-multiple {
+    transform: scale(1.1) rotate(5deg) translateX(10px);
+    transition: transform 0.3s ease;
+}
+
+/* Transform-origin - Punto de origen */
+.transform-origin {
+    transform-origin: center center;  /* Por defecto */
+    /* O: top left, bottom right, etc. */
+    transform: rotate(45deg);
+}
+                </div>
+
+                <table class="tabla">
+                    <tr>
+                        <th>Función</th>
+                        <th>Sintaxis</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td><strong>scale()</strong></td>
+                        <td><code>scale(1.5)</code></td>
+                        <td>Cambia el tamaño (1 = normal)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>rotate()</strong></td>
+                        <td><code>rotate(45deg)</code></td>
+                        <td>Gira el elemento</td>
+                    </tr>
+                    <tr>
+                        <td><strong>skew()</strong></td>
+                        <td><code>skew(10deg, 5deg)</code></td>
+                        <td>Sesga en X e Y</td>
+                    </tr>
+                    <tr>
+                        <td><strong>translate()</strong></td>
+                        <td><code>translate(10px, -5px)</code></td>
+                        <td>Mueve el elemento</td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN: ANIMACIONES -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="animaciones">
+            <h2>✨ ANIMACIONES - Keyframes y Transiciones</h2>
+
+            <div class="info-box">
+                <strong>💡 Diferencia: Transition vs Animation</strong>
+                <strong>Transition:</strong> Cambio suave entre 2 estados (inicio → fin) | <strong>Animation:</strong> Múltiples fotogramas repetibles
+            </div>
+
+            <div class="ejemplo">
+                <h3><span class="badge badge-animacion">ANIMACIONES</span> Keyframes</h3>
+                <p>Ejemplos de animaciones con @keyframes:</p>
+
+                <div class="demo" style="padding: 20px; display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
+                    <div class="demo-anim anim-pulse">Pulse</div>
+                    <div class="demo-anim anim-bounce">Bounce</div>
+                    <div class="demo-anim anim-rotate">Rotate</div>
+                    <div class="demo-anim anim-slide">Slide</div>
+                    <div class="demo-anim anim-fade">Fade</div>
+                </div>
+
+                <div class="boton-codigo" onclick="toggleCodigo(this)">Ver Código CSS - Animaciones</div>
+                <div class="codigo">
+/* Definir animación con @keyframes */
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-30px);
+    }
+    50% {
+        transform: translateX(30px);
+    }
+    100% {
+        transform: translateX(-30px);
+    }
+}
+
+@keyframes rotate-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fade-in-out {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Aplicar la animación */
+.anim-pulse {
+    animation: pulse 2s infinite;
+    /* Sintaxis: animation-name duration timing-function iteration-count; */
+}
+
+.anim-bounce {
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+.anim-rotate {
+    animation: rotate-spin 2s linear infinite;
+}
+
+/* Timing functions comunes */
+.anim-timing {
+    animation-timing-function: ease;        /* Suave al inicio y final */
+    animation-timing-function: ease-in;     /* Lento al inicio */
+    animation-timing-function: ease-out;    /* Lento al final */
+    animation-timing-function: ease-in-out; /* Suave inicio y final */
+    animation-timing-function: linear;      /* Velocidad constante */
+}
+
+/* Controlar la animación */
+.anim-control {
+    animation-duration: 2s;              /* Duración */
+    animation-delay: 1s;                 /* Esperar antes de iniciar */
+    animation-iteration-count: infinite; /* Repeticiones (o número) */
+    animation-direction: alternate;      /* normal, reverse, alternate, alternate-reverse */
+    animation-fill-mode: forwards;       /* Mantener estado final */
+}
+                </div>
+
+                <div class="info-box tip">
+                    <strong>⚡ Performance</strong>
+                    Anima solo <code>transform</code> y <code>opacity</code> para mejor rendimiento. Evita animar width, height, left, top.
+                </div>
+            </div>
+
+            <div class="ejemplo">
+                <h3><span class="badge badge-animacion">TRANSICIONES</span> Cambios Suaves</h3>
+
+                <div class="boton-codigo" onclick="toggleCodigo(this)">Ver Código CSS - Transiciones</div>
+                <div class="codigo">
+/* Transiciones suaves */
+.transition-basica {
+    background: #667eea;
+    transition: background 0.3s ease;  /* 300ms para cambiar fondo */
+}
+
+.transition-basica:hover {
+    background: #764ba2;
+}
+
+/* Múltiples propiedades */
+.transition-multiple {
+    transition: all 0.3s ease;  /* Todas las propiedades */
+}
+
+/* O específicas */
+.transition-especificas {
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.2s ease-out;
+}
+
+/* Timing functions */
+.timing-linear { transition-timing-function: linear; }
+.timing-ease { transition-timing-function: ease; }
+.timing-ease-in { transition-timing-function: ease-in; }
+.timing-ease-out { transition-timing-function: ease-out; }
+.timing-ease-in-out { transition-timing-function: ease-in-out; }
+
+/* Curva personalizada */
+.timing-custom {
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Atajo (property duration timing-function delay) */
+.atajo {
+    transition: all 0.3s ease 0.1s;  /* Con delay */
+}
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN: FILTROS -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="filtros">
+            <h2>📷 FILTROS - Efectos Visuales</h2>
+
+            <div class="ejemplo">
+                <h3><span class="badge badge-efecto">FILTROS</span> Efectos CSS</h3>
+
+                <div class="demo" style="padding: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;">
+                    <div class="filtro-demo">
+                        <div class="blur">Blur</div>
+                        <p style="font-size: 12px; margin-top: 5px;">blur(5px)</p>
+                    </div>
+                    <div class="filtro-demo">
+                        <div class="brightness">Brightness</div>
+                        <p style="font-size: 12px; margin-top: 5px;">brightness(1.5)</p>
+                    </div>
+                    <div class="filtro-demo">
+                        <div class="contrast">Contrast</div>
+                        <p style="font-size: 12px; margin-top: 5px;">contrast(2)</p>
+                    </div>
+                    <div class="filtro-demo">
+                        <div class="grayscale">Grayscale</div>
+                        <p style="font-size: 12px; margin-top: 5px;">grayscale(100%)</p>
+                    </div>
+                    <div class="filtro-demo">
+                        <div class="sepia">Sepia</div>
+                        <p style="font-size: 12px; margin-top: 5px;">sepia(100%)</p>
+                    </div>
+                </div>
+
+                <div class="boton-codigo" onclick="toggleCodigo(this)">Ver Código CSS - Filtros</div>
+                <div class="codigo">
+/* Filtros CSS - Efectos sobre elementos */
+
+/* Blur - Difuminar */
+.blur {
+    filter: blur(5px);  /* 0 = sin efecto, mayor número = más difuso */
+}
+
+/* Brightness - Brillo */
+.brightness {
+    filter: brightness(1.5);  /* 1 = normal, > 1 = más brillante, < 1 = más oscuro */
+}
+
+/* Contrast - Contraste */
+.contrast {
+    filter: contrast(2);  /* 1 = normal, > 1 = más contraste */
+}
+
+/* Grayscale - Escala de grises */
+.grayscale {
+    filter: grayscale(100%);  /* 0% = color, 100% = blanco y negro */
+}
+
+/* Sepia - Efecto antiguo/marrón */
+.sepia {
+    filter: sepia(100%);  /* 0% = sin efecto, 100% = totalmente sepia */
+}
+
+/* Hue Rotate - Rotar colores */
+.hue-rotate {
+    filter: hue-rotate(90deg);  /* Rota la rueda de colores */
+}
+
+/* Saturate - Saturación de color */
+.saturate {
+    filter: saturate(200%);  /* 100% = normal, > 100% = más vívido */
+}
+
+/* Invert - Invertir colores */
+.invert {
+    filter: invert(1);  /* 0 = normal, 1 = invertido */
+}
+
+/* Drop shadow - Sombra */
+.drop-shadow {
+    filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.3));
+}
+
+/* Múltiples filtros combinados */
+.filtros-combinados {
+    filter: brightness(1.2) contrast(1.5) saturate(1.5);
+}
+
+/* Transición suave de filtros */
+.filtros-hover {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+}
+
+.filtros-hover:hover {
+    filter: grayscale(0%);
+}
+                </div>
+
+                <table class="tabla">
+                    <tr>
+                        <th>Filtro</th>
+                        <th>Valores Típicos</th>
+                        <th>Caso de Uso</th>
+                    </tr>
+                    <tr>
+                        <td><code>blur()</code></td>
+                        <td>0px - 50px</td>
+                        <td>Desenfoque, fondo, efecto artistico</td>
+                    </tr>
+                    <tr>
+                        <td><code>brightness()</code></td>
+                        <td>0% - 200%</td>
+                        <td>Ajustar luminosidad</td>
+                    </tr>
+                    <tr>
+                        <td><code>grayscale()</code></td>
+                        <td>0% - 100%</td>
+                        <td>Efecto vintage, foco</td>
+                    </tr>
+                    <tr>
+                        <td><code>sepia()</code></td>
+                        <td>0% - 100%</td>
+                        <td>Estilo antiguo, nostalgia</td>
+                    </tr>
+                    <tr>
+                        <td><code>hue-rotate()</code></td>
+                        <td>0deg - 360deg</td>
+                        <td>Cambiar tonalidad de colores</td>
+                    </tr>
+                </table>
+
+                <div class="caso-uso">
+                    <h4>📌 Aplicaciones Reales</h4>
+                    <ul>
+                        <li>🖼️ <strong>Galería:</strong> Imagen en blanco/negro, color en hover</li>
+                        <li>🎬 <strong>Modo oscuro:</strong> Invertir colores al cambiar tema</li>
+                        <li>📸 <strong>Efectos artísticos:</strong> Sepia, blur para fondos</li>
+                        <li>⚡ <strong>Loading:</strong> Brightness para destacar/desactivar elementos</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN: LAYOUT -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="layout">
+            <h2>📐 LAYOUT - Flexbox y Grid</h2>
+
+            <div class="ejemplo">
+                <h3><span class="badge badge-layout">LAYOUT</span> Flexbox</h3>
+
+                <div class="boton-codigo" onclick="toggleCodigo(this)">Ver Código CSS - Flexbox Completo</div>
+                <div class="codigo">
+/* Contenedor Flexbox */
+.flex-container {
+    display: flex;
+    flex-direction: row;              /* row, column, row-reverse, column-reverse */
+    justify-content: center;          /* Eje principal */
+    align-items: center;              /* Eje secundario */
+    gap: 20px;                        /* Espacio entre items */
+    flex-wrap: wrap;                  /* Permite saltos de línea */
+    height: 300px;                    /* Altura para demostración */
+}
+
+/* Items dentro del flex */
+.flex-item {
+    flex: 1;                          /* Crecer/encogerse equitativamente */
+    flex-grow: 1;                     /* Factor de crecimiento */
+    flex-shrink: 1;                   /* Factor de encogimiento */
+    flex-basis: auto;                 /* Tamaño base */
+    min-width: 100px;
+}
+
+/* Justify-content valores */
+.justify-start { justify-content: flex-start; }      /* Al inicio */
+.justify-center { justify-content: center; }         /* Centrado */
+.justify-end { justify-content: flex-end; }          /* Al final */
+.justify-around { justify-content: space-around; }   /* Espaciado alrededor */
+.justify-between { justify-content: space-between; } /* Espaciado entre */
+
+/* Align-items valores */
+.align-start { align-items: flex-start; }      /* Arriba */
+.align-center { align-items: center; }         /* Centro */
+.align-end { align-items: flex-end; }          /* Abajo */
+.align-stretch { align-items: stretch; }       /* Estirar al máximo */
+.align-baseline { align-items: baseline; }     /* Línea de base del texto */
+                </div>
+            </div>
+
+            <div class="ejemplo">
+                <h3><span class="badge badge-layout">LAYOUT</span> CSS Grid</h3>
+
+                <div class="boton-codigo" onclick="toggleCodigo(this)">Ver Código CSS - Grid Completo</div>
+                <div class="codigo">
+/* Contenedor Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 columnas iguales */
+    grid-template-rows: auto auto auto;     /* 3 filas automáticas */
+    gap: 20px;                              /* Espaciado entre items */
+    max-width: 1200px;
+}
+
+/* Grid Responsivo */
+.grid-responsivo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;  /* Se adapta automáticamente al tamaño */
+}
+
+/* Items en grid */
+.grid-item {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/* Hacer que un item ocupe más espacio */
+.grid-item-destacado {
+    grid-column: 1 / 3;  /* Ocupa 2 columnas */
+    grid-row: 1 / 3;     /* Ocupa 2 filas */
+}
+
+/* Áreas nombradas para layout complejo */
+.grid-areas {
+    display: grid;
+    grid-template-areas:
+        "header header header"
+        "sidebar main main"
+        "footer footer footer";
+    grid-template-columns: 1fr 2fr 2fr;
+    grid-template-rows: auto 1fr auto;
+}
+
+.grid-header { grid-area: header; }
+.grid-sidebar { grid-area: sidebar; }
+.grid-main { grid-area: main; }
+.grid-footer { grid-area: footer; }
+                </div>
+
+                <div class="caso-uso">
+                    <h4>📌 Flexbox vs Grid</h4>
+                    <ul>
+                        <li>⬅️➡️ <strong>Flexbox:</strong> Para layouts lineales (una fila o columna)</li>
+                        <li>⬜ <strong>Grid:</strong> Para layouts complejos (dos dimensiones)</li>
+                        <li>🔀 <strong>Combinados:</strong> Flexbox para detalles, Grid para estructura general</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>🎉 MEGA Referencia CSS3 - Completada</h3>
+        <p>Más de 100 propiedades CSS documentadas con ejemplos y código desplegable</p>
+        <p style="font-size: 12px; margin-top: 15px; opacity: 0.9;">
+            Última actualización: 3 de Diciembre de 2025 | Diseño moderno | Código interactivo | Casos de uso incluidos
+        </p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Función para desplegar/contraer código
+        function toggleCodigo(boton) {
+            const codigo = boton.nextElementSibling;
+            codigo.classList.toggle('abierto');
+            boton.classList.toggle('abierto');
+        }
+    </script>
+
+</body>
+</html>

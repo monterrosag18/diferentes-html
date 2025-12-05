@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Referencia COMPLETA de HTML5 con 50+ etiquetas y ejemplos prácticos">
+    <meta name="author" content="Proyecto Educativo Web">
+    <title>🎓 Referencia HTML5 Completa - 50+ Etiquetas Prácticas</title>
+    <link rel="stylesheet" href="estilos_referencia.css">
+    <style>
+        /* Estilos adicionales específicos para la referencia expandida */
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        .badge-nuevo { background: #FF6B6B; }
+        .badge-semantica { background: #4ECDC4; }
+        .badge-multimedia { background: #FFE66D; color: #333; }
+        .badge-formulario { background: #95E1D3; color: #333; }
+        .badge-texto { background: #C7CEEA; }
+        
+        .tip-box {
+            background: #E8F4F8;
+            border-left: 4px solid #4ECDC4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        
+        .atributos-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+        }
+        
+        .atributos-tabla th,
+        .atributos-tabla td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .atributos-tabla th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .atributos-tabla tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .ejemplo-avanzado {
+            background: #f9f9f9;
+            border: 2px dashed #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER PRINCIPAL -->
+    <header class="header-principal">
+        <h1>🎓 Referencia Completa HTML5</h1>
+        <p class="subtitulo">50+ Etiquetas con Ejemplos Prácticos, Atributos y Casos de Uso</p>
+        <p style="font-size: 14px; margin-top: 10px; opacity: 0.9;">
+            Última actualización: Diciembre 2025 | Incluye: Textos, Listas, Formularios, Multimedia, Tablas, Semántica, Datos
+        </p>
+    </header>
+
+    <!-- NAVEGACIÓN STICKY -->
+    <nav class="nav-referencia">
+        <a href="#textos">📝 Textos</a>
+        <a href="#listas">📋 Listas</a>
+        <a href="#formularios">📋 Formularios</a>
+        <a href="#multimedia">🎬 Multimedia</a>
+        <a href="#tablas">📊 Tablas</a>
+        <a href="#semantica">🏗️ Semántica</a>
+        <a href="#datos">💾 Datos</a>
+        <a href="#avanzadas">⚡ Avanzadas</a>
+    </nav>
+
+    <main class="contenedor-referencia">
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 1: TEXTOS Y CONTENIDO -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="textos" class="seccion-referencia">
+            <h2>📝 ETIQUETAS DE TEXTO Y CONTENIDO</h2>
+            
+            <!-- ENCABEZADOS -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Encabezados (h1 - h6)</h3>
+                    <span class="badge badge-texto">Texto</span>
+                </div>
+                
+                <div class="ejemplo-html">
+                    <h1 style="margin: 10px 0;">H1: Título Principal de la Página</h1>
+                    <h2 style="margin: 10px 0;">H2: Encabezado Secundario</h2>
+                    <h3 style="margin: 10px 0;">H3: Subsección Importante</h3>
+                    <h4 style="margin: 10px 0;">H4: Subtítulo</h4>
+                    <h5 style="margin: 10px 0;">H5: Encabezado Menor</h5>
+                    <h6 style="margin: 10px 0;">H6: Encabezado Mínimo</h6>
+                </div>
+                
+                <div class="tip-box">
+                    <strong>💡 Importante:</strong> Solo debes usar <code>h1</code> UNA VEZ por página. Usa los demás en orden jerárquico.
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;!-- Estructura jerárquica correcta --&gt;
+&lt;h1&gt;Título Principal de la Página&lt;/h1&gt;
+&lt;h2&gt;Encabezado Secundario&lt;/h2&gt;
+&lt;h3&gt;Subsección&lt;/h3&gt;
+
+&lt;!-- Para SEO es importante mantener el orden --&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- PÁRRAFOS Y ÉNFASIS -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Párrafos y Énfasis</h3>
+                    <span class="badge badge-texto">Texto</span>
+                </div>
+                
+                <div class="ejemplo-html">
+                    <p>Esto es un párrafo <strong>normal con texto importante</strong> en negrita.</p>
+                    
+                    <p>Este párrafo tiene <em>énfasis en cursivas</em> para destacar algo importante.</p>
+                    
+                    <p>También puedes usar <b>etiqueta b para negrita</b> y <i>etiqueta i para itálica</i>.</p>
+                    
+                    <p>Diferencia: <strong>strong</strong> (semántico, importante) vs <b>b</b> (solo visual).</p>
+                    
+                    <p>Puedes hacer <mark>marcas de color amarillo</mark> para destacar partes importantes.</p>
+                    
+                    <p>Y también <u>subrayar texto</u> si es necesario.</p>
+                </div>
+                
+                <div class="tip-box">
+                    <strong>📌 Regla de oro:</strong> Prefiere <code>strong</code> y <code>em</code> sobre <code>b</code> e <code>i</code>. Son semánticas.
+                </div>
+                
+                <table class="atributos-tabla">
+                    <tr>
+                        <th>Etiqueta</th>
+                        <th>Uso</th>
+                        <th>Visual</th>
+                    </tr>
+                    <tr>
+                        <td>&lt;strong&gt;</td>
+                        <td>Contenido importante</td>
+                        <td><strong>Negrita semántica</strong></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;em&gt;</td>
+                        <td>Énfasis</td>
+                        <td><em>Itálica semántica</em></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;mark&gt;</td>
+                        <td>Destacar texto</td>
+                        <td><mark>Fondo amarillo</mark></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;u&gt;</td>
+                        <td>Subrayar</td>
+                        <td><u>Subrayado</u></td>
+                    </tr>
+                    <tr>
+                        <td>&lt;small&gt;</td>
+                        <td>Texto pequeño</td>
+                        <td><small>Texto pequeño</small></td>
+                    </tr>
+                </table>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;p&gt;Texto con &lt;strong&gt;contenido importante&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Texto con &lt;em&gt;énfasis&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Puedes &lt;mark&gt;marcar&lt;/mark&gt; partes importantes&lt;/p&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- CITAS Y REFERENCIAS -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Citas y Referencias</h3>
+                    <span class="badge badge-texto">Texto</span>
+                </div>
+                
+                <div class="ejemplo-html">
+                    <blockquote style="border-left: 4px solid #667eea; padding-left: 15px; margin: 15px 0; font-style: italic; color: #555;">
+                        "La mejor forma de aprender a programar es haciendo proyectos reales y rompiendo cosas."
+                        <br><small>— Alguien sabio</small>
+                    </blockquote>
+                    
+                    <p>Como dijo <q>una cita corta dentro del texto</q> es útil para referencias.</p>
+                    
+                    <p>Para indicar que alguien dijo algo: <cite>El Quijote, Cervantes</cite></p>
+                    
+                    <p>Si necesitas texto que ya no es relevante: <del>Este texto está tachado</del> por estar desactualizado.</p>
+                    
+                    <p>Si necesitas insertar: <ins>Este texto fue insertado después</ins>.</p>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;blockquote&gt;
+    "Una cita larga de alguien importante"
+&lt;/blockquote&gt;
+
+&lt;p&gt;Como dijo &lt;q&gt;una cita corta&lt;/q&gt;&lt;/p&gt;
+&lt;p&gt;Crédito: &lt;cite&gt;Título de Obra&lt;/cite&gt;&lt;/p&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- SUPERÍNDICES Y SUBÍNDICES -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Superíndices, Subíndices y Código</h3>
+                    <span class="badge badge-texto">Texto</span>
+                </div>
+                
+                <div class="ejemplo-html">
+                    <p>Fórmula: E = mc<sup>2</sup> (Einstein)</p>
+                    
+                    <p>Fórmula química: H<sub>2</sub>O (agua)</p>
+                    
+                    <p>Para mostrar código: La función <code>console.log()</code> imprime en consola.</p>
+                    
+                    <p>Teclado: Presiona <kbd>Ctrl</kbd> + <kbd>C</kbd> para copiar.</p>
+                    
+                    <p>Variable: La <var>x</var> representa el valor desconocido.</p>
+                    
+                    <p>Salida: <samp>El programa imprimió esto</samp></p>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;p&gt;E = mc&lt;sup&gt;2&lt;/sup&gt;&lt;/p&gt;
+&lt;p&gt;H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+&lt;p&gt;La función &lt;code&gt;console.log()&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;V&lt;/kbd&gt;&lt;/p&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- SALTOS Y SEPARADORES -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Saltos de Línea y Separadores</h3>
+                    <span class="badge badge-texto">Texto</span>
+                </div>
+                
+                <div class="ejemplo-html">
+                    <p>Primera línea<br>Segunda línea (con salto forzado)</p>
+                    
+                    <hr style="margin: 20px 0; border: 1px solid #ddd;">
+                    
+                    <p>El salto de línea (<code>br</code>) fuerza un salto.</p>
+                    <p>El separador (<code>hr</code>) crea una línea horizontal.</p>
+                    
+                    <address>
+                        📍 Dirección de contacto:<br>
+                        Calle Principal 123<br>
+                        Ciudad, País
+                    </address>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;p&gt;Línea 1&lt;br&gt;Línea 2&lt;/p&gt;
+&lt;hr&gt;
+&lt;address&gt;Dirección de contacto&lt;/address&gt;</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 2: LISTAS -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="listas" class="seccion-referencia">
+            <h2>📋 LISTAS (DESORDENADA, ORDENADA, DEFINICIÓN)</h2>
+            
+            <!-- LISTA DESORDENADA -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Lista Desordenada (ul)</h3>
+                    <span class="badge badge-texto">Estructura</span>
+                </div>
+                
+                <div class="ejemplo-html">
+                    <h4>Ingredientes para un sándwich:</h4>
+                    <ul style="line-height: 1.8;">
+                        <li>Pan integral (2 rebanadas)</li>
+                        <li>Jamón serrano
+                            <ul>
+                                <li>De buena calidad</li>
+                                <li>Cortado fino</li>
+                            </ul>
+                        </li>
+                        <li>Queso fresco</li>
+                        <li>Tomate maduro</li>
+                        <li>Lechuga fresca</li>
+                        <li>Mayonesa casera</li>
+                    </ul>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;ul&gt;
+    &lt;li&gt;Elemento 1&lt;/li&gt;
+    &lt;li&gt;Elemento 2
+        &lt;ul&gt;
+            &lt;li&gt;Subelemento 2.1&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- LISTA ORDENADA -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Lista Ordenada (ol)</h3>
+                    <span class="badge badge-texto">Estructura</span>
+                </div>
+                
+                <div class="ejemplo-html">
+                    <h4>Pasos para hacer un sándwich:</h4>
+                    <ol style="line-height: 1.8;">
+                        <li>Tomar el pan integral</li>
+                        <li>Untar mayonesa en ambas rebanadas</li>
+                        <li>Colocar jamón serrano</li>
+                        <li>Agregar queso
+                            <ol>
+                                <li>Queso fresco primero</li>
+                                <li>Luego queso de untar (opcional)</li>
+                            </ol>
+                        </li>
+                        <li>Poner tomate y lechuga</li>
+                        <li>Cerrar el sándwich</li>
+                        <li>Cortar diagonalmente</li>
+                        <li>¡Disfrutar!</li>
+                    </ol>
+                </div>
+                
+                <div class="tip-box">
+                    <strong>Atributos útiles:</strong>
+                    <ul style="margin: 10px 0;">
+                        <li><code>start="5"</code> - Comienza en número 5</li>
+                        <li><code>reversed</code> - Cuenta hacia atrás</li>
+                        <li><code>type="a"</code> - Letras (a, b, c...)</li>
+                        <li><code>type="i"</code> - Números romanos (i, ii, iii...)</li>
+                    </ul>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;ol&gt;
+    &lt;li&gt;Primer paso&lt;/li&gt;
+    &lt;li&gt;Segundo paso&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ol start="5" type="a"&gt;
+    &lt;li&gt;Comienza en e&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- LISTA DE DEFINICIONES -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Lista de Definiciones (dl)</h3>
+                    <span class="badge badge-texto">Estructura</span>
+                </div>
+                
+                <div class="ejemplo-html">
+                    <dl style="line-height: 2;">
+                        <dt><strong>HTML</strong></dt>
+                        <dd>HyperText Markup Language - Lenguaje para crear estructura web.</dd>
+                        
+                        <dt><strong>CSS</strong></dt>
+                        <dd>Cascading Style Sheets - Lenguaje para estilos y diseño.</dd>
+                        
+                        <dt><strong>JavaScript</strong></dt>
+                        <dd>Lenguaje de programación para interactividad en web.</dd>
+                        
+                        <dt><strong>DOM</strong></dt>
+                        <dd>Document Object Model - Representación del documento HTML en JavaScript.</dd>
+                    </dl>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;dl&gt;
+    &lt;dt&gt;Término&lt;/dt&gt;
+    &lt;dd&gt;Definición del término&lt;/dd&gt;
+    
+    &lt;dt&gt;Otro término&lt;/dt&gt;
+    &lt;dd&gt;Su definición&lt;/dd&gt;
+&lt;/dl&gt;</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 3: FORMULARIOS -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="formularios" class="seccion-referencia">
+            <h2>📋 FORMULARIOS (INPUTS, VALIDACIÓN, CONTROLES)</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Tipos de Input Comunes</h3>
+                    <span class="badge badge-formulario">Formulario</span>
+                </div>
+                
+                <div class="ejemplo-html" style="padding: 20px; background: #f9f9f9;">
+                    <form style="max-width: 500px;">
+                        <div style="margin-bottom: 15px;">
+                            <label for="nombre">Nombre:</label><br>
+                            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label for="email">Email:</label><br>
+                            <input type="email" id="email" name="email" placeholder="tu@email.com">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label for="contraseña">Contraseña:</label><br>
+                            <input type="password" id="contraseña" name="contraseña" placeholder="••••••••">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label for="edad">Edad:</label><br>
+                            <input type="number" id="edad" name="edad" min="0" max="120" placeholder="25">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label for="fecha">Fecha de nacimiento:</label><br>
+                            <input type="date" id="fecha" name="fecha">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label for="color">Color favorito:</label><br>
+                            <input type="color" id="color" name="color" value="#667eea">
+                        </div>
+                        
+                        <div style="margin-bottom: 15px;">
+                            <label for="rango">Nivel de experiencia:</label><br>
+                            <input type="range" id="rango" name="rango" min="0" max="10" value="5">
+                        </div>
+                    </form>
+                </div>
+                
+                <table class="atributos-tabla">
+                    <tr>
+                        <th>type</th>
+                        <th>Uso</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>text</td>
+                        <td>Texto simple</td>
+                        <td>input[type="text"]</td>
+                    </tr>
+                    <tr>
+                        <td>email</td>
+                        <td>Email (validación)</td>
+                        <td>input[type="email"]</td>
+                    </tr>
+                    <tr>
+                        <td>password</td>
+                        <td>Contraseña oculta</td>
+                        <td>input[type="password"]</td>
+                    </tr>
+                    <tr>
+                        <td>number</td>
+                        <td>Números con botones</td>
+                        <td>input[type="number"]</td>
+                    </tr>
+                    <tr>
+                        <td>date</td>
+                        <td>Selector de fecha</td>
+                        <td>input[type="date"]</td>
+                    </tr>
+                    <tr>
+                        <td>color</td>
+                        <td>Selector de color</td>
+                        <td>input[type="color"]</td>
+                    </tr>
+                    <tr>
+                        <td>range</td>
+                        <td>Deslizador</td>
+                        <td>input[type="range"]</td>
+                    </tr>
+                    <tr>
+                        <td>file</td>
+                        <td>Cargar archivo</td>
+                        <td>input[type="file"]</td>
+                    </tr>
+                </table>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;input type="text" placeholder="Escriba aquí"&gt;
+&lt;input type="email" required&gt;
+&lt;input type="password" minlength="8"&gt;
+&lt;input type="number" min="0" max="100"&gt;
+&lt;input type="date"&gt;
+&lt;input type="color"&gt;
+&lt;input type="range" min="0" max="10"&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- RADIOS Y CHECKBOXES -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Radios, Checkboxes y Select</h3>
+                    <span class="badge badge-formulario">Formulario</span>
+                </div>
+                
+                <div class="ejemplo-html" style="padding: 20px; background: #f9f9f9;">
+                    <form style="max-width: 400px;">
+                        <fieldset style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 4px;">
+                            <legend>¿Cuál es tu experiencia en programación?</legend>
+                            <div style="margin: 10px 0;">
+                                <input type="radio" id="principiante" name="experiencia" value="principiante">
+                                <label for="principiante">Principiante</label>
+                            </div>
+                            <div style="margin: 10px 0;">
+                                <input type="radio" id="intermedio" name="experiencia" value="intermedio">
+                                <label for="intermedio">Intermedio</label>
+                            </div>
+                            <div style="margin: 10px 0;">
+                                <input type="radio" id="avanzado" name="experiencia" value="avanzado">
+                                <label for="avanzado">Avanzado</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset style="margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 4px;">
+                            <legend>¿Qué lenguajes dominas?</legend>
+                            <div style="margin: 10px 0;">
+                                <input type="checkbox" id="html" name="lenguajes" value="html">
+                                <label for="html">HTML</label>
+                            </div>
+                            <div style="margin: 10px 0;">
+                                <input type="checkbox" id="css" name="lenguajes" value="css">
+                                <label for="css">CSS</label>
+                            </div>
+                            <div style="margin: 10px 0;">
+                                <input type="checkbox" id="javascript" name="lenguajes" value="javascript">
+                                <label for="javascript">JavaScript</label>
+                            </div>
+                        </fieldset>
+
+                        <div style="margin-bottom: 15px;">
+                            <label for="pais">País:</label><br>
+                            <select id="pais" name="pais" style="width: 100%; padding: 8px; margin-top: 5px;">
+                                <option value="">--Seleccionar--</option>
+                                <option value="mx">México</option>
+                                <option value="es">España</option>
+                                <option value="ar">Argentina</option>
+                                <option value="co">Colombia</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;!-- Radio (una opción) --&gt;
+&lt;input type="radio" id="opcion1" name="grupo" value="1"&gt;
+&lt;label for="opcion1"&gt;Opción 1&lt;/label&gt;
+
+&lt;!-- Checkbox (múltiples opciones) --&gt;
+&lt;input type="checkbox" id="opcion1" name="opciones"&gt;
+&lt;label for="opcion1"&gt;Opción 1&lt;/label&gt;
+
+&lt;!-- Select (dropdown) --&gt;
+&lt;select name="pais"&gt;
+    &lt;option value="mx"&gt;México&lt;/option&gt;
+    &lt;option value="es"&gt;España&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- TEXTAREA Y BOTONES -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Textarea, Botones y Validación</h3>
+                    <span class="badge badge-formulario">Formulario</span>
+                </div>
+                
+                <div class="ejemplo-html" style="padding: 20px; background: #f9f9f9;">
+                    <form style="max-width: 500px;">
+                        <div style="margin-bottom: 15px;">
+                            <label for="comentarios">Déjanos tu comentario:</label><br>
+                            <textarea id="comentarios" name="comentarios" rows="5" placeholder="Escribe tu feedback aquí..." style="width: 100%; padding: 10px; font-family: Arial; margin-top: 5px;"></textarea>
+                        </div>
+
+                        <div style="display: flex; gap: 10px;">
+                            <button type="submit" style="padding: 10px 20px; background: #667eea; color: white; border: none; border-radius: 4px; cursor: pointer;">Enviar</button>
+                            <button type="reset" style="padding: 10px 20px; background: #ccc; color: #333; border: none; border-radius: 4px; cursor: pointer;">Limpiar</button>
+                            <button type="button" onclick="alert('Botón normal')" style="padding: 10px 20px; background: #FFE66D; color: #333; border: none; border-radius: 4px; cursor: pointer;">Normal</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;!-- Textarea para textos largos --&gt;
+&lt;textarea rows="5" cols="40" placeholder="Escribe aquí"&gt;&lt;/textarea&gt;
+
+&lt;!-- Botones --&gt;
+&lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;button type="reset"&gt;Limpiar&lt;/button&gt;
+&lt;button type="button"&gt;Botón normal&lt;/button&gt;</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 4: MULTIMEDIA -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="multimedia" class="seccion-referencia">
+            <h2>🎬 MULTIMEDIA (IMÁGENES, VIDEO, AUDIO, IFRAME)</h2>
+            
+            <!-- IMÁGENES -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Imágenes (img)</h3>
+                    <span class="badge badge-multimedia">Multimedia</span>
+                </div>
+                
+                <div class="ejemplo-html" style="text-align: center;">
+                    <svg width="300" height="200" style="background: #f0f0f0; border-radius: 8px;">
+                        <rect width="300" height="200" fill="#e0e0e0"/>
+                        <circle cx="150" cy="100" r="50" fill="#667eea"/>
+                        <text x="150" y="105" text-anchor="middle" fill="white" font-size="14">Ejemplo de imagen SVG</text>
+                    </svg>
+                    <p style="font-size: 12px; color: #666; margin-top: 10px;">Imagen de ejemplo (SVG)</p>
+                </div>
+                
+                <div class="tip-box">
+                    <strong>Atributos importantes:</strong>
+                    <ul style="margin: 10px 0;">
+                        <li><code>src</code> - Ruta de la imagen (requerido)</li>
+                        <li><code>alt</code> - Texto alternativo (accesibilidad)</li>
+                        <li><code>width</code> - Ancho en píxeles</li>
+                        <li><code>height</code> - Alto en píxeles</li>
+                        <li><code>loading="lazy"</code> - Carga perezosa (optimiza rendimiento)</li>
+                    </ul>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;!-- Imagen simple --&gt;
+&lt;img src="imagen.jpg" alt="Descripción de la imagen"&gt;
+
+&lt;!-- Con dimensiones --&gt;
+&lt;img src="imagen.jpg" alt="Descripción" width="300" height="200"&gt;
+
+&lt;!-- Con carga perezosa --&gt;
+&lt;img src="imagen.jpg" alt="Descripción" loading="lazy"&gt;
+
+&lt;!-- Múltiples formatos (picture) --&gt;
+&lt;picture&gt;
+    &lt;source srcset="imagen.webp" type="image/webp"&gt;
+    &lt;img src="imagen.jpg" alt="Descripción"&gt;
+&lt;/picture&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- FIGURE -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Figure y Figcaption</h3>
+                    <span class="badge badge-multimedia">Multimedia</span>
+                </div>
+                
+                <div class="ejemplo-html">
+                    <figure style="text-align: center; background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
+                        <svg width="200" height="150" style="margin: 0 auto; display: block;">
+                            <rect width="200" height="150" fill="#FFE66D"/>
+                            <polygon points="100,10 40,140 160,140" fill="#667eea"/>
+                            <text x="100" y="80" text-anchor="middle" fill="white" font-size="16" font-weight="bold">Gráfico</text>
+                        </svg>
+                        <figcaption style="margin-top: 15px; font-size: 14px; color: #666;">
+                            <strong>Figura 1:</strong> Ejemplo de figure con caption semántico
+                        </figcaption>
+                    </figure>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;figure&gt;
+    &lt;img src="grafico.jpg" alt="Gráfico de datos"&gt;
+    &lt;figcaption&gt;Figura 1: Descripción del gráfico&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- VIDEO -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Video (video)</h3>
+                    <span class="badge badge-multimedia">Multimedia</span>
+                </div>
+                
+                <div class="ejemplo-html">
+                    <video style="width: 100%; max-width: 400px; background: #000; border-radius: 8px; display: block; margin: 20px auto;" controls poster="thumbnail.jpg">
+                        <source src="video.mp4" type="video/mp4">
+                        <source src="video.webm" type="video/webm">
+                        Tu navegador no soporta el elemento video.
+                    </video>
+                </div>
+                
+                <div class="tip-box">
+                    <strong>Atributos:</strong>
+                    <ul style="margin: 10px 0;">
+                        <li><code>controls</code> - Muestra controles (play, pausa, volumen)</li>
+                        <li><code>autoplay</code> - Comienza a reproducir automáticamente</li>
+                        <li><code>loop</code> - Reproduce en bucle</li>
+                        <li><code>muted</code> - Sin sonido</li>
+                        <li><code>poster</code> - Imagen de portada</li>
+                    </ul>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;video width="400" height="300" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    &lt;source src="video.webm" type="video/webm"&gt;
+    Tu navegador no soporta video.
+&lt;/video&gt;
+
+&lt;!-- Con autoplay y loop --&gt;
+&lt;video autoplay loop muted&gt;
+    &lt;source src="video.mp4"&gt;
+&lt;/video&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- AUDIO -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Audio (audio)</h3>
+                    <span class="badge badge-multimedia">Multimedia</span>
+                </div>
+                
+                <div class="ejemplo-html">
+                    <p>🎵 Reproductor de audio:</p>
+                    <audio style="width: 100%; max-width: 400px;" controls>
+                        <source src="audio.mp3" type="audio/mpeg">
+                        <source src="audio.ogg" type="audio/ogg">
+                        Tu navegador no soporta audio.
+                    </audio>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    &lt;source src="audio.ogg" type="audio/ogg"&gt;
+    Tu navegador no soporta audio.
+&lt;/audio&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- IFRAME -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Iframe (contenido externo)</h3>
+                    <span class="badge badge-multimedia">Multimedia</span>
+                </div>
+                
+                <div class="ejemplo-html">
+                    <div style="background: #f0f0f0; padding: 20px; border-radius: 8px; text-align: center;">
+                        <p>Ejemplo de iframe (contenedor de otra página):</p>
+                        <div style="background: white; padding: 20px; border-radius: 4px; margin-top: 10px;">
+                            [Aquí iría un iframe de YouTube, Google Maps, etc]
+                        </div>
+                    </div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;!-- YouTube --&gt;
+&lt;iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/VIDEO_ID"
+    frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;!-- Google Maps --&gt;
+&lt;iframe src="https://www.google.com/maps/embed?pb=..." 
+    width="600" height="450" style="border:0;" 
+    allowfullscreen="" loading="lazy"&gt;&lt;/iframe&gt;</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 5: TABLAS -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="tablas" class="seccion-referencia">
+            <h2>📊 TABLAS (ESTRUCTURA COMPLETA)</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Tabla Estructurada Correctamente</h3>
+                    <span class="badge">Datos</span>
+                </div>
+                
+                <div class="ejemplo-html" style="overflow-x: auto;">
+                    <table class="atributos-tabla" style="margin: 20px 0;">
+                        <caption style="caption-side: top; margin-bottom: 10px; font-weight: bold;">Tabla 1: Lenguajes de Programación Web</caption>
+                        <thead>
+                            <tr>
+                                <th>Lenguaje</th>
+                                <th>Tipo</th>
+                                <th>Uso Principal</th>
+                                <th>Dificultad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>HTML</td>
+                                <td>Marcado</td>
+                                <td>Estructura</td>
+                                <td>Fácil</td>
+                            </tr>
+                            <tr>
+                                <td>CSS</td>
+                                <td>Estilos</td>
+                                <td>Diseño</td>
+                                <td>Fácil</td>
+                            </tr>
+                            <tr>
+                                <td>JavaScript</td>
+                                <td>Programación</td>
+                                <td>Interactividad</td>
+                                <td>Media</td>
+                            </tr>
+                            <tr>
+                                <td>PHP</td>
+                                <td>Backend</td>
+                                <td>Servidor</td>
+                                <td>Media</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4" style="text-align: center; font-weight: bold;">Total: 4 lenguajes principales</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;table&gt;
+    &lt;caption&gt;Título de la tabla&lt;/caption&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Encabezado 1&lt;/th&gt;
+            &lt;th&gt;Encabezado 2&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Datos 1&lt;/td&gt;
+            &lt;td&gt;Datos 2&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2"&gt;Pie de tabla&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 6: SEMÁNTICA -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="semantica" class="seccion-referencia">
+            <h2>🏗️ ELEMENTOS SEMÁNTICOS HTML5</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Estructura Semántica de Página</h3>
+                    <span class="badge badge-semantica">Semántica</span>
+                </div>
+                
+                <div class="ejemplo-avanzado">
+                    <div style="background: #667eea; color: white; padding: 15px; margin-bottom: 15px; border-radius: 4px; text-align: center;">
+                        &lt;header&gt; - Encabezado de la página
+                    </div>
+                    
+                    <div style="background: #4ECDC4; color: white; padding: 15px; margin-bottom: 15px; border-radius: 4px;">
+                        &lt;nav&gt; - Navegación (menú)
+                    </div>
+                    
+                    <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                        <div style="flex: 3; background: #95E1D3; padding: 15px; border-radius: 4px;">
+                            &lt;main&gt; - Contenido principal
+                            <div style="margin-top: 10px; background: white; padding: 10px; border-radius: 4px; color: #333;">
+                                &lt;article&gt; Artículos &lt;/article&gt;<br>
+                                &lt;section&gt; Secciones &lt;/section&gt;
+                            </div>
+                        </div>
+                        <div style="flex: 1; background: #FFE66D; color: #333; padding: 15px; border-radius: 4px;">
+                            &lt;aside&gt;<br>Barra lateral
+                        </div>
+                    </div>
+                    
+                    <div style="background: #667eea; color: white; padding: 15px; border-radius: 4px; text-align: center;">
+                        &lt;footer&gt; - Pie de página
+                    </div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código completo</summary>
+                    <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;...&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Mi Sitio Web&lt;/h1&gt;
+    &lt;/header&gt;
+
+    &lt;nav&gt;
+        &lt;a href="#"&gt;Inicio&lt;/a&gt;
+        &lt;a href="#"&gt;Servicios&lt;/a&gt;
+    &lt;/nav&gt;
+
+    &lt;main&gt;
+        &lt;article&gt;
+            &lt;h2&gt;Artículo 1&lt;/h2&gt;
+            &lt;section&gt;Contenido&lt;/section&gt;
+        &lt;/article&gt;
+    &lt;/main&gt;
+
+    &lt;aside&gt;
+        &lt;h3&gt;Barra lateral&lt;/h3&gt;
+    &lt;/aside&gt;
+
+    &lt;footer&gt;
+        &lt;p&gt;© 2025 Mi Sitio&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                </details>
+            </article>
+
+            <!-- ELEMENTOS ESPECÍFICOS -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Elementos Semánticos Específicos</h3>
+                    <span class="badge badge-semantica">Semántica</span>
+                </div>
+                
+                <table class="atributos-tabla">
+                    <tr>
+                        <th>Etiqueta</th>
+                        <th>Significado</th>
+                        <th>Cuándo usarla</th>
+                    </tr>
+                    <tr>
+                        <td>&lt;header&gt;</td>
+                        <td>Encabezado</td>
+                        <td>Parte superior de página o sección</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;nav&gt;</td>
+                        <td>Navegación</td>
+                        <td>Menú de enlaces principales</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;main&gt;</td>
+                        <td>Contenido principal</td>
+                        <td>Contenido central de la página (1 por página)</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;article&gt;</td>
+                        <td>Artículo</td>
+                        <td>Contenido independiente (blog, post, noticia)</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;section&gt;</td>
+                        <td>Sección</td>
+                        <td>Grupo temático de contenido</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;aside&gt;</td>
+                        <td>Barra lateral</td>
+                        <td>Contenido relacionado pero secundario</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;footer&gt;</td>
+                        <td>Pie de página</td>
+                        <td>Información de cierre (links, copyright, contacto)</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 7: DATOS Y ATRIBUTOS GLOBALES -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="datos" class="seccion-referencia">
+            <h2>💾 DATOS Y ATRIBUTOS GLOBALES</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>data-* Atributos</h3>
+                    <span class="badge badge-nuevo">Datos</span>
+                </div>
+                
+                <div class="ejemplo-html" style="padding: 20px; background: #f9f9f9;">
+                    <div data-id="123" data-tipo="usuario" data-activo="true" style="background: white; padding: 15px; border: 2px solid #667eea; border-radius: 4px;">
+                        <h4>Usuario Ejemplo</h4>
+                        <p>Este elemento tiene atributos data-* que se pueden acceder desde JavaScript.</p>
+                        <button onclick="mostrarData()" style="padding: 8px 15px; background: #667eea; color: white; border: none; border-radius: 4px; cursor: pointer;">Mostrar datos</button>
+                    </div>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>&lt;!-- Atributos data-* --&gt;
+&lt;div data-id="123" data-tipo="usuario" data-activo="true"&gt;
+    Contenido
+&lt;/div&gt;
+
+&lt;!-- Acceder desde JavaScript --&gt;
+const el = document.querySelector('div');
+console.log(el.dataset.id);      // "123"
+console.log(el.dataset.tipo);    // "usuario"
+console.log(el.dataset.activo);  // "true"</code></pre>
+                </details>
+            </article>
+
+            <!-- ATRIBUTOS GLOBALES -->
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Atributos Globales Útiles</h3>
+                    <span class="badge badge-nuevo">Atributos</span>
+                </div>
+                
+                <table class="atributos-tabla">
+                    <tr>
+                        <th>Atributo</th>
+                        <th>Uso</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>id</td>
+                        <td>Identificador único</td>
+                        <td>id="mi-elemento"</td>
+                    </tr>
+                    <tr>
+                        <td>class</td>
+                        <td>Clases CSS (múltiples)</td>
+                        <td>class="tarjeta destacada"</td>
+                    </tr>
+                    <tr>
+                        <td>title</td>
+                        <td>Tooltip (ayuda)</td>
+                        <td>title="Pasa el mouse aquí"</td>
+                    </tr>
+                    <tr>
+                        <td>style</td>
+                        <td>CSS inline</td>
+                        <td>style="color: red;"</td>
+                    </tr>
+                    <tr>
+                        <td>data-*</td>
+                        <td>Datos personalizados</td>
+                        <td>data-id="123"</td>
+                    </tr>
+                    <tr>
+                        <td>lang</td>
+                        <td>Idioma</td>
+                        <td>lang="es"</td>
+                    </tr>
+                    <tr>
+                        <td>hidden</td>
+                        <td>Ocultar elemento</td>
+                        <td>hidden</td>
+                    </tr>
+                    <tr>
+                        <td>disabled</td>
+                        <td>Desabilitar input</td>
+                        <td>disabled</td>
+                    </tr>
+                </table>
+            </article>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 8: ETIQUETAS AVANZADAS -->
+        <!-- ═══════════════════════════════════════════════════════════ -->
+        <section id="avanzadas" class="seccion-referencia">
+            <h2>⚡ ETIQUETAS AVANZADAS</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Otras Etiquetas Útiles</h3>
+                    <span class="badge badge-nuevo">Avanzadas</span>
+                </div>
+                
+                <table class="atributos-tabla">
+                    <tr>
+                        <th>Etiqueta</th>
+                        <th>Uso</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>&lt;meta&gt;</td>
+                        <td>Metadatos (SEO, viewport)</td>
+                        <td>&lt;meta name="viewport" content="width=device-width"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;link&gt;</td>
+                        <td>Vincular CSS, favicons</td>
+                        <td>&lt;link rel="stylesheet" href="estilos.css"&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;script&gt;</td>
+                        <td>Código JavaScript</td>
+                        <td>&lt;script src="app.js"&gt;&lt;/script&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;noscript&gt;</td>
+                        <td>Mensaje si JS deshabilitado</td>
+                        <td>&lt;noscript&gt;Requiere JavaScript&lt;/noscript&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;template&gt;</td>
+                        <td>Plantilla reutilizable</td>
+                        <td>&lt;template id="mi-template"&gt;...&lt;/template&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;dialog&gt;</td>
+                        <td>Diálogo modal</td>
+                        <td>&lt;dialog&gt;Contenido&lt;/dialog&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;progress&gt;</td>
+                        <td>Barra de progreso</td>
+                        <td>&lt;progress value="70" max="100"&gt;&lt;/progress&gt;</td>
+                    </tr>
+                    <tr>
+                        <td>&lt;meter&gt;</td>
+                        <td>Medidor</td>
+                        <td>&lt;meter value="6" min="0" max="10"&gt;&lt;/meter&gt;</td>
+                    </tr>
+                </table>
+                
+                <div style="margin-top: 20px;">
+                    <h4 style="margin-bottom: 10px;">Ejemplos en vivo:</h4>
+                    <div style="background: #f9f9f9; padding: 15px; border-radius: 4px;">
+                        <p>📊 Progreso: <progress value="70" max="100" style="width: 200px; height: 20px;"></progress></p>
+                        <p>📈 Medidor: <meter value="6" min="0" max="10" style="width: 200px;"></meter></p>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+    </main>
+
+    <footer style="background: #667eea; color: white; padding: 20px; text-align: center; margin-top: 40px;">
+        <p>📚 Referencia HTML5 Completa | Última actualización: Diciembre 2025</p>
+    </footer>
+
+    <script>
+        // Función para mostrar los datos del elemento
+        function mostrarData() {
+            const elemento = document.querySelector('[data-id]');
+            alert(`ID: ${elemento.dataset.id}\nTipo: ${elemento.dataset.tipo}\nActivo: ${elemento.dataset.activo}`);
+        }
+    </script>
+</body>
+</html>

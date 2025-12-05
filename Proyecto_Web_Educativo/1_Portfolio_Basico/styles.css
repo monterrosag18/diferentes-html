@@ -1,0 +1,492 @@
+/* 
+  ===============================
+  ARCHIVO: styles.css
+  CARPETA: 1_Portfolio_Basico
+  PROPÓSITO: Estilos visuales para el portfolio
+  
+  QUÉ ES CSS:
+  CSS (Cascading Style Sheets) es lo que PINTA y POSICIONA
+  los elementos HTML. Define colores, tamaños, fuentes, espacios.
+  
+  ESTRUCTURA BÁSICA DE UNA REGLA CSS:
+  selectores {
+    propiedad: valor;
+  }
+  
+  EJEMPLO: 
+  h1 {
+    color: azul;  <- propiedad: valor;
+  }
+  ===============================
+*/
+
+/* 
+  ========== RESET Y CONFIGURACIÓN GLOBAL ==========
+  Quitamos márgenes y rellenos predeterminados
+  Esto da un lienzo limpio para empezar
+*/
+
+* {
+  /* 
+    *: Selector universal - aplica a TODO
+    margin: 0: Quita espacios externos
+    padding: 0: Quita espacios internos
+    box-sizing: border-box: Incluye bordes en el tamaño total
+  */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+  ========== ESTILOS GENERALES DEL BODY ==========
+  body: El contenedor principal de toda la página
+*/
+
+body {
+  /* 
+    font-family: Tipo de letra
+    'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    Primera opción (Segoe UI) es la preferida, si no existe,
+    intenta Tahoma, luego Geneva, y al final usa sans-serif genérica
+  */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  
+  /* line-height: Altura de las líneas de texto (espaciado vertical) */
+  line-height: 1.6;
+  
+  /* color: Color del texto principal */
+  color: #333;
+  
+  /* background-color: Color de fondo */
+  background-color: #f4f4f4;
+}
+
+/* 
+  ========== CONTENEDOR GENERAL ==========
+  .contenedor: Clase para centralizar y limitar ancho del contenido
+  El punto (.) significa que es una clase
+*/
+
+.contenedor {
+  /* 
+    max-width: Ancho máximo
+    1200px: Un buen ancho para pantallas desktop
+    Si la pantalla es más pequeña, se adapta (responsivo)
+  */
+  max-width: 1200px;
+  
+  /* margin: 0 auto: Centra horizontalmente */
+  margin: 0 auto;
+  
+  /* padding: Relleno interno (espacio dentro) */
+  padding: 0 20px;
+}
+
+/* 
+  ========== ENCABEZADO (HEADER) ==========
+  header: La sección superior del sitio
+*/
+
+header {
+  /* background-color: Color de fondo del header */
+  background-color: #2c3e50;
+  
+  /* color: Color del texto dentro */
+  color: white;
+  
+  /* padding: Relleno de 40px arriba/abajo, 0 izquierda/derecha */
+  padding: 40px 0;
+  
+  /* text-align: Alineación del texto */
+  text-align: center;
+}
+
+/* 
+  header h1: Encabezado h1 DENTRO de header
+  Selector compuesto: solo aplica h1 dentro de header
+*/
+
+header h1 {
+  /* font-size: Tamaño de la letra */
+  font-size: 2.5rem;
+  
+  /* rem: Unidad relativa (relativa a tamaño base 16px)
+     2.5rem = 2.5 * 16px = 40px
+     Es mejor que px porque es adaptable
+  */
+  
+  /* margin-bottom: Espacio debajo */
+  margin-bottom: 10px;
+}
+
+/* Subtítulo dentro del header */
+header .subtitulo {
+  /* font-size: 1.1rem = 17.6px */
+  font-size: 1.1rem;
+  
+  /* opacity: Transparencia (1 = opaco, 0 = invisible) */
+  opacity: 0.9;
+}
+
+/* 
+  ========== NAVEGACIÓN ==========
+  nav: Barra de navegación
+*/
+
+nav {
+  /* background-color: Un poco más oscuro que el header */
+  background-color: #34495e;
+  
+  /* position: sticky: Queda pegado arriba al hacer scroll */
+  position: sticky;
+  
+  /* top: 0: Pegado desde el tope */
+  top: 0;
+  
+  /* z-index: Nivel de profundidad (superior a otros elementos) */
+  z-index: 100;
+}
+
+/* 
+  nav ul: Lista (ul = unordered list) dentro de nav
+  Aquí van los enlaces de navegación
+*/
+
+nav ul {
+  /* 
+    display: flex: Coloca elementos en fila horizontalmente
+    Es muy importante para layouts modernos
+  */
+  display: flex;
+  
+  /* list-style: none: Quita los puntitos de las listas */
+  list-style: none;
+  
+  /* justify-content: center: Centra items horizontalmente */
+  justify-content: center;
+  
+  /* max-width y margin como el .contenedor */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 
+  nav li: Items (li = list item) de la navegación
+*/
+
+nav li {
+  /* margin: 0 20px: 0 arriba/abajo, 20px izquierda/derecha */
+  margin: 0 20px;
+}
+
+/* 
+  nav a: Enlaces dentro de nav
+  a: Etiqueta de enlace (anchor)
+*/
+
+nav a {
+  /* 
+    color: white: Texto blanco
+    text-decoration: none: Quita la línea azul de enlaces
+  */
+  color: white;
+  text-decoration: none;
+  
+  /* display: block: Convierte en bloque para padding */
+  display: block;
+  
+  /* padding: Relleno alrededor del texto del enlace */
+  padding: 15px 0;
+  
+  /* 
+    transition: Animación suave al cambiar propiedades
+    0.3s: La animación tarda 0.3 segundos
+  */
+  transition: 0.3s;
+}
+
+/* 
+  nav a:hover: Cuando pone el mouse sobre un enlace
+  :hover es un pseudo-clase
+*/
+
+nav a:hover {
+  /* color: #1abc9c: Cambia a color turquesa */
+  color: #1abc9c;
+  
+  /* border-bottom: Línea abajo del enlace */
+  border-bottom: 2px solid #1abc9c;
+}
+
+/* 
+  ========== MAIN: CONTENIDO PRINCIPAL ==========
+  main: El corazón de la página
+*/
+
+main {
+  /* min-height: Altura mínima (ocupa al menos esta altura) */
+  min-height: calc(100vh - 200px);
+  
+  /* 
+    calc(): Permite hacer cálculos en CSS
+    100vh = 100% de la altura visible (viewport)
+  */
+}
+
+/* 
+  ========== SECCIONES ==========
+  .seccion: Clase para cada sección de contenido
+*/
+
+.seccion {
+  /* padding: Relleno interno */
+  padding: 60px 0;
+  
+  /* background-color: Fondo blanco */
+  background-color: white;
+  
+  /* margin-bottom: Espacio abajo */
+  margin-bottom: 20px;
+}
+
+/* Línea para separar visualmente */
+.seccion:nth-child(odd) {
+  /* nth-child(odd): Cada sección impar (1ª, 3ª, 5ª...) */
+  background-color: #f9f9f9;
+}
+
+/* 
+  .seccion h2: Encabezados nivel 2 en secciones
+*/
+
+.seccion h2 {
+  /* font-size: 2rem = 32px */
+  font-size: 2rem;
+  
+  /* margin-bottom: Espacio debajo del título */
+  margin-bottom: 30px;
+  
+  /* color: #2c3e50: Azul oscuro */
+  color: #2c3e50;
+  
+  /* border-bottom: Línea decorativa abajo */
+  border-bottom: 3px solid #1abc9c;
+  
+  /* padding-bottom: Espacio entre texto y línea */
+  padding-bottom: 10px;
+  
+  /* width: 200px: Ancho de la línea */
+  width: 200px;
+}
+
+/* 
+  ========== ARTÍCULOS (PROYECTOS) ==========
+  .proyecto: Cada proyecto es un artículo
+*/
+
+.proyecto {
+  /* 
+    margin-bottom: Espacio entre proyectos
+    background-color: Fondo ligeramente diferente
+  */
+  margin-bottom: 30px;
+  background-color: white;
+  
+  /* padding: Relleno interno */
+  padding: 20px;
+  
+  /* border-left: Línea decorativa a la izquierda */
+  border-left: 5px solid #1abc9c;
+  
+  /* border-radius: Esquinas redondeadas */
+  border-radius: 5px;
+  
+  /* 
+    box-shadow: Sombra debajo del elemento
+    5px 5px 15px: Desplazamiento y difuminación
+    rgba(0,0,0,0.1): Color negro con 10% de opacidad
+  */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  
+  /* transition: Animación suave */
+  transition: 0.3s;
+}
+
+/* 
+  .proyecto:hover: Cuando pone mouse sobre un proyecto
+*/
+
+.proyecto:hover {
+  /* 
+    box-shadow: Sombra más pronunciada al pasar mouse
+    Efecto de "levantarse" del fondo
+  */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  
+  /* transform: scale(1.02): Aumenta tamaño 2% */
+  transform: scale(1.02);
+}
+
+/* .proyecto h3: Títulos de proyectos */
+.proyecto h3 {
+  /* color: #2c3e50: Azul oscuro */
+  color: #2c3e50;
+  
+  /* margin-bottom: Espacio debajo */
+  margin-bottom: 10px;
+}
+
+/* 
+  ========== LISTA DE HABILIDADES ==========
+  .lista-habilidades: Lista de competencias técnicas
+*/
+
+.lista-habilidades {
+  /* 
+    display: grid: Crea una grilla
+    grid-template-columns: repeat(2, 1fr)
+    Divide en 2 columnas iguales (1fr cada una)
+    fr = fracción del espacio disponible
+  */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  
+  /* gap: Espacio entre items */
+  gap: 15px;
+  
+  /* list-style: none: Quita puntitos */
+  list-style: none;
+}
+
+/* .lista-habilidades li: Items de habilidades */
+.lista-habilidades li {
+  /* 
+    background: Degradado de colores
+    linear-gradient(135deg, ...): Ángulo de 135 grados
+  */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  
+  /* color: white: Texto blanco */
+  color: white;
+  
+  /* padding: Relleno interno */
+  padding: 15px 20px;
+  
+  /* border-radius: Esquinas redondeadas */
+  border-radius: 5px;
+  
+  /* text-align: center: Centra el texto */
+  text-align: center;
+}
+
+/* 
+  ========== FOOTER: PIE DE PÁGINA ==========
+  footer: Sección inferior del sitio
+*/
+
+footer {
+  /* background-color: Mismo color que header */
+  background-color: #2c3e50;
+  
+  /* color: white: Texto blanco */
+  color: white;
+  
+  /* padding: Relleno interno */
+  padding: 40px 0;
+  
+  /* text-align: center: Centra el texto */
+  text-align: center;
+  
+  /* margin-top: Espacio arriba */
+  margin-top: 40px;
+}
+
+/* footer a: Enlaces dentro del footer */
+footer a {
+  /* color: #1abc9c: Turquesa */
+  color: #1abc9c;
+  
+  /* text-decoration: none: Quita la línea azul */
+  text-decoration: none;
+}
+
+/* footer a:hover: Cuando pasa mouse */
+footer a:hover {
+  /* text-decoration: underline: Agrega línea abajo */
+  text-decoration: underline;
+}
+
+/* 
+  ========== RESPONSIVE DESIGN (MOBILE) ==========
+  @media: Regla para aplicar estilos en pantallas pequeñas
+  (max-width: 768px): Si el ancho es menor o igual a 768px
+  768px es el ancho típico de tablets
+*/
+
+@media (max-width: 768px) {
+  /* 
+    Aquí ponemos los cambios para pantallas pequeñas
+  */
+  
+  /* Encabezado más pequeño */
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  /* Navegación en columna */
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Items de navegación */
+  nav li {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Lista de habilidades en 1 columna */
+  .lista-habilidades {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Secciones con menos padding */
+  .seccion {
+    padding: 40px 0;
+  }
+  
+  /* Encabezados de sección más pequeños */
+  .seccion h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* 
+  ========== RESPONSIVE DESIGN (CELULAR) ==========
+  (max-width: 480px): Si el ancho es menor a 480px
+  480px es ancho típico de celular
+*/
+
+@media (max-width: 480px) {
+  /* Font más pequeño */
+  body {
+    font-size: 14px;
+  }
+  
+  /* Header muy pequeño */
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  /* Contenedor con más padding para márgenes */
+  .contenedor {
+    padding: 0 10px;
+  }
+  
+  /* Proyectos sin sombra */
+  .proyecto {
+    padding: 15px;
+  }
+}

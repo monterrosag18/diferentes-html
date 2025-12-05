@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Referencia COMPLETA de JavaScript con 50+ ejemplos interactivos">
+    <meta name="author" content="Proyecto Educativo Web">
+    <title>⚙️ Referencia JavaScript Completa - 50+ Ejemplos Interactivos</title>
+    <link rel="stylesheet" href="estilos_referencia.css">
+    <style>
+        /* Estilos específicos para JavaScript */
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 8px;
+            font-weight: bold;
+        }
+        
+        .badge-basico { background: #FF6B6B; }
+        .badge-intermedio { background: #4ECDC4; }
+        .badge-avanzado { background: #FFE66D; color: #333; }
+        .badge-dom { background: #95E1D3; color: #333; }
+        .badge-async { background: #C7CEEA; }
+        
+        #consola-viva {
+            background: #1e1e1e;
+            color: #00FF00;
+            font-family: 'Courier New', monospace;
+            padding: 15px;
+            border-radius: 8px;
+            height: 200px;
+            overflow-y: auto;
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 15px 0;
+            border: 2px solid #667eea;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .boton-ejecutar {
+            padding: 10px 20px;
+            margin: 5px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+        
+        .boton-ejecutar:hover {
+            background: #FF6B6B;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .input-demo {
+            padding: 8px 12px;
+            border: 2px solid #667eea;
+            border-radius: 4px;
+            font-size: 14px;
+            margin: 5px;
+        }
+        
+        .resultado-demo {
+            background: #E8F4F8;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+        
+        .atributos-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            background: white;
+        }
+        
+        .atributos-tabla th,
+        .atributos-tabla td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        .atributos-tabla th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+        
+        .atributos-tabla tr:hover {
+            background: #f5f5f5;
+        }
+        
+        .ejemplo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .card-resultado {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header-principal">
+        <h1>⚙️ Referencia Completa JavaScript</h1>
+        <p class="subtitulo">50+ Ejemplos Interactivos con Consola en Vivo</p>
+        <p style="font-size: 14px; margin-top: 10px; opacity: 0.9;">
+            Incluye: Variables, Operadores, Objetos, Arrays, Funciones, DOM, Eventos, Promesas, Async/Await y más
+        </p>
+    </header>
+
+    <!-- NAVEGACIÓN -->
+    <nav class="nav-referencia">
+        <a href="#variables">📦 Variables</a>
+        <a href="#tipos">🎯 Tipos</a>
+        <a href="#operadores">➕ Operadores</a>
+        <a href="#objetos">🔧 Objetos</a>
+        <a href="#arrays">📚 Arrays</a>
+        <a href="#funciones">⚙️ Funciones</a>
+        <a href="#condicionales">🔀 Control</a>
+        <a href="#dom">🖱️ DOM</a>
+        <a href="#eventos">📡 Eventos</a>
+        <a href="#async">⏱️ Async</a>
+    </nav>
+
+    <main class="contenedor-referencia">
+
+        <!-- CONSOLA VIVA CENTRAL -->
+        <section style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin-bottom: 30px;">
+            <h3>🖥️ Consola en Vivo - Haz click en "Ejecutar" para ver resultados:</h3>
+            <div id="consola-viva">
+                > Consola lista. Haz click en cualquier botón para ver resultados aquí...\n
+            </div>
+            <div style="text-align: center; margin-top: 10px;">
+                <button class="boton-ejecutar" onclick="limpiarConsola()">🗑️ Limpiar Consola</button>
+            </div>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 1: VARIABLES -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="variables" class="seccion-referencia">
+            <h2>📦 VARIABLES (VAR, LET, CONST)</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Declarar Variables</h3>
+                    <span class="badge badge-basico">Básico</span>
+                </div>
+                
+                <table class="atributos-tabla">
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Alcance</th>
+                        <th>Reasignable</th>
+                        <th>Redeclarable</th>
+                        <th>Inicialización</th>
+                        <th>Recomendación</th>
+                    </tr>
+                    <tr>
+                        <td><code>var</code></td>
+                        <td>Global/Función</td>
+                        <td>✅ Sí</td>
+                        <td>✅ Sí</td>
+                        <td>Opcional</td>
+                        <td>❌ Evitar</td>
+                    </tr>
+                    <tr>
+                        <td><code>let</code></td>
+                        <td>Bloque</td>
+                        <td>✅ Sí</td>
+                        <td>❌ No</td>
+                        <td>Opcional</td>
+                        <td>✅ Preferir</td>
+                    </tr>
+                    <tr>
+                        <td><code>const</code></td>
+                        <td>Bloque</td>
+                        <td>❌ No</td>
+                        <td>❌ No</td>
+                        <td>Obligatorio</td>
+                        <td>✅ Mejor</td>
+                    </tr>
+                </table>
+                
+                <div style="margin-top: 20px;">
+                    <button class="boton-ejecutar" onclick="ejemploVariables()">Ejecutar: Variables</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>// VAR (función scope - evitar)
+var nombre = "Juan";
+var nombre = "Pedro";  // Se puede redeclarar
+nombre = "Carlos";     // Se puede reasignar
+
+// LET (block scope - usar)
+let edad = 25;
+age = 26;  // Se puede reasignar
+// let edad = 30;  // ERROR: no se puede redeclarar
+
+// CONST (block scope - mejor)
+const ciudad = "Madrid";
+// ciudad = "Barcelona";  // ERROR: no se puede reasignar
+
+// Regla de oro: usa CONST por defecto, LET si necesitas cambiar valor</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 2: TIPOS DE DATOS -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="tipos" class="seccion-referencia">
+            <h2>🎯 TIPOS DE DATOS PRIMITIVOS</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>String, Number, Boolean, null, undefined</h3>
+                    <span class="badge badge-basico">Básico</span>
+                </div>
+                
+                <table class="atributos-tabla">
+                    <tr>
+                        <th>Tipo</th>
+                        <th>Ejemplo</th>
+                        <th>typeof</th>
+                        <th>Descripción</th>
+                    </tr>
+                    <tr>
+                        <td>String</td>
+                        <td>"Hola" o 'Hola'</td>
+                        <td>string</td>
+                        <td>Texto entre comillas</td>
+                    </tr>
+                    <tr>
+                        <td>Number</td>
+                        <td>42, 3.14, -5</td>
+                        <td>number</td>
+                        <td>Números enteros y decimales</td>
+                    </tr>
+                    <tr>
+                        <td>Boolean</td>
+                        <td>true, false</td>
+                        <td>boolean</td>
+                        <td>Verdadero o falso</td>
+                    </tr>
+                    <tr>
+                        <td>null</td>
+                        <td>null</td>
+                        <td>object*</td>
+                        <td>Valor nulo (intencional)</td>
+                    </tr>
+                    <tr>
+                        <td>undefined</td>
+                        <td>undefined</td>
+                        <td>undefined</td>
+                        <td>No definido aún</td>
+                    </tr>
+                    <tr>
+                        <td>BigInt</td>
+                        <td>123n, 456n</td>
+                        <td>bigint</td>
+                        <td>Números muy grandes</td>
+                    </tr>
+                    <tr>
+                        <td>Symbol</td>
+                        <td>Symbol()</td>
+                        <td>symbol</td>
+                        <td>Valor único</td>
+                    </tr>
+                </table>
+                
+                <div style="margin-top: 20px;">
+                    <button class="boton-ejecutar" onclick="ejemploTipos()">Ejecutar: Tipos de Datos</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>// STRING
+const texto = "Hola Mundo";
+const template = `Hola ${nombre}`; // Template literals
+
+// NUMBER
+const numero = 42;
+const decimal = 3.14;
+const negativo = -5;
+
+// BOOLEAN
+const verdadero = true;
+const falso = false;
+
+// NULL y UNDEFINED
+const nulo = null;        // Intencional
+let noDefinido;           // undefined (sin valor)
+
+// CONVERSIONES
+String(42);               // "42"
+Number("123");            // 123
+Boolean(0);               // false
+Boolean(1);               // true
+parseInt("42");           // 42
+parseFloat("3.14");       // 3.14</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 3: OPERADORES -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="operadores" class="seccion-referencia">
+            <h2>➕ OPERADORES</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Aritméticos, Comparación, Lógicos</h3>
+                    <span class="badge badge-basico">Básico</span>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px;">
+                    <h4>Operadores Aritméticos:</h4>
+                    <table class="atributos-tabla" style="margin: 10px 0;">
+                        <tr>
+                            <th>Operador</th>
+                            <th>Nombre</th>
+                            <th>Ejemplo</th>
+                            <th>Resultado</th>
+                        </tr>
+                        <tr>
+                            <td>+</td>
+                            <td>Suma</td>
+                            <td>5 + 3</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>-</td>
+                            <td>Resta</td>
+                            <td>5 - 3</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>*</td>
+                            <td>Multiplicación</td>
+                            <td>5 * 3</td>
+                            <td>15</td>
+                        </tr>
+                        <tr>
+                            <td>/</td>
+                            <td>División</td>
+                            <td>15 / 3</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>%</td>
+                            <td>Módulo (resto)</td>
+                            <td>17 % 5</td>
+                            <td>2</td>
+                        </tr>
+                        <tr>
+                            <td>**</td>
+                            <td>Exponencial</td>
+                            <td>2 ** 3</td>
+                            <td>8</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Operadores de Comparación:</h4>
+                    <table class="atributos-tabla" style="margin: 10px 0;">
+                        <tr>
+                            <th>Operador</th>
+                            <th>Significado</th>
+                            <th>Ejemplo</th>
+                            <th>Resultado</th>
+                        </tr>
+                        <tr>
+                            <td>==</td>
+                            <td>Igual (loose)</td>
+                            <td>5 == "5"</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>===</td>
+                            <td>Igual (strict)</td>
+                            <td>5 === "5"</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>!=</td>
+                            <td>Diferente (loose)</td>
+                            <td>5 != "5"</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>!==</td>
+                            <td>Diferente (strict)</td>
+                            <td>5 !== "5"</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>&gt;</td>
+                            <td>Mayor que</td>
+                            <td>5 > 3</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;</td>
+                            <td>Menor que</td>
+                            <td>5 < 3</td>
+                            <td>false</td>
+                        </tr>
+                    </table>
+                    
+                    <h4>Operadores Lógicos:</h4>
+                    <table class="atributos-tabla" style="margin: 10px 0;">
+                        <tr>
+                            <th>Operador</th>
+                            <th>Significado</th>
+                            <th>Ejemplo</th>
+                            <th>Resultado</th>
+                        </tr>
+                        <tr>
+                            <td>&&</td>
+                            <td>AND (y)</td>
+                            <td>true && true</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>||</td>
+                            <td>OR (o)</td>
+                            <td>true || false</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>!</td>
+                            <td>NOT (no)</td>
+                            <td>!true</td>
+                            <td>false</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button class="boton-ejecutar" onclick="ejemploOperadores()">Ejecutar: Operadores</button>
+                </div>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 4: OBJETOS -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="objetos" class="seccion-referencia">
+            <h2>🔧 OBJETOS (ESTRUCTURAS DE DATOS)</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Crear y Manipular Objetos</h3>
+                    <span class="badge badge-intermedio">Intermedio</span>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button class="boton-ejecutar" onclick="ejemploObjetos()">Ejecutar: Crear Objetos</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>// Objeto literal
+const persona = {
+    nombre: "Juan",
+    edad: 25,
+    ciudad: "Madrid",
+    presentar: function() {
+        return `Hola, soy ${this.nombre}`;
+    }
+};
+
+// Acceder propiedades
+persona.nombre;           // "Juan"
+persona["edad"];          // 25
+
+// Modificar propiedades
+persona.edad = 26;
+persona.profesion = "Ingeniero";  // Agregar nueva
+
+// Métodos
+persona.presentar();      // "Hola, soy Juan"
+
+// Iterar propiedades
+for (let clave in persona) {
+    console.log(clave, persona[clave]);
+}
+
+// Object methods
+Object.keys(persona);     // ["nombre", "edad", "ciudad", "presentar"]
+Object.values(persona);   // ["Juan", 25, "Madrid", function]
+Object.entries(persona);  // [["nombre", "Juan"], ...]</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Destructuring (Desestructuración)</h3>
+                    <span class="badge badge-avanzado">Avanzado</span>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button class="boton-ejecutar" onclick="ejemploDestructuring()">Ejecutar: Destructuring</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>// Destructuring de objetos
+const persona = { nombre: "Juan", edad: 25, ciudad: "Madrid" };
+
+// Extrae propiedades directamente
+const { nombre, edad } = persona;
+console.log(nombre);  // "Juan"
+
+// Con alias
+const { nombre: n, edad: a } = persona;
+
+// Con valores por defecto
+const { nombre, pais = "España" } = persona;
+
+// En parámetros de función
+function presentar({ nombre, edad }) {
+    return `${nombre} tiene ${edad} años`;
+}</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 5: ARRAYS -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="arrays" class="seccion-referencia">
+            <h2>📚 ARRAYS (LISTAS)</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Crear y Manipular Arrays</h3>
+                    <span class="badge badge-intermedio">Intermedio</span>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button class="boton-ejecutar" onclick="ejemploArrays()">Ejecutar: Crear Arrays</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>// Crear arrays
+const numeros = [1, 2, 3, 4, 5];
+const mixto = [1, "texto", true, null];
+const vacio = [];
+
+// Acceso por índice
+numeros[0];             // 1
+numeros[2];             // 3
+
+// Propiedades
+numeros.length;         // 5
+
+// Métodos de modificación
+numeros.push(6);        // Agrega al final: [1,2,3,4,5,6]
+numeros.pop();          // Quita del final: [1,2,3,4,5]
+numeros.unshift(0);     // Agrega al inicio: [0,1,2,3,4,5]
+numeros.shift();        // Quita del inicio: [1,2,3,4,5]
+
+// Búsqueda
+numeros.indexOf(3);     // 2 (posición)
+numeros.includes(4);    // true
+
+// Conversión
+numeros.join(", ");     // "1, 2, 3, 4, 5"
+"1,2,3".split(",");     // [1, 2, 3]
+
+// Reverse y Sort
+[1,2,3].reverse();      // [3,2,1]
+[3,1,2].sort();         // [1,2,3]</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Métodos Array: map, filter, reduce, find</h3>
+                    <span class="badge badge-avanzado">Avanzado</span>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button class="boton-ejecutar" onclick="ejemploMetodosArray()">Ejecutar: Métodos Array</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>const numeros = [1, 2, 3, 4, 5];
+
+// MAP - Transforma cada elemento
+const duplicados = numeros.map(n => n * 2);
+// [2, 4, 6, 8, 10]
+
+// FILTER - Filtra elementos
+const pares = numeros.filter(n => n % 2 === 0);
+// [2, 4]
+
+// FIND - Encuentra el primer elemento
+const primero = numeros.find(n => n > 3);
+// 4
+
+// FINDINDEX - Encuentra el índice
+const indice = numeros.findIndex(n => n > 3);
+// 3
+
+// REDUCE - Acumula en un valor
+const suma = numeros.reduce((acum, n) => acum + n, 0);
+// 15
+
+// SOME - Comprueba si alguno cumple
+numeros.some(n => n > 4);
+// true
+
+// EVERY - Comprueba si todos cumplen
+numeros.every(n => n > 0);
+// true
+
+// CHAINING - Combinar métodos
+const resultado = numeros
+    .filter(n => n > 2)
+    .map(n => n * 2)
+    .reduce((a, n) => a + n, 0);
+// (3*2) + (4*2) + (5*2) = 24</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 6: FUNCIONES -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="funciones" class="seccion-referencia">
+            <h2>⚙️ FUNCIONES</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Funciones Tradicionales y Arrow Functions</h3>
+                    <span class="badge badge-intermedio">Intermedio</span>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button class="boton-ejecutar" onclick="ejemploFunciones()">Ejecutar: Funciones</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>// Función tradicional
+function sumar(a, b) {
+    return a + b;
+}
+sumar(5, 3);            // 8
+
+// Función expresión
+const multiplicar = function(a, b) {
+    return a * b;
+};
+multiplicar(5, 3);      // 15
+
+// Arrow function (moderna)
+const restar = (a, b) => {
+    return a - b;
+};
+restar(5, 3);           // 2
+
+// Arrow function simplificada (una línea)
+const dividir = (a, b) => a / b;
+dividir(15, 3);         // 5
+
+// Parámetros por defecto
+function saludar(nombre = "Amigo") {
+    return `Hola ${nombre}`;
+}
+saludar();              // "Hola Amigo"
+saludar("Juan");        // "Hola Juan"
+
+// Rest parameters (resto de argumentos)
+function suma(...numeros) {
+    return numeros.reduce((a, n) => a + n, 0);
+}
+suma(1, 2, 3, 4);       // 10
+
+// Callbacks
+function procesar(datos, callback) {
+    callback(datos);
+}
+procesar(5, (n) => console.log(n * 2));</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 7: CONDICIONALES -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="condicionales" class="seccion-referencia">
+            <h2>🔀 CONDICIONALES (if, switch, ternario)</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Estructuras Condicionales</h3>
+                    <span class="badge badge-basico">Básico</span>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button class="boton-ejecutar" onclick="ejemploCondicionales()">Ejecutar: Condicionales</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>// IF - ELSE
+const edad = 25;
+if (edad < 18) {
+    console.log("Menor de edad");
+} else if (edad < 65) {
+    console.log("Adulto");
+} else {
+    console.log("Jubilado");
+}
+
+// SWITCH
+const dia = 3;
+switch (dia) {
+    case 1:
+        console.log("Lunes");
+        break;
+    case 2:
+        console.log("Martes");
+        break;
+    default:
+        console.log("Otro día");
+}
+
+// TERNARIO (operador condicional)
+const resultado = edad >= 18 ? "Mayor" : "Menor";
+
+// OPERADOR LÓGICO COMO CONDICIONAL
+const nombre = usuario && usuario.nombre;  // Chequea existencia</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 8: BUCLES -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="bucles" class="seccion-referencia">
+            <h2>🔁 BUCLES (for, while, forEach)</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Tipos de Bucles</h3>
+                    <span class="badge badge-basico">Básico</span>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button class="boton-ejecutar" onclick="ejemploBucles()">Ejecutar: Bucles</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>// FOR clásico
+for (let i = 0; i < 5; i++) {
+    console.log(i);  // 0, 1, 2, 3, 4
+}
+
+// WHILE
+let contador = 0;
+while (contador < 5) {
+    console.log(contador);
+    contador++;
+}
+
+// DO-WHILE (se ejecuta al menos una vez)
+let num = 0;
+do {
+    console.log(num);
+    num++;
+} while (num < 3);
+
+// FOR-OF (itera valores)
+const array = ['a', 'b', 'c'];
+for (const elemento of array) {
+    console.log(elemento);  // 'a', 'b', 'c'
+}
+
+// FOR-IN (itera índices/claves)
+const objeto = { x: 10, y: 20 };
+for (const clave in objeto) {
+    console.log(clave, objeto[clave]);
+}
+
+// FOREACH (método de array)
+[1, 2, 3].forEach((num, indice) => {
+    console.log(indice, num);
+});
+
+// BREAK y CONTINUE
+for (let i = 0; i < 10; i++) {
+    if (i === 3) break;     // Sale del bucle
+    if (i === 1) continue;  // Salta esta iteración
+    console.log(i);
+}</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 9: DOM -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="dom" class="seccion-referencia">
+            <h2>🖱️ DOM (MANIPULAR ELEMENTOS HTML)</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Selectores y Manipulación</h3>
+                    <span class="badge badge-dom">DOM</span>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button class="boton-ejecutar" onclick="ejemploSelectores()">Ejecutar: Selectores</button>
+                    <button class="boton-ejecutar" onclick="ejemploContenido()">Ejecutar: Cambiar Contenido</button>
+                    <button class="boton-ejecutar" onclick="ejemploCrearElementos()">Ejecutar: Crear Elementos</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>// SELECTORES
+document.getElementById("miId");              // Por ID
+document.querySelector(".clase");             // Primer selector CSS
+document.querySelectorAll(".clase");          // Todos
+document.getElementsByClassName("clase");    // Por clase
+document.getElementsByTagName("div");        // Por etiqueta
+
+// CONTENIDO
+const elemento = document.querySelector("#miId");
+
+// Cambiar texto
+elemento.textContent = "Nuevo texto";
+
+// Cambiar HTML
+elemento.innerHTML = "<strong>HTML</strong>";
+
+// ATRIBUTOS
+elemento.setAttribute("class", "nueva-clase");
+elemento.getAttribute("class");               // "nueva-clase"
+elemento.classList.add("otra-clase");
+elemento.classList.remove("clase");
+elemento.classList.toggle("activo");
+
+// ESTILOS
+elemento.style.color = "red";
+elemento.style.backgroundColor = "blue";
+elemento.style.fontSize = "20px";
+
+// CREAR ELEMENTOS
+const nuevo = document.createElement("div");
+nuevo.textContent = "Nuevo elemento";
+document.body.appendChild(nuevo);
+
+// ELIMINAR ELEMENTOS
+elemento.remove();
+elemento.parentElement.removeChild(elemento);</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 10: EVENTOS -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="eventos" class="seccion-referencia">
+            <h2>📡 EVENTOS</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Listeners y Manejo de Eventos</h3>
+                    <span class="badge badge-dom">DOM</span>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 15px 0;">
+                    <h4>Prueba los eventos:</h4>
+                    <button class="boton-ejecutar" onclick="ejemploEventos()">Ejecutar: Eventos</button>
+                    
+                    <div style="margin-top: 20px;">
+                        <input type="text" id="input-demo" class="input-demo" placeholder="Escribe aquí para ver onChange">
+                        <button id="btn-demo" class="boton-ejecutar" style="display: block; margin-top: 10px;">Click aquí</button>
+                    </div>
+                    
+                    <div id="resultado-eventos" class="resultado-demo" style="display: none;">
+                        Resultado de evento aquí
+                    </div>
+                </div>
+                
+                <table class="atributos-tabla">
+                    <tr>
+                        <th>Evento</th>
+                        <th>Cuándo ocurre</th>
+                        <th>Ejemplo</th>
+                    </tr>
+                    <tr>
+                        <td>click</td>
+                        <td>Se hace click</td>
+                        <td>onclick() o addEventListener('click')</td>
+                    </tr>
+                    <tr>
+                        <td>change</td>
+                        <td>Cambia el valor</td>
+                        <td>En inputs, selects</td>
+                    </tr>
+                    <tr>
+                        <td>input</td>
+                        <td>Se escribe en input</td>
+                        <td>Mientras se está escribiendo</td>
+                    </tr>
+                    <tr>
+                        <td>submit</td>
+                        <td>Se envía formulario</td>
+                        <td>En form element</td>
+                    </tr>
+                    <tr>
+                        <td>focus</td>
+                        <td>Gana el foco</td>
+                        <td>Cuando se hace click en input</td>
+                    </tr>
+                    <tr>
+                        <td>blur</td>
+                        <td>Pierde el foco</td>
+                        <td>Cuando se sale del input</td>
+                    </tr>
+                    <tr>
+                        <td>mouseenter/leave</td>
+                        <td>Mouse entra/sale</td>
+                        <td>Hover effects</td>
+                    </tr>
+                    <tr>
+                        <td>keypress/keydown</td>
+                        <td>Se presiona tecla</td>
+                        <td>Atajos de teclado</td>
+                    </tr>
+                </table>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>// En HTML (antiguo - no recomendado)
+&lt;button onclick="miFunc()"&gt;Click&lt;/button&gt;
+
+// addEventListener (recomendado)
+const btn = document.querySelector("button");
+
+btn.addEventListener("click", () => {
+    console.log("¡Clickeado!");
+});
+
+// Con función nombrada
+function handleClick(evento) {
+    console.log(evento);
+    console.log(evento.type);      // "click"
+    console.log(evento.target);    // El elemento que disparó
+}
+btn.addEventListener("click", handleClick);
+
+// Evento de formulario
+const formulario = document.querySelector("form");
+formulario.addEventListener("submit", (evento) => {
+    evento.preventDefault();  // Previene recarga
+    console.log("Formulario enviado");
+});
+
+// Evento de input
+const input = document.querySelector("input");
+input.addEventListener("input", (evento) => {
+    console.log(evento.target.value);  // Valor del input
+});
+
+// Remover listener
+btn.removeEventListener("click", handleClick);
+
+// Event delegation
+document.addEventListener("click", (evento) => {
+    if (evento.target.classList.contains("mi-clase")) {
+        console.log("Clickeado!");
+    }
+});</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <!-- SECCIÓN 11: ASYNC/AWAIT y PROMESAS -->
+        <!-- ═════════════════════════════════════════════════════════ -->
+        <section id="async" class="seccion-referencia">
+            <h2>⏱️ PROMESAS Y ASYNC/AWAIT</h2>
+            
+            <article class="ejemplo-card">
+                <div style="display: flex; gap: 10px; align-items: center;">
+                    <h3>Programación Asincrónica</h3>
+                    <span class="badge badge-avanzado">Avanzado</span>
+                </div>
+                
+                <div style="margin-top: 20px;">
+                    <button class="boton-ejecutar" onclick="ejemploPromesas()">Ejecutar: Promesas</button>
+                    <button class="boton-ejecutar" onclick="ejemploAsyncAwait()">Ejecutar: Async/Await</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>📖 Ver código</summary>
+                    <pre><code>// PROMESA básica
+const miPromesa = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve("¡Éxito!");
+    }, 1000);
+});
+
+// Consumir promesa con .then()
+miPromesa
+    .then(resultado => console.log(resultado))
+    .catch(error => console.error(error))
+    .finally(() => console.log("Terminado"));
+
+// ASYNC FUNCTION (forma moderna)
+async function obtenerDatos() {
+    try {
+        const respuesta = await fetch("https://api.ejemplo.com/datos");
+        const datos = await respuesta.json();
+        return datos;
+    } catch (error) {
+        console.error("Error:", error);
+    }
+}
+
+// Ejecutar función async
+obtenerDatos().then(datos => console.log(datos));
+
+// Promise.all() - Esperar múltiples promesas
+Promise.all([promesa1, promesa2, promesa3])
+    .then(resultados => console.log(resultados));
+
+// Promise.race() - Primera que termina
+Promise.race([promesa1, promesa2])
+    .then(resultado => console.log(resultado));</code></pre>
+                </details>
+            </article>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer style="background: #667eea; color: white; padding: 20px; text-align: center; margin-top: 40px;">
+        <p>⚙️ Referencia JavaScript Completa | 50+ Ejemplos | Última actualización: Diciembre 2025</p>
+    </footer>
+
+    <!-- SCRIPT CON TODAS LAS FUNCIONES -->
+    <script>
+        // ═════════════════════════════════════════════════════════════
+        // FUNCIONES AUXILIARES
+        // ═════════════════════════════════════════════════════════════
+        
+        function escribirConsola(mensaje) {
+            const consola = document.getElementById("consola-viva");
+            consola.textContent += "\n> " + mensaje;
+            consola.scrollTop = consola.scrollHeight;
+        }
+        
+        function limpiarConsola() {
+            const consola = document.getElementById("consola-viva");
+            consola.textContent = "> Consola limpiada. Lista para nuevos ejemplos...\n";
+        }
+        
+        // ═════════════════════════════════════════════════════════════
+        // EJEMPLOS
+        // ═════════════════════════════════════════════════════════════
+        
+        function ejemploVariables() {
+            limpiarConsola();
+            
+            // VAR (no usar)
+            var nombre = "Juan";
+            nombre = "Pedro";  // Se reasigna
+            
+            // LET (usar si cambias valor)
+            let edad = 25;
+            edad = 26;
+            
+            // CONST (mejor)
+            const ciudad = "Madrid";
+            
+            escribirConsola("VAR nombre: " + nombre);
+            escribirConsola("LET edad: " + edad);
+            escribirConsola("CONST ciudad: " + ciudad);
+            escribirConsola("✓ Regla: CONST > LET > VAR");
+        }
+        
+        function ejemploTipos() {
+            limpiarConsola();
+            
+            const texto = "Hola";
+            const numero = 42;
+            const decimal = 3.14;
+            const verdadero = true;
+            const nulo = null;
+            let noDefinido;
+            
+            escribirConsola("STRING: " + typeof texto + " = '" + texto + "'");
+            escribirConsola("NUMBER: " + typeof numero + " = " + numero);
+            escribirConsola("NUMBER: " + typeof decimal + " = " + decimal);
+            escribirConsola("BOOLEAN: " + typeof verdadero + " = " + verdadero);
+            escribirConsola("NULL: " + typeof nulo + " = " + nulo);
+            escribirConsola("UNDEFINED: " + typeof noDefinido + " = " + noDefinido);
+        }
+        
+        function ejemploOperadores() {
+            limpiarConsola();
+            
+            const a = 10, b = 3;
+            
+            escribirConsola("╔════ ARITMÉTICOS ════╗");
+            escribirConsola(a + " + " + b + " = " + (a + b));
+            escribirConsola(a + " - " + b + " = " + (a - b));
+            escribirConsola(a + " * " + b + " = " + (a * b));
+            escribirConsola(a + " / " + b + " = " + (a / b));
+            escribirConsola(a + " % " + b + " = " + (a % b));
+            escribirConsola(a + " ** " + b + " = " + (a ** b));
+            
+            escribirConsola("╔════ COMPARACIÓN ════╗");
+            escribirConsola(a + " === " + a + " = " + (a === a));
+            escribirConsola(a + " > " + b + " = " + (a > b));
+            escribirConsola(a + " < " + b + " = " + (a < b));
+            
+            escribirConsola("╔════ LÓGICOS ════╗");
+            escribirConsola("true && false = " + (true && false));
+            escribirConsola("true || false = " + (true || false));
+            escribirConsola("!true = " + (!true));
+        }
+        
+        function ejemploObjetos() {
+            limpiarConsola();
+            
+            const persona = {
+                nombre: "Juan",
+                edad: 25,
+                ciudad: "Madrid",
+                presentar: function() {
+                    return "Hola, soy " + this.nombre;
+                }
+            };
+            
+            escribirConsola("✓ Objeto creado: persona");
+            escribirConsola("nombre: " + persona.nombre);
+            escribirConsola("edad: " + persona.edad);
+            escribirConsola("ciudad: " + persona.ciudad);
+            escribirConsola("Método: " + persona.presentar());
+            escribirConsola("Claves: " + Object.keys(persona).join(", "));
+        }
+        
+        function ejemploDestructuring() {
+            limpiarConsola();
+            
+            const persona = { nombre: "Juan", edad: 25, ciudad: "Madrid" };
+            const { nombre, edad, ciudad } = persona;
+            
+            escribirConsola("✓ Destructuring aplicado");
+            escribirConsola("nombre: " + nombre);
+            escribirConsola("edad: " + edad);
+            escribirConsola("ciudad: " + ciudad);
+        }
+        
+        function ejemploArrays() {
+            limpiarConsola();
+            
+            const numeros = [1, 2, 3, 4, 5];
+            
+            escribirConsola("✓ Array: " + numeros);
+            escribirConsola("Largo: " + numeros.length);
+            escribirConsola("Primer elemento: " + numeros[0]);
+            escribirConsola("Último elemento: " + numeros[numeros.length - 1]);
+            
+            const nuevoArray = [...numeros, 6];
+            escribirConsola("Con spread operator: " + nuevoArray);
+        }
+        
+        function ejemploMetodosArray() {
+            limpiarConsola();
+            
+            const numeros = [1, 2, 3, 4, 5];
+            
+            const duplicados = numeros.map(n => n * 2);
+            escribirConsola("MAP (*2): " + duplicados);
+            
+            const pares = numeros.filter(n => n % 2 === 0);
+            escribirConsola("FILTER (pares): " + pares);
+            
+            const suma = numeros.reduce((a, n) => a + n, 0);
+            escribirConsola("REDUCE (suma): " + suma);
+            
+            const encuentro = numeros.find(n => n > 3);
+            escribirConsola("FIND (>3): " + encuentro);
+        }
+        
+        function ejemploFunciones() {
+            limpiarConsola();
+            
+            // Tradicional
+            function sumar(a, b) {
+                return a + b;
+            }
+            
+            // Arrow
+            const restar = (a, b) => a - b;
+            
+            // Con default
+            const saludar = (nombre = "Amigo") => "Hola " + nombre;
+            
+            escribirConsola("Función tradicional: sumar(5,3) = " + sumar(5, 3));
+            escribirConsola("Arrow function: restar(5,3) = " + restar(5, 3));
+            escribirConsola("Con default: saludar() = " + saludar());
+            escribirConsola("Con default: saludar('Juan') = " + saludar("Juan"));
+        }
+        
+        function ejemploCondicionales() {
+            limpiarConsola();
+            
+            const edad = 25;
+            
+            if (edad < 18) {
+                escribirConsola("Menor de edad");
+            } else if (edad < 65) {
+                escribirConsola("✓ Adulto (if-else)");
+            } else {
+                escribirConsola("Jubilado");
+            }
+            
+            const resultado = edad >= 18 ? "Mayor" : "Menor";
+            escribirConsola("Ternario: " + resultado);
+            
+            const dia = 3;
+            let nombreDia;
+            switch (dia) {
+                case 1:
+                    nombreDia = "Lunes";
+                    break;
+                case 3:
+                    nombreDia = "Miércoles";
+                    break;
+                default:
+                    nombreDia = "Otro día";
+            }
+            escribirConsola("Switch: día " + dia + " = " + nombreDia);
+        }
+        
+        function ejemploBucles() {
+            limpiarConsola();
+            
+            let resultado = "FOR: ";
+            for (let i = 1; i <= 5; i++) {
+                resultado += i + " ";
+            }
+            escribirConsola(resultado);
+            
+            const array = ['a', 'b', 'c'];
+            escribirConsola("FOR-OF: " + array.join(", "));
+            
+            let suma = 0;
+            [1, 2, 3, 4, 5].forEach(n => suma += n);
+            escribirConsola("FOREACH suma: " + suma);
+        }
+        
+        function ejemploSelectores() {
+            limpiarConsola();
+            
+            escribirConsola("╔════ SELECTORES ════╗");
+            escribirConsola("getElementById('id')");
+            escribirConsola("querySelector('.clase')");
+            escribirConsola("querySelectorAll('.clase')");
+            escribirConsola("getElementsByClassName('clase')");
+            escribirConsola("getElementsByTagName('div')");
+        }
+        
+        function ejemploContenido() {
+            limpiarConsola();
+            
+            escribirConsola("╔════ MANIPULAR CONTENIDO ════╗");
+            escribirConsola("elemento.textContent = 'Nuevo texto'");
+            escribirConsola("elemento.innerHTML = '<strong>HTML</strong>'");
+            escribirConsola("elemento.setAttribute('class', 'nueva-clase')");
+            escribirConsola("elemento.classList.add('clase')");
+            escribirConsola("elemento.classList.remove('clase')");
+            escribirConsola("elemento.classList.toggle('activo')");
+        }
+        
+        function ejemploCrearElementos() {
+            limpiarConsola();
+            
+            escribirConsola("╔════ CREAR Y ELIMINAR ════╗");
+            escribirConsola("const div = document.createElement('div')");
+            escribirConsola("div.textContent = 'Nuevo'");
+            escribirConsola("document.body.appendChild(div)");
+            escribirConsola("elemento.remove()");
+            escribirConsola("✓ Elementos creados dinámicamente");
+        }
+        
+        function ejemploEventos() {
+            limpiarConsola();
+            
+            escribirConsola("╔════ EVENTOS ════╗");
+            
+            const btn = document.getElementById("btn-demo");
+            if (btn) {
+                btn.addEventListener("click", () => {
+                    escribirConsola("✓ Click detectado en botón");
+                });
+            }
+            
+            const input = document.getElementById("input-demo");
+            if (input) {
+                input.addEventListener("input", (e) => {
+                    escribirConsola("Input cambió: '" + e.target.value + "'");
+                });
+            }
+            
+            escribirConsola("Prueba: click el botón o escribe en el input");
+        }
+        
+        function ejemploPromesas() {
+            limpiarConsola();
+            
+            escribirConsola("╔════ PROMESAS ════╗");
+            
+            const promesa = new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("✓ Promesa resuelta!");
+                }, 1000);
+            });
+            
+            promesa.then(resultado => {
+                escribirConsola(resultado);
+            });
+            
+            escribirConsola("Esperando 1 segundo...");
+        }
+        
+        function ejemploAsyncAwait() {
+            limpiarConsola();
+            
+            async function procesar() {
+                escribirConsola("╔════ ASYNC/AWAIT ════╗");
+                escribirConsola("Iniciando función async...");
+                
+                // Simula delay
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                escribirConsola("✓ Esperó 1 segundo");
+                escribirConsola("Async/Await es la forma moderna de manejar promesas");
+            }
+            
+            procesar();
+        }
+    </script>
+</body>
+</html>

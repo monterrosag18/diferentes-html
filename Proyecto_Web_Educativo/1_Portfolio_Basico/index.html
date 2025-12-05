@@ -1,0 +1,210 @@
+<!-- 
+  ===============================
+  ARCHIVO: index.html
+  CARPETA: 1_Portfolio_Basico
+  PROPÓSITO: Crear un portfolio personal con HTML semántico
+  
+  QUÉ ES HTML SEMÁNTICO:
+  HTML semántico es usar las etiquetas correctas para describir el contenido.
+  No solo <div>, sino <header>, <nav>, <main>, <article>, <footer>.
+  Esto ayuda a:
+  - Los buscadores (SEO) entiendan mejor la página
+  - Lectores de pantalla para discapacitados
+  - El código sea más legible y mantenible
+  ===============================
+-->
+
+<!DOCTYPE html>
+<!-- 
+  DOCTYPE: Le dice al navegador que esto es HTML5 (la versión más moderna)
+  Es la primera línea que siempre debe ir en un archivo HTML
+-->
+
+<html lang="es">
+<!-- 
+  <html>: Etiqueta raíz que contiene todo el documento
+  lang="es": Atributo que indica que el idioma es español
+  Esto es importante para accesibilidad y SEO
+-->
+
+<head>
+  <!-- 
+    <head>: Sección donde van metadatos e información del documento
+    No se ve en la pantalla, pero es información importante para el navegador
+  -->
+  
+  <!-- Codificación de caracteres: UTF-8 soporta caracteres especiales (á, é, ñ) -->
+  <meta charset="UTF-8">
+  
+  <!-- 
+    Meta viewport: Hace que la página sea responsiva (funcione bien en celulares)
+    width=device-width: Ancho del dispositivo
+    initial-scale=1.0: Zoom inicial al 100%
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Descripción de la página para buscadores -->
+  <meta name="description" content="Portfolio personal de desarrollador web con HTML, CSS y JavaScript">
+  
+  <!-- Palabras clave para SEO -->
+  <meta name="keywords" content="desarrollador, web, HTML, CSS, JavaScript">
+  
+  <!-- Título que aparece en la pestaña del navegador -->
+  <title>Mi Portfolio - Desarrollador Web</title>
+  
+  <!-- Enlace al archivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- 
+    <body>: Contiene todo el contenido visible de la página
+    Aquí va todo lo que el usuario ve en pantalla
+  -->
+
+  <!-- 
+    <header>: Encabezado principal de la página
+    Típicamente contiene logo, navegación, título principal
+    Es SEMÁNTICO: comunica que esto es la cabecera
+  -->
+  <header>
+    <div class="contenedor">
+      <!-- 
+        <h1>: Encabezado nivel 1 (el más importante)
+        Debe haber solo UN <h1> por página para SEO
+        Define el tema principal de la página
+      -->
+      <h1>Juan Pérez - Desarrollador Web</h1>
+      
+      <!-- <p>: Párrafo de texto -->
+      <p class="subtitulo">Especializado en HTML, CSS y JavaScript</p>
+    </div>
+  </header>
+
+  <!-- 
+    <nav>: Navegación de la página
+    SEMÁNTICO: indica que aquí van enlaces de navegación
+    Mejora accesibilidad para lectores de pantalla
+  -->
+  <nav>
+    <ul>
+      <!-- <li>: Item de lista -->
+      <!-- <a>: Enlace a otras páginas -->
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- 
+    <main>: Contenido principal de la página
+    SEMÁNTICO: diferencia el contenido principal de sidebars
+    Debe haber solo uno por página
+  -->
+  <main>
+    
+    <!-- 
+      <section>: Agrupa contenido relacionado
+      SEMÁNTICO: organiza la página en secciones lógicas
+      En este caso, sección de "acerca de mí"
+    -->
+    <section id="inicio" class="seccion">
+      <div class="contenedor">
+        <h2>Acerca de Mí</h2>
+        <!-- 
+          <h2>: Encabezado nivel 2 (subencabezado)
+          Se puede usar múltiples en una página
+          Estructura jerárquica: h1 > h2 > h3 > h4 > h5 > h6
+        -->
+        
+        <p>Soy un desarrollador web apasionado por crear experiencias digitales increíbles. Con 3 años de experiencia, he trabajado en proyectos para empresas de diversos sectores.</p>
+        
+        <!-- <strong>: Texto importante (negrita semántica) -->
+        <p>Me especializo en <strong>HTML semántico</strong>, <strong>CSS responsivo</strong> y <strong>JavaScript interactivo</strong>.</p>
+      </div>
+    </section>
+
+    <!-- 
+      Segunda sección: Proyectos
+      Aquí mostramos trabajos realizados
+    -->
+    <section id="proyectos" class="seccion">
+      <div class="contenedor">
+        <h2>Mis Proyectos</h2>
+        
+        <!-- 
+          <article>: Contenido independiente que podría existir por sí solo
+          SEMÁNTICO: cada artículo es autónomo
+          Aquí cada proyecto es un artículo diferente
+        -->
+        <article class="proyecto">
+          <h3>Tienda Online de Ropa</h3>
+          <!-- <em>: Énfasis (cursiva semántica) -->
+          <p>Desarrollé una tienda online con catálogo de productos, carrito de compras y pasarela de pago. <em>Tecnologías: HTML5, CSS3, JavaScript</em></p>
+        </article>
+
+        <article class="proyecto">
+          <h3>Blog de Tecnología</h3>
+          <p>Creé un blog responsivo con sistema de categorías y comentarios. Los artículos se actualizan dinámicamente con JavaScript. <em>Tecnologías: HTML5, CSS3, JavaScript</em></p>
+        </article>
+
+        <article class="proyecto">
+          <h3>Dashboard Administrativo</h3>
+          <p>Sistema de panel de control con gráficas interactivas y gestión de datos en tiempo real. <em>Tecnologías: HTML5, CSS3, JavaScript</em></p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 
+      Tercera sección: Habilidades
+      Listado de competencias técnicas
+    -->
+    <section id="habilidades" class="seccion">
+      <div class="contenedor">
+        <h2>Habilidades Técnicas</h2>
+        
+        <!-- 
+          <ul>: Lista desordenada (sin números)
+          Para listas sin orden específico
+        -->
+        <ul class="lista-habilidades">
+          <li>HTML5 Semántico</li>
+          <li>CSS3 Responsive</li>
+          <li>JavaScript ES6+</li>
+          <li>Git y Control de Versiones</li>
+          <li>Diseño Responsivo Mobile-First</li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 
+    <footer>: Pie de página
+    SEMÁNTICO: denota la sección final de la página
+    Contiene información de contacto, copyright, enlaces útiles
+  -->
+  <footer id="contacto">
+    <div class="contenedor">
+      <p>&copy; 2024 Juan Pérez. Todos los derechos reservados.</p>
+      
+      <!-- 
+        <address>: Información de contacto
+        SEMÁNTICO: específicamente para contacto/dirección
+      -->
+      <address>
+        Email: <a href="mailto:juan@ejemplo.com">juan@ejemplo.com</a><br>
+        Teléfono: <a href="tel:+573001234567">+57 300 123 4567</a>
+      </address>
+    </div>
+  </footer>
+
+  <!-- 
+    <script>: Enlace a archivo JavaScript externo
+    Se pone al final del <body> para que la página cargue primero
+    Así la experiencia del usuario es más rápida
+  -->
+  <script src="script.js"></script>
+</body>
+
+</html>

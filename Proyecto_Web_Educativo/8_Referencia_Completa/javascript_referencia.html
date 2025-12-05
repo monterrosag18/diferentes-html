@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referencia JavaScript - Ejemplos Interactivos</title>
+    <link rel="stylesheet" href="estilos_referencia.css">
+    <style>
+        /* Estilos adicionales para esta página */
+        .resultado-codigo {
+            background-color: #2c3e50;
+            color: #00FF00;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            border-left: 4px solid #00FF00;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        
+        .boton-ejecutar {
+            background-color: #667eea;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            margin: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .boton-ejecutar:hover {
+            background-color: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .input-demo {
+            padding: 10px;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            margin: 5px 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .demo-contenedor {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header-principal">
+        <h1>⚙️ Referencia Completa JavaScript</h1>
+        <p class="subtitulo">Ejemplos interactivos de JavaScript con consola en vivo</p>
+    </header>
+
+    <nav class="nav-referencia">
+        <a href="#variables">Variables</a>
+        <a href="#tipos">Tipos de Datos</a>
+        <a href="#objetos">Objetos y Arrays</a>
+        <a href="#funciones">Funciones</a>
+        <a href="#dom">DOM</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#storage">Storage</a>
+    </nav>
+
+    <main class="contenedor-referencia">
+
+        <!-- CONSOLA EN VIVO -->
+        <div style="background-color: #f0f0f0; padding: 15px; border-radius: 8px; margin: 15px 0;">
+            <h3>📺 Consola en Vivo</h3>
+            <p>Mira los resultados aquí mientras ejecutas los ejemplos:</p>
+            <div id="consola-viva" class="resultado-codigo">
+                // Los resultados aparecerán aquí...
+            </div>
+        </div>
+
+        <!-- ====== SECCIÓN 1: VARIABLES ====== -->
+        <section id="variables" class="seccion-referencia">
+            <h2>1️⃣ VARIABLES</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Declaración de Variables (var, let, const)</h3>
+                
+                <div class="demo-contenedor">
+                    <p><strong>Diferencias principales:</strong></p>
+                    <pre><code>// var - Antigua (evitar usar)
+var edad = 25;
+
+// let - Moderna (mejor para variables que cambian)
+let nombre = "Juan";
+nombre = "Pedro";  // ✓ Permitido
+
+// const - Moderna (mejor para valores constantes)
+const PI = 3.14159;
+// PI = 3.14;  // ✗ Error: no se puede cambiar
+</code></pre>
+                </div>
+                
+                <button class="boton-ejecutar" onclick="ejemploVariables()">Ejecutar Variables</button>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript completo</summary>
+                    <pre><code>// Variables numéricas
+let edad = 25;
+let altura = 1.75;
+let cantidad = 100;
+
+// Variables de texto (string)
+let nombre = "Juan";
+let ciudad = "Medellín";
+let mensaje = "Hola " + nombre;  // Concatenación
+
+// Template literals (mejor opción)
+let saludo = `Hola ${nombre}, tienes ${edad} años`;
+
+// Variables booleanas
+let activo = true;
+let esMayor = edad >= 18;
+
+// Mostrar en consola
+console.log(nombre);
+console.log(edad);
+console.log(saludo);</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== SECCIÓN 2: TIPOS DE DATOS ====== -->
+        <section id="tipos" class="seccion-referencia">
+            <h2>2️⃣ TIPOS DE DATOS</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Tipos Primitivos y Complejos</h3>
+                
+                <div class="demo-contenedor">
+                    <p><strong>Tipos de datos disponibles:</strong></p>
+                    <pre><code>// Tipos primitivos
+let numero = 42;           // number
+let decimal = 3.14;        // number
+let texto = "Hola";        // string
+let booleano = true;       // boolean
+let vacio = null;          // null (nada intencionalmente)
+let indefinido = undefined; // undefined (no definido)
+
+// Símbolos (avanzado)
+let simbolo = Symbol("id");
+
+// Objetos y Arrays (tipos complejos)
+let persona = { nombre: "Juan" };  // object
+let lista = [1, 2, 3];             // object (es un tipo especial)
+</code></pre>
+                </div>
+                
+                <button class="boton-ejecutar" onclick="ejemploTipos()">Ejecutar Tipos</button>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// Verificar tipo
+let valor = 42;
+console.log(typeof valor);  // "number"
+
+console.log(typeof "hola");     // "string"
+console.log(typeof true);       // "boolean"
+console.log(typeof undefined);  // "undefined"
+console.log(typeof {});         // "object"
+console.log(typeof []);         // "object" (arrays son objetos)
+
+// Conversión de tipos
+let numString = "42";
+let numConvertido = parseInt(numString);     // 42 (string a número)
+let numConvertido2 = Number(numString);      // 42
+let stringConvertido = String(42);           // "42" (número a string)
+let stringConvertido2 = (42).toString();     // "42"
+let booleanoConvertido = Boolean(1);         // true
+let booleanoConvertido2 = !!1;               // true (doble negación)</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Operadores Básicos</h3>
+                
+                <button class="boton-ejecutar" onclick="ejemploOperadores()">Ejecutar Operadores</button>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// Operadores aritméticos
+let suma = 10 + 5;           // 15
+let resta = 10 - 5;          // 5
+let multiplicacion = 10 * 5; // 50
+let division = 10 / 5;       // 2
+let modulo = 10 % 3;         // 1 (resto)
+
+// Operadores de comparación
+console.log(10 > 5);       // true
+console.log(10 < 5);       // false
+console.log(10 >= 10);     // true
+console.log(10 <= 10);     // true
+console.log(10 == "10");   // true (compara valor)
+console.log(10 === "10");  // false (compara valor y tipo)
+console.log(10 != 5);      // true
+console.log(10 !== "10");  // true
+
+// Operadores lógicos
+let a = true;
+let b = false;
+console.log(a && b);  // false (AND - ambos deben ser true)
+console.log(a || b);  // true (OR - al menos uno true)
+console.log(!a);      // false (NOT - invierte valor)</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== SECCIÓN 3: OBJETOS Y ARRAYS ====== -->
+        <section id="objetos" class="seccion-referencia">
+            <h2>3️⃣ OBJETOS Y ARRAYS</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Objetos (Diccionarios)</h3>
+                
+                <button class="boton-ejecutar" onclick="ejemploObjetos()">Ejecutar Objetos</button>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// Crear objeto
+let persona = {
+    nombre: "Juan",
+    edad: 25,
+    ciudad: "Medellín",
+    activo: true
+};
+
+// Acceder a propiedades
+console.log(persona.nombre);      // "Juan"
+console.log(persona["edad"]);     // 25
+
+// Modificar propiedades
+persona.edad = 26;
+persona["ciudad"] = "Bogotá";
+
+// Agregar nuevas propiedades
+persona.email = "juan@email.com";
+
+// Eliminar propiedades
+delete persona.activo;
+
+// Verificar si existe propiedad
+if ("nombre" in persona) {
+    console.log("Tiene nombre");
+}
+
+// Obtener todas las propiedades
+let propiedades = Object.keys(persona);
+// ["nombre", "edad", "ciudad", "email"]
+
+// Obtener todos los valores
+let valores = Object.values(persona);
+// ["Juan", 26, "Bogotá", "juan@email.com"]
+
+// Recorrer objeto
+for (let clave in persona) {
+    console.log(clave + ": " + persona[clave]);
+}</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Arrays (Listas)</h3>
+                
+                <button class="boton-ejecutar" onclick="ejemploArrays()">Ejecutar Arrays</button>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// Crear array
+let numeros = [1, 2, 3, 4, 5];
+let nombres = ["Juan", "María", "Carlos"];
+let mixto = [1, "Juan", true, null];
+
+// Acceder a elementos (comienza en 0)
+console.log(nombres[0]);     // "Juan"
+console.log(nombres[1]);     // "María"
+
+// Obtener longitud
+console.log(nombres.length); // 3
+
+// Agregar elemento al final
+nombres.push("Pedro");       // ["Juan", "María", "Carlos", "Pedro"]
+
+// Remover último elemento
+nombres.pop();               // ["Juan", "María", "Carlos"]
+
+// Agregar elemento al inicio
+nombres.unshift("Ana");      // ["Ana", "Juan", "María", "Carlos"]
+
+// Remover del inicio
+nombres.shift();             // ["Juan", "María", "Carlos"]
+
+// Encontrar elemento
+let posicion = nombres.indexOf("María");  // 1
+let existe = nombres.includes("Juan");    // true
+
+// Recorrer array
+nombres.forEach((nombre) => {
+    console.log(nombre);
+});
+
+// Recorrer con índice
+nombres.forEach((nombre, indice) => {
+    console.log(indice + ": " + nombre);
+});</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Métodos de Array (map, filter, find)</h3>
+                
+                <button class="boton-ejecutar" onclick="ejemploMetodosArray()">Ejecutar Métodos</button>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>let productos = [
+    { nombre: "Laptop", precio: 1000 },
+    { nombre: "Mouse", precio: 20 },
+    { nombre: "Teclado", precio: 80 }
+];
+
+// map - Transformar cada elemento
+let nombres = productos.map((p) => p.nombre);
+// ["Laptop", "Mouse", "Teclado"]
+
+// filter - Filtrar elementos
+let caros = productos.filter((p) => p.precio > 50);
+// [{nombre: "Laptop", precio: 1000}, {nombre: "Teclado", precio: 80}]
+
+// find - Encontrar primer elemento
+let mouse = productos.find((p) => p.nombre === "Mouse");
+// {nombre: "Mouse", precio: 20}
+
+// findIndex - Posición del elemento
+let indice = productos.findIndex((p) => p.nombre === "Mouse");
+// 1
+
+// some - ¿Existe al menos uno que cumpla?
+let hayCaros = productos.some((p) => p.precio > 500);
+// true
+
+// every - ¿Todos cumplen?
+let todos10 = productos.every((p) => p.precio > 10);
+// true
+
+// reduce - Sumar/agrupar
+let total = productos.reduce((suma, p) => suma + p.precio, 0);
+// 1100
+
+// sort - Ordenar
+let porPrecio = productos.sort((a, b) => a.precio - b.precio);</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== SECCIÓN 4: FUNCIONES ====== -->
+        <section id="funciones" class="seccion-referencia">
+            <h2>4️⃣ FUNCIONES</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Declaración de Funciones</h3>
+                
+                <button class="boton-ejecutar" onclick="ejemploFunciones()">Ejecutar Funciones</button>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// Función tradicional
+function saludar(nombre) {
+    return "Hola " + nombre;
+}
+
+let resultado = saludar("Juan");
+console.log(resultado);  // "Hola Juan"
+
+// Función con múltiples parámetros
+function sumar(a, b) {
+    return a + b;
+}
+
+console.log(sumar(5, 3));  // 8
+
+// Función con parámetros por defecto
+function saludo(nombre = "Usuario") {
+    return "Hola " + nombre;
+}
+
+console.log(saludo());          // "Hola Usuario"
+console.log(saludo("María"));   // "Hola María"
+
+// Arrow function (función flecha) - ES6
+const multiplicar = (a, b) => {
+    return a * b;
+};
+
+console.log(multiplicar(4, 5));  // 20
+
+// Arrow function simplificada (1 línea)
+const dividir = (a, b) => a / b;
+console.log(dividir(20, 4));  // 5
+
+// Función anónima (sin nombre)
+let restar = function(a, b) {
+    return a - b;
+};
+
+console.log(restar(10, 3));  // 7</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Condicionales (if, else, switch)</h3>
+                
+                <button class="boton-ejecutar" onclick="ejemploCondicionales()">Ejecutar Condicionales</button>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// if - else
+let edad = 18;
+
+if (edad >= 18) {
+    console.log("Eres mayor de edad");
+} else {
+    console.log("Eres menor de edad");
+}
+
+// if - else if - else
+let nota = 75;
+
+if (nota >= 90) {
+    console.log("A");
+} else if (nota >= 80) {
+    console.log("B");
+} else if (nota >= 70) {
+    console.log("C");
+} else {
+    console.log("F");
+}
+
+// Operador ternario (if resumido)
+let mensaje = edad >= 18 ? "Mayor" : "Menor";
+console.log(mensaje);  // "Mayor"
+
+// switch
+let dia = 3;
+
+switch(dia) {
+    case 1:
+        console.log("Lunes");
+        break;
+    case 2:
+        console.log("Martes");
+        break;
+    case 3:
+        console.log("Miércoles");
+        break;
+    default:
+        console.log("Día inválido");
+}</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Bucles (for, while, do-while)</h3>
+                
+                <button class="boton-ejecutar" onclick="ejemploBucles()">Ejecutar Bucles</button>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// for tradicional
+for (let i = 0; i < 5; i++) {
+    console.log(i);  // 0, 1, 2, 3, 4
+}
+
+// for-of (para arrays)
+let frutas = ["manzana", "banana", "naranja"];
+
+for (let fruta of frutas) {
+    console.log(fruta);  // manzana, banana, naranja
+}
+
+// for-in (para objetos)
+let persona = { nombre: "Juan", edad: 25 };
+
+for (let propiedad in persona) {
+    console.log(propiedad + ": " + persona[propiedad]);
+}
+
+// while
+let contador = 0;
+while (contador < 3) {
+    console.log(contador);
+    contador++;
+}  // 0, 1, 2
+
+// do-while (se ejecuta al menos una vez)
+let num = 0;
+do {
+    console.log(num);
+    num++;
+} while (num < 3);  // 0, 1, 2</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== SECCIÓN 5: DOM ====== -->
+        <section id="dom" class="seccion-referencia">
+            <h2>5️⃣ MANIPULACIÓN DEL DOM</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Seleccionar Elementos</h3>
+                
+                <div class="demo-contenedor">
+                    <p id="demo-id">Este elemento tiene id="demo-id"</p>
+                    <p class="demo-clase">Este elemento tiene class="demo-clase"</p>
+                    <button class="boton-ejecutar" onclick="ejemploSelectores()">Ejecutar Selectores</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// Seleccionar por ID
+let elemento = document.getElementById("demo-id");
+console.log(elemento);
+
+// Seleccionar por clase
+let elementos = document.getElementsByClassName("demo-clase");
+console.log(elementos);  // HTMLCollection
+
+// Seleccionar por etiqueta
+let parrafos = document.getElementsByTagName("p");
+console.log(parrafos);
+
+// querySelector - MEJOR (CSS selector)
+let elemento1 = document.querySelector("#demo-id");      // por ID
+let elemento2 = document.querySelector(".demo-clase");   // por clase
+let elemento3 = document.querySelector("p");             // por etiqueta
+
+// querySelectorAll - Todos los que coincidan
+let elementos1 = document.querySelectorAll(".demo-clase");
+let elementos2 = document.querySelectorAll("p");
+
+// Recorrer elementos seleccionados
+elementos2.forEach((el) => {
+    console.log(el.textContent);
+});</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Cambiar Contenido y Atributos</h3>
+                
+                <div class="demo-contenedor">
+                    <p id="contenido-demo">Contenido original</p>
+                    <img id="img-demo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect fill='%23667eea' width='100' height='100'/%3E%3C/svg%3E" alt="Imagen demo">
+                    <button class="boton-ejecutar" onclick="ejemploContenido()">Ejecutar Cambios</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>let elemento = document.querySelector("#contenido-demo");
+
+// Cambiar contenido de texto
+elemento.textContent = "Nuevo contenido";
+
+// Cambiar HTML (con etiquetas)
+elemento.innerHTML = "&lt;strong&gt;Texto en negritas&lt;/strong&gt;";
+
+// Cambiar atributos
+let img = document.querySelector("#img-demo");
+img.src = "nueva-imagen.png";
+img.alt = "Nueva descripción";
+img.setAttribute("data-id", "123");
+img.setAttribute("title", "Título del atributo");
+
+// Obtener atributo
+let idAtributo = img.getAttribute("data-id");
+console.log(idAtributo);  // "123"
+
+// Agregar clase
+elemento.classList.add("nueva-clase");
+
+// Remover clase
+elemento.classList.remove("nueva-clase");
+
+// Alternar clase
+elemento.classList.toggle("activo");
+
+// Verificar si tiene clase
+if (elemento.classList.contains("nueva-clase")) {
+    console.log("Tiene la clase");
+}</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Crear y Eliminar Elementos</h3>
+                
+                <div class="demo-contenedor" id="contenedor-elementos">
+                    <p>Aquí se agregarán elementos dinámicamente</p>
+                    <button class="boton-ejecutar" onclick="ejemploCrearElementos()">Crear Elementos</button>
+                    <button class="boton-ejecutar" onclick="ejemploLimpiarElementos()" style="background-color: #FF6B6B;">Limpiar</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// Crear elemento
+let nuevoParrafo = document.createElement("p");
+nuevoParrafo.textContent = "Este es un nuevo párrafo";
+
+// Agregar al DOM
+let contenedor = document.querySelector("#contenedor-elementos");
+contenedor.appendChild(nuevoParrafo);
+
+// Crear con HTML
+let nuevoDiv = document.createElement("div");
+nuevoDiv.innerHTML = "&lt;h3&gt;Título&lt;/h3&gt;&lt;p&gt;Contenido&lt;/p&gt;";
+contenedor.appendChild(nuevoDiv);
+
+// Insertar antes de otro elemento
+let primero = contenedor.querySelector("p");
+contenedor.insertBefore(nuevoParrafo, primero);
+
+// Reemplazar elemento
+let remplazo = document.createElement("p");
+remplazo.textContent = "Elemento reemplazado";
+contenedor.replaceChild(remplazo, primero);
+
+// Remover elemento
+contenedor.removeChild(nuevoParrafo);
+
+// Remover todos los hijos
+contenedor.innerHTML = "";  // Rápido pero elimina event listeners
+
+// Mejor forma de limpiar
+while (contenedor.firstChild) {
+    contenedor.removeChild(contenedor.firstChild);
+}</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== SECCIÓN 6: EVENTOS ====== -->
+        <section id="eventos" class="seccion-referencia">
+            <h2>6️⃣ EVENTOS</h2>
+            
+            <article class="ejemplo-card">
+                <h3>Event Listeners</h3>
+                
+                <div class="demo-contenedor">
+                    <input type="text" id="input-evento" class="input-demo" placeholder="Escribe algo aquí">
+                    <button id="boton-evento" class="boton-ejecutar">Haz click aquí</button>
+                    <p id="resultado-evento">Los resultados aparecerán aquí</p>
+                    <button class="boton-ejecutar" onclick="ejemploEventos()">Activar Event Listeners</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// Agregar event listener
+let boton = document.querySelector("#boton-evento");
+
+boton.addEventListener("click", function() {
+    console.log("Botón clickeado");
+});
+
+// Con arrow function
+boton.addEventListener("click", () => {
+    console.log("Botón clickeado con arrow function");
+});
+
+// Recibir evento como parámetro
+boton.addEventListener("click", (event) => {
+    console.log(event);        // Objeto del evento
+    console.log(event.target); // Elemento que disparó el evento
+});
+
+// Otros eventos
+let input = document.querySelector("#input-evento");
+
+// keyup - Cuando se suelta una tecla
+input.addEventListener("keyup", (e) => {
+    console.log("Tecla soltada: " + e.key);
+});
+
+// input - Cuando cambia el valor
+input.addEventListener("input", (e) => {
+    console.log("Nuevo valor: " + e.target.value);
+});
+
+// focus - Cuando recibe focus
+input.addEventListener("focus", () => {
+    console.log("Input enfocado");
+});
+
+// blur - Cuando pierde focus
+input.addEventListener("blur", () => {
+    console.log("Input desenfocado");
+});
+
+// change - Cuando cambia el valor (select, checkbox)
+let select = document.querySelector("select");
+select.addEventListener("change", (e) => {
+    console.log("Nuevo valor: " + e.target.value);
+});
+
+// Otros eventos útiles
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("DOM cargado");
+});
+
+window.addEventListener("resize", () => {
+    console.log("Ventana redimensionada");
+});
+
+window.addEventListener("scroll", () => {
+    console.log("Página scrolleada");
+});</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Formularios</h3>
+                
+                <div class="demo-contenedor">
+                    <form id="formulario-demo">
+                        <label for="nombre-form">Nombre:</label>
+                        <input type="text" id="nombre-form" class="input-demo" required>
+                        
+                        <label for="email-form">Email:</label>
+                        <input type="email" id="email-form" class="input-demo" required>
+                        
+                        <button type="submit" class="boton-ejecutar">Enviar Formulario</button>
+                    </form>
+                    <p id="resultado-form"></p>
+                    <button class="boton-ejecutar" onclick="ejemploFormulario()">Activar Formulario</button>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// Formulario
+let formulario = document.querySelector("#formulario-demo");
+
+// Event submit
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();  // Evitar recargar página
+    
+    // Obtener valores
+    let nombre = document.querySelector("#nombre-form").value;
+    let email = document.querySelector("#email-form").value;
+    
+    console.log("Nombre: " + nombre);
+    console.log("Email: " + email);
+    
+    // Validar
+    if (nombre === "") {
+        console.log("Nombre requerido");
+        return;
+    }
+    
+    if (email === "") {
+        console.log("Email requerido");
+        return;
+    }
+    
+    console.log("Formulario válido");
+    
+    // Resetear
+    formulario.reset();
+});
+
+// Obtener valor de input
+let input = document.querySelector("input");
+console.log(input.value);
+
+// Cambiar valor
+input.value = "Nuevo valor";
+
+// Validación regex
+function validarEmail(email) {
+    let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+}
+
+console.log(validarEmail("juan@email.com"));  // true
+console.log(validarEmail("juan.email"));      // false</code></pre>
+                </details>
+            </article>
+        </section>
+
+        <!-- ====== SECCIÓN 7: STORAGE ====== -->
+        <section id="storage" class="seccion-referencia">
+            <h2>7️⃣ ALMACENAMIENTO LOCAL (localStorage)</h2>
+            
+            <article class="ejemplo-card">
+                <h3>localStorage - Guardar y Recuperar Datos</h3>
+                
+                <div class="demo-contenedor">
+                    <input type="text" id="storage-input" class="input-demo" placeholder="Escribe algo para guardar">
+                    <button class="boton-ejecutar" onclick="guardarEnStorage()">Guardar</button>
+                    <button class="boton-ejecutar" onclick="cargarDelStorage()">Cargar</button>
+                    <button class="boton-ejecutar" onclick="limpiarStorage()" style="background-color: #FF6B6B;">Limpiar</button>
+                    <p id="storage-resultado"></p>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// Guardar valor simple
+localStorage.setItem("nombre", "Juan");
+
+// Recuperar valor
+let nombre = localStorage.getItem("nombre");
+console.log(nombre);  // "Juan"
+
+// Eliminar un item
+localStorage.removeItem("nombre");
+
+// Limpiar todo
+localStorage.clear();
+
+// Guardar objeto (JSON)
+let persona = {
+    nombre: "Juan",
+    edad: 25,
+    ciudad: "Medellín"
+};
+
+// Convertir a JSON para guardar
+localStorage.setItem("persona", JSON.stringify(persona));
+
+// Recuperar y convertir
+let personaGuardada = JSON.parse(localStorage.getItem("persona"));
+console.log(personaGuardada.nombre);  // "Juan"
+
+// Guardar array
+let numeros = [1, 2, 3, 4, 5];
+localStorage.setItem("numeros", JSON.stringify(numeros));
+
+// Recuperar array
+let numerosGuardados = JSON.parse(localStorage.getItem("numeros"));
+console.log(numerosGuardados[0]);  // 1
+
+// Verificar si existe
+if (localStorage.getItem("persona")) {
+    console.log("Persona existe");
+} else {
+    console.log("Persona no existe");
+}
+
+// Obtener todas las keys
+for (let i = 0; i < localStorage.length; i++) {
+    let clave = localStorage.key(i);
+    let valor = localStorage.getItem(clave);
+    console.log(clave + ": " + valor);
+}</code></pre>
+                </details>
+            </article>
+
+            <article class="ejemplo-card">
+                <h3>Caso Práctico: Carrito Persistente</h3>
+                
+                <div class="demo-contenedor">
+                    <input type="text" id="carrito-producto" class="input-demo" placeholder="Producto">
+                    <input type="number" id="carrito-precio" class="input-demo" placeholder="Precio" value="0">
+                    <button class="boton-ejecutar" onclick="agregarAlCarrito()">Agregar al Carrito</button>
+                    <button class="boton-ejecutar" onclick="mostrarCarrito()">Ver Carrito</button>
+                    <button class="boton-ejecutar" onclick="vaciarCarrito()" style="background-color: #FF6B6B;">Vaciar</button>
+                    <p id="carrito-resultado"></p>
+                </div>
+                
+                <details class="codigo-html">
+                    <summary>Ver código JavaScript</summary>
+                    <pre><code>// Estructura de carrito
+let carrito = {
+    items: [],
+    total: 0
+};
+
+// Función para agregar al carrito
+function agregarAlCarrito(producto, precio) {
+    // Cargar carrito guardado
+    let carritoGuardado = JSON.parse(localStorage.getItem("carrito")) || carrito;
+    
+    // Agregar nuevo item
+    carritoGuardado.items.push({
+        producto: producto,
+        precio: precio
+    });
+    
+    // Calcular total
+    carritoGuardado.total = carritoGuardado.items.reduce((sum, item) => {
+        return sum + item.precio;
+    }, 0);
+    
+    // Guardar
+    localStorage.setItem("carrito", JSON.stringify(carritoGuardado));
+    console.log("Producto agregado");
+}
+
+// Función para obtener carrito
+function obtenerCarrito() {
+    let carritoGuardado = localStorage.getItem("carrito");
+    if (!carritoGuardado) {
+        return carrito;
+    }
+    return JSON.parse(carritoGuardado);
+}
+
+// Función para vaciar carrito
+function vaciarCarrito() {
+    localStorage.removeItem("carrito");
+    console.log("Carrito vaciado");
+}
+
+// Usar las funciones
+agregarAlCarrito("Laptop", 1000);
+agregarAlCarrito("Mouse", 20);
+
+let mi_carrito = obtenerCarrito();
+console.log(mi_carrito);  // Ver carrito completo
+console.log(mi_carrito.total);  // Ver total</code></pre>
+                </details>
+            </article>
+        </section>
+
+    </main>
+
+    <footer class="footer-referencia">
+        <p>&copy; 2024 Referencia JavaScript - Proyecto Educativo | Todos los derechos reservados</p>
+    </footer>
+
+    <!-- SCRIPTS - Funciones de ejemplo -->
+    <script>
+        // Función para escribir en la consola viva
+        function escribirConsola(mensaje) {
+            let consola = document.querySelector("#consola-viva");
+            consola.textContent += "\n" + mensaje;
+            consola.scrollTop = consola.scrollHeight;
+        }
+
+        // Limpiar consola
+        function limpiarConsola() {
+            document.querySelector("#consola-viva").textContent = "// Consola en vivo...\n";
+        }
+
+        // ===== EJEMPLOS =====
+
+        function ejemploVariables() {
+            limpiarConsola();
+            let edad = 25;
+            let nombre = "Juan";
+            let activo = true;
+            
+            escribirConsola("✓ Variable edad: " + edad);
+            escribirConsola("✓ Variable nombre: " + nombre);
+            escribirConsola("✓ Variable activo: " + activo);
+            escribirConsola(`✓ Template literal: Hola ${nombre}, tienes ${edad} años`);
+        }
+
+        function ejemploTipos() {
+            limpiarConsola();
+            escribirConsola("typeof 42 = " + typeof 42);
+            escribirConsola("typeof 'texto' = " + typeof 'texto');
+            escribirConsola("typeof true = " + typeof true);
+            escribirConsola("typeof {} = " + typeof {});
+            escribirConsola("typeof [] = " + typeof []);
+            escribirConsola("typeof undefined = " + typeof undefined);
+        }
+
+        function ejemploOperadores() {
+            limpiarConsola();
+            escribirConsola("10 + 5 = " + (10 + 5));
+            escribirConsola("10 - 5 = " + (10 - 5));
+            escribirConsola("10 * 5 = " + (10 * 5));
+            escribirConsola("10 / 5 = " + (10 / 5));
+            escribirConsola("10 > 5 = " + (10 > 5));
+            escribirConsola("true && false = " + (true && false));
+            escribirConsola("true || false = " + (true || false));
+        }
+
+        function ejemploObjetos() {
+            limpiarConsola();
+            let persona = { nombre: "Juan", edad: 25, ciudad: "Medellín" };
+            escribirConsola("Objeto persona creado");
+            escribirConsola("persona.nombre = " + persona.nombre);
+            escribirConsola("persona.edad = " + persona.edad);
+            escribirConsola("Claves: " + Object.keys(persona).join(", "));
+        }
+
+        function ejemploArrays() {
+            limpiarConsola();
+            let nombres = ["Juan", "María", "Carlos"];
+            escribirConsola("Array: " + nombres);
+            escribirConsola("Primer elemento: " + nombres[0]);
+            escribirConsola("Longitud: " + nombres.length);
+            escribirConsola("Incluye 'María': " + nombres.includes("María"));
+        }
+
+        function ejemploMetodosArray() {
+            limpiarConsola();
+            let numeros = [1, 2, 3, 4, 5];
+            let duplicados = numeros.map(n => n * 2);
+            let pares = numeros.filter(n => n % 2 === 0);
+            let suma = numeros.reduce((a, b) => a + b, 0);
+            
+            escribirConsola("Array original: " + numeros);
+            escribirConsola("map (×2): " + duplicados);
+            escribirConsola("filter (pares): " + pares);
+            escribirConsola("reduce (suma): " + suma);
+        }
+
+        function ejemploFunciones() {
+            limpiarConsola();
+            function sumar(a, b) {
+                return a + b;
+            }
+            
+            const multiplicar = (a, b) => a * b;
+            
+            escribirConsola("sumar(5, 3) = " + sumar(5, 3));
+            escribirConsola("multiplicar(4, 5) = " + multiplicar(4, 5));
+        }
+
+        function ejemploCondicionales() {
+            limpiarConsola();
+            let edad = 20;
+            let mensaje = edad >= 18 ? "Mayor de edad" : "Menor de edad";
+            escribirConsola("Edad: " + edad);
+            escribirConsola("Resultado: " + mensaje);
+        }
+
+        function ejemploBucles() {
+            limpiarConsola();
+            escribirConsola("Bucle for (0 a 4):");
+            for (let i = 0; i < 5; i++) {
+                escribirConsola("  i = " + i);
+            }
+        }
+
+        function ejemploSelectores() {
+            limpiarConsola();
+            let elemento = document.querySelector("#demo-id");
+            escribirConsola("querySelector('#demo-id'): " + elemento.textContent);
+        }
+
+        function ejemploContenido() {
+            limpiarConsola();
+            let p = document.querySelector("#contenido-demo");
+            p.textContent = "✓ ¡Contenido cambiado!";
+            escribirConsola("textContent modificado");
+        }
+
+        function ejemploCrearElementos() {
+            let div = document.createElement("div");
+            div.textContent = "✓ Elemento creado dinámicamente";
+            div.style.padding = "10px";
+            div.style.margin = "5px";
+            div.style.backgroundColor = "#667eea";
+            div.style.color = "white";
+            div.style.borderRadius = "8px";
+            document.querySelector("#contenedor-elementos").appendChild(div);
+            limpiarConsola();
+            escribirConsola("✓ Elemento agregado al DOM");
+        }
+
+        function ejemploLimpiarElementos() {
+            let contenedor = document.querySelector("#contenedor-elementos");
+            let p = contenedor.querySelector("p");
+            if (p) contenedor.removeChild(p);
+            limpiarConsola();
+            escribirConsola("✓ Elemento removido");
+        }
+
+        function ejemploEventos() {
+            limpiarConsola();
+            let boton = document.querySelector("#boton-evento");
+            let input = document.querySelector("#input-evento");
+            
+            boton.addEventListener("click", () => {
+                escribirConsola("✓ ¡Botón clickeado!");
+            });
+            
+            input.addEventListener("input", (e) => {
+                escribirConsola("✓ Escribiste: " + e.target.value);
+            });
+            
+            escribirConsola("Event listeners activados");
+        }
+
+        function ejemploFormulario() {
+            limpiarConsola();
+            let form = document.querySelector("#formulario-demo");
+            form.addEventListener("submit", (e) => {
+                e.preventDefault();
+                let nombre = document.querySelector("#nombre-form").value;
+                escribirConsola("✓ Formulario enviado");
+                escribirConsola("Nombre: " + nombre);
+            });
+            escribirConsola("Formulario activado");
+        }
+
+        function guardarEnStorage() {
+            let valor = document.querySelector("#storage-input").value;
+            if (valor === "") {
+                alert("Escribe algo primero");
+                return;
+            }
+            localStorage.setItem("miDato", valor);
+            document.querySelector("#storage-resultado").textContent = "✓ Guardado: " + valor;
+            limpiarConsola();
+            escribirConsola("localStorage.setItem('miDato', '" + valor + "')");
+        }
+
+        function cargarDelStorage() {
+            let valor = localStorage.getItem("miDato");
+            if (valor === null) {
+                document.querySelector("#storage-resultado").textContent = "No hay datos guardados";
+                return;
+            }
+            document.querySelector("#storage-resultado").textContent = "✓ Cargado: " + valor;
+            limpiarConsola();
+            escribirConsola("localStorage.getItem('miDato') = '" + valor + "'");
+        }
+
+        function limpiarStorage() {
+            localStorage.removeItem("miDato");
+            document.querySelector("#storage-resultado").textContent = "✓ Datos eliminados";
+            limpiarConsola();
+            escribirConsola("localStorage.removeItem('miDato')");
+        }
+
+        function agregarAlCarrito() {
+            let producto = document.querySelector("#carrito-producto").value;
+            let precio = document.querySelector("#carrito-precio").value;
+            
+            if (!producto || !precio) {
+                alert("Completa todos los campos");
+                return;
+            }
+            
+            let carrito = JSON.parse(localStorage.getItem("carrito")) || { items: [], total: 0 };
+            carrito.items.push({ producto, precio: parseFloat(precio) });
+            carrito.total = carrito.items.reduce((sum, item) => sum + item.precio, 0);
+            
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            document.querySelector("#carrito-resultado").textContent = "✓ " + producto + " agregado";
+        }
+
+        function mostrarCarrito() {
+            let carrito = JSON.parse(localStorage.getItem("carrito"));
+            if (!carrito || carrito.items.length === 0) {
+                document.querySelector("#carrito-resultado").textContent = "Carrito vacío";
+                return;
+            }
+            let resultado = "Carrito:\n";
+            carrito.items.forEach((item, i) => {
+                resultado += (i + 1) + ". " + item.producto + " - $" + item.precio + "\n";
+            });
+            resultado += "Total: $" + carrito.total;
+            document.querySelector("#carrito-resultado").textContent = resultado;
+        }
+
+        function vaciarCarrito() {
+            localStorage.removeItem("carrito");
+            document.querySelector("#carrito-resultado").textContent = "✓ Carrito vaciado";
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,195 @@
+<!-- 
+  ===============================
+  ARCHIVO: index.html
+  CARPETA: 2_Tienda_Online
+  PROPÓSITO: Tienda online con productos y carrito dinámico
+  
+  CARACTERÍSTICAS:
+  - Catálogo de productos con imágenes
+  - Sistema de carrito de compras
+  - Validación de formulario
+  - DOM manipulation avanzado
+  - Uso de data-attributes
+  ===============================
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <!-- 
+    viewport: Configuración para que sea responsiva
+    Muy importante para que funcione bien en celulares
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="description" content="Tienda online de productos electrónicos con carrito de compras">
+  <title>TechStore - Tienda Online</title>
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- 
+    Header con logo y carrito
+    El carrito muestra el número de productos agregados
+  -->
+  <header class="header-tienda">
+    <div class="contenedor-header">
+      <!-- Logo de la tienda -->
+      <div class="logo">
+        <h1>🛍️ TechStore</h1>
+        <p>Tu tienda de tecnología en línea</p>
+      </div>
+      
+      <!-- Carrito de compras -->
+      <div class="carrito-icon">
+        <!-- 
+          data-carrito: Atributo personalizado que guardamos datos
+          data-*: Se usa para guardar información del elemento
+          JavaScript puede acceder con dataset.carrito
+        -->
+        <span class="icono">🛒</span>
+        <span class="cantidad" id="cantidad-carrito" data-carrito="0">0</span>
+        <p>Carrito</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navegación -->
+  <nav class="navegacion">
+    <ul>
+      <li><a href="#catalogo">Catálogo</a></li>
+      <li><a href="#ofertas">Ofertas</a></li>
+      <li><a href="#envios">Envíos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sección del catálogo de productos -->
+  <main>
+    <section id="catalogo" class="seccion-catalogo">
+      <div class="contenedor">
+        <h2>Nuestro Catálogo</h2>
+        
+        <!-- 
+          Filtros de productos
+          Permiten filtrar por categoría (esto se controla con JavaScript)
+        -->
+        <div class="filtros">
+          <button class="btn-filtro activo" data-filtro="todos">Todos</button>
+          <button class="btn-filtro" data-filtro="laptops">Laptops</button>
+          <button class="btn-filtro" data-filtro="phones">Teléfonos</button>
+          <button class="btn-filtro" data-filtro="accesorios">Accesorios</button>
+        </div>
+        
+        <!-- 
+          Grid de productos
+          Aquí van los productos que se cargan dinámicamente con JavaScript
+          
+          Estructura de cada producto:
+          - Imagen del producto
+          - Nombre
+          - Descripción
+          - Precio
+          - Botón agregar al carrito
+        -->
+        <div class="grid-productos" id="grid-productos">
+          <!-- Los productos se insertan aquí con JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de ofertas especiales -->
+    <section id="ofertas" class="seccion-ofertas">
+      <div class="contenedor">
+        <h2>Ofertas Especiales</h2>
+        <div class="banner-ofertas">
+          <h3>🔥 Descuentos hasta 50% en productos seleccionados</h3>
+          <p>Válido hasta fin de mes</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Modal del carrito -->
+  <!-- 
+    Modal: Ventana emergente que se abre cuando haces click en el carrito
+    Se controla con JavaScript mostrando/ocultando
+  -->
+  <div class="modal" id="modal-carrito">
+    <div class="contenido-modal">
+      <button class="cerrar-modal" id="cerrar-modal">&times;</button>
+      
+      <h2>Tu Carrito de Compras</h2>
+      
+      <!-- Tabla con items del carrito -->
+      <table class="tabla-carrito">
+        <thead>
+          <tr>
+            <!-- 
+              thead: Encabezados de tabla
+              th: Celda de encabezado
+            -->
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <!-- 
+          tbody: Cuerpo de tabla
+          Aquí van las filas con los productos del carrito
+        -->
+        <tbody id="carrito-items">
+          <!-- Se llena con JavaScript -->
+        </tbody>
+      </table>
+      
+      <!-- Resumen del carrito -->
+      <div class="resumen-carrito">
+        <div class="fila">
+          <span>Subtotal:</span>
+          <span id="subtotal">$0.00</span>
+        </div>
+        <div class="fila">
+          <span>Impuesto (10%):</span>
+          <span id="impuesto">$0.00</span>
+        </div>
+        <div class="fila total">
+          <span>Total:</span>
+          <span id="total">$0.00</span>
+        </div>
+      </div>
+      
+      <!-- Botones de acción -->
+      <div class="botones-carrito">
+        <button class="btn btn-secundario" id="vaciar-carrito">Vaciar Carrito</button>
+        <button class="btn btn-primario" id="checkout">Ir a Pagar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Overlay del modal (fondo oscuro detrás del modal) -->
+  <!-- 
+    overlay: Fondo oscuro semi-transparente
+    Cuando haces click aquí, cierra el modal
+  -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Footer -->
+  <footer id="contacto">
+    <div class="contenedor">
+      <p>&copy; 2024 TechStore. Todos los derechos reservados.</p>
+      <p>Email: contacto@techstore.com | Teléfono: +57 300 123 4567</p>
+    </div>
+  </footer>
+
+  <!-- Script JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
